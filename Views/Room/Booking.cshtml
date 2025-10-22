@@ -1,0 +1,196 @@
+<main class="main">
+
+    <!-- Tiêu đề trang -->
+    <div class="page-title light-background">
+        <div class="container d-lg-flex justify-content-between align-items-center">
+            <h1 class="mb-2 mb-lg-0">Đặt phòng</h1>
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="/Home/Index">Trang chủ</a></li>
+                    <li class="current">Đặt phòng</li>
+                </ol>
+            </nav>
+        </div>
+    </div><!-- Kết thúc Tiêu đề trang -->
+
+    <!-- Phần Đặt phòng -->
+    <section id="booking" class="booking section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="reservation-wrapper">
+
+                <div class="reservation-header text-center" data-aos="fade-up" data-aos-delay="200">
+                    <h2>Đặt chỗ nghỉ của bạn</h2>
+                    <p class="lead">Trải nghiệm lòng hiếu khách tuyệt vời với quy trình đặt phòng đơn giản</p>
+                </div>
+
+                <div class="booking-grid">
+
+                    <div class="booking-form-section" data-aos="fade-right" data-aos-delay="300">
+                        <div class="form-container">
+                            <form class="reservation-form" action="" method="POST">
+
+                                <div class="form-section">
+                                    <h4>Chi tiết đặt phòng</h4>
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="arrival-date" class="form-label">Ngày đến</label>
+                                            <input type="date" class="form-control" id="arrival-date"
+                                                name="arrival_date" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="departure-date" class="form-label">Ngày đi</label>
+                                            <input type="date" class="form-control" id="departure-date"
+                                                name="departure_date" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="guest-count" class="form-label">Tổng số khách</label>
+                                            <select class="form-select" id="guest-count" name="guest_count" required="">
+                                                <option value="">Chọn số khách</option>
+                                                <option value="1">1 Khách</option>
+                                                <option value="2">2 Khách</option>
+                                                <option value="3">3 Khách</option>
+                                                <option value="4">4 Khách</option>
+                                                <option value="5">Trên 5 Khách</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="room-count" class="form-label">Tổng số phòng</label>
+                                            <select class="form-select" id="room-count" name="room_count" required="">
+                                                <option value="">Chọn số phòng</option>
+                                                <option value="1">1 Phòng</option>
+                                                <option value="2">2 Phòng</option>
+                                                <option value="3">3 Phòng</option>
+                                                <option value="4">Trên 4 Phòng</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h4>Ưu tiên phòng</h4>
+                                    <div class="form-group">
+                                        <label for="accommodation-type" class="form-label">Loại phòng</label>
+                                        <select class="form-select" id="accommodation-type" name="accommodation_type">
+                                            <option value="">Không ưu tiên</option>
+                                            <option value="classic">Phòng Cổ điển</option>
+                                            <option value="premium">Phòng Cao cấp</option>
+                                            <option value="junior-suite">Suite Junior</option>
+                                            <option value="luxury-suite">Suite Sang trọng</option>
+                                            <option value="penthouse">Suite Penthouse</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="additional-notes" class="form-label">Yêu cầu bổ sung</label>
+                                        <textarea class="form-control" id="additional-notes" name="additional_notes"
+                                            rows="3"
+                                            placeholder="Vui lòng ghi rõ các yêu cầu hoặc ưu tiên đặc biệt..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h4>Thông tin khách</h4>
+                                    <div class="form-grid">
+                                        <div class="form-group full-width">
+                                            <label for="primary-guest" class="form-label">Tên khách chính</label>
+                                            <input type="text" class="form-control" id="primary-guest"
+                                                name="primary_guest" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-email" class="form-label">Địa chỉ email</label>
+                                            <input type="email" class="form-control" id="contact-email"
+                                                name="contact_email" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-phone" class="form-label">Số điện thoại liên hệ</label>
+                                            <input type="tel" class="form-control" id="contact-phone"
+                                                name="contact_phone" required="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-calendar-plus me-2"></i>
+                                        Gửi yêu cầu đặt phòng
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="hotel-showcase" data-aos="fade-left" data-aos-delay="400">
+                        <div class="showcase-image">
+                            <img src="~/assets/img/hotel/showcase-1.webp" alt="Trưng bày khách sạn sang trọng"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="hotel-highlights">
+                            <h3>Tại sao chọn khách sạn của chúng tôi</h3>
+                            <div class="highlights-grid">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Kết nối cao cấp</h5>
+                                        <p>Truy cập internet tốc độ cao ở mọi khu vực</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Dịch vụ 24/7</h5>
+                                        <p>Hỗ trợ và phục vụ liên tục quanh ngày</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-car-front"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Đỗ xe Valet</h5>
+                                        <p>Đỗ xe miễn phí với dịch vụ valet</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-heart-pulse"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Trung tâm sức khỏe</h5>
+                                        <p>Cơ sở spa và phòng gym đầy đủ tiện nghi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-guarantees">
+                            <div class="guarantee-item">
+                                <i class="bi bi-shield-check"></i>
+                                <span>Đặt phòng an toàn</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="bi bi-arrow-clockwise"></i>
+                                <span>Hủy đặt linh hoạt</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="bi bi-telephone"></i>
+                                <span>Hỗ trợ 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- Kết thúc Phần Đặt phòng -->
+
+</main>

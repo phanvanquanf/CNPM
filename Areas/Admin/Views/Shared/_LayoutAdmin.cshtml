@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
+    data-assets-path="~/admin/assets/" data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Dashboard - Quản lý Khách sạn</title>
+
+    <meta name="description" content="Hệ thống quản lý khách sạn chuyên nghiệp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/admin/assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="~/admin/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/admin/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/admin/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/admin/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="~/admin/assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            prefix: 'tw-',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#696cff',
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Helpers -->
+    <script src="~/admin/assets/vendor/js/helpers.js"></script>
+
+    <!-- Config -->
+    <script src="~/admin/assets/js/config.js"></script>
+
+    <style>
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar-table th,
+        .calendar-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .calendar-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .calendar-day {
+            height: 40px;
+            position: relative;
+        }
+
+        .calendar-day.today {
+            background-color: #e7f3ff;
+            font-weight: bold;
+        }
+
+        .calendar-day.occupied {
+            background-color: #fff2e8;
+        }
+
+        .booking-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background-color: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .room-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-available {
+            background-color: #28a745;
+        }
+
+        .status-occupied {
+            background-color: #dc3545;
+        }
+
+        .status-maintenance {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            @await Component.InvokeAsync("AdminMenu")
+            <!-- /Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item d-flex align-items-center">
+                                <i class="bx bx-search fs-4 lh-0"></i>
+                                <input type="text" class="form-control border-0 shadow-none" placeholder="Tìm kiếm..."
+                                    aria-label="Search..." />
+                            </div>
+                        </div>
+                        <!-- /Search -->
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="~/admin/assets/img/avatars/1.png" alt
+                                            class="w-px-40 h-auto rounded-circle" />
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="~/admin/assets/img/avatars/1.png" alt
+                                                            class="w-px-40 h-auto rounded-circle" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-semibold d-block">Nguyễn Văn A</span>
+                                                    <small class="text-muted">Quản lý</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">Thông tin cá nhân</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bx bx-cog me-2"></i>
+                                            <span class="align-middle">Cài đặt</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Đăng xuất</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/User -->
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /Navbar -->
+
+                <!-- Main -->
+                @RenderBody()
+                <!-- End main -->
+            </div>
+            <!-- /Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- /Layout wrapper -->
+
+    <!-- Core JS -->
+    <script src="~/admin/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/admin/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/admin/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/admin/assets/vendor/js/menu.js"></script>
+
+    <!-- Vendors JS -->
+    <script src="~/admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="~/admin/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/admin/assets/js/dashboards-analytics.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- Lucide Icon -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script>
+        //Xử lý sự kiện cho lịch
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarDays = document.querySelectorAll('.calendar-day');
+
+            calendarDays.forEach(day => {
+                day.addEventListener('click', function () {
+                    const date = this.textContent.trim();
+                    alert(`Bạn đã chọn ngày ${date}. Hiển thị chi tiết đặt phòng...`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

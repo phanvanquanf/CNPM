@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<partial name="Header" />
+
+<body class="index-page">
+  <!-- Menu -->
+  @await Component.InvokeAsync("MenuView")
+  <!-- End Menu -->
+
+  <!-- Main -->
+  @RenderBody()
+  <!-- End Main -->
+  <partial name="Footer" />
+</body>
+
+</html>

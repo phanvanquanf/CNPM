@@ -1,0 +1,56 @@
+@using hotels.Areas.Admin.Models
+@model IList<AdminMenu>
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a href="/Admin/Home/Index" class="app-brand-link d-flex align-items-center">
+            <!-- Logo bằng ảnh -->
+            <span class="app-brand-logo demo">
+                <img src="~/admin/assets/img/logo/logo.jpg" alt="Logo HotelPro" width="40" height="40"
+                    class="rounded" />
+            </span>
+
+            <!-- Tên thương hiệu -->
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">HotelPro</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <!-- Danh sách menu -->
+    <ul class="menu-inner py-1">
+        @foreach (var parent in Model.Where(m => m.ItemLevel == 1))
+        {
+            var children = Model
+            .Where(c => c.ParentLevel == parent.AdminMenuID)
+            .OrderBy(c => c.ItemOrder)
+            .ToList();
+
+            <li class="menu-item @(parent.ItemName == "Dashboard" ? "active" : "")">
+                <a href="@(parent.ControllerName != null ? Url.Action(parent.ActionName, parent.ControllerName) : "javascript:void(0);")"
+                    class="menu-link @(children.Any() ? "menu-toggle" : "")" target="@parent.ItemTarget">
+                    <i class="menu-icon tf-icons @(parent.Icon)"></i>
+                    <div data-i18n="@parent.ItemName">@parent.ItemName</div>
+                </a>
+
+                @if (children.Any())
+                {
+                    <ul class="menu-sub">
+                        @foreach (var child in children)
+                        {
+                            <li class="menu-item">
+                                <a href="@Url.Action(child.ActionName, child.ControllerName)" class="menu-link">
+                                    <div data-i18n="@child.ItemName">@child.ItemName</div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</aside>

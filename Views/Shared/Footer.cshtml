@@ -1,0 +1,185 @@
+<footer id="footer" class="footer position-relative dark-background">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="/Home/Index" class="logo d-flex align-items-center">
+                        <span class="sitename">Grandoria</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>123 Đường ABC</p>
+                        <p>Quận 1, TP. Hồ Chí Minh</p>
+                        <p class="mt-3"><strong>Điện thoại:</strong> <span>+84 123 456 789</span></p>
+                        <p><strong>Email:</strong> <span>info@grandoria.com</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Liên Kết Hữu Ích</h4>
+                    <ul>
+                        <li><a href="/Home/Index">Trang Chủ</a></li>
+                        <li><a href="/Home/About">Giới Thiệu</a></li>
+                        <li><a href="/Services/Index">Dịch Vụ</a></li>
+                        <li><a href="/Pages/Privacy">Điều Khoản Dịch Vụ</a></li>
+                        <li><a href="/Pages/Terms">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Dịch Vụ Của Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="/Room/Index">Lưu Trú</a></li>
+                        <li><a href="/Services/Restaurant">Nhà hàng</a></li>
+                        <li><a href="/Services/Spa">Spa</a></li>
+                        <li><a href="/Services/Events">Sự Kiện</a></li>
+                        <li><a href="/Services/">Hội Nghị</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+                        <li><a href="#">Hướng Dẫn Đặt Phòng</a></li>
+                        <li><a href="#">Chính Sách Hủy</a></li>
+                        <li><a href="/Home/Contact">Liên Hệ</a></li>
+                        <li><a href="#">Hỗ Trợ 24/7</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Kết Nối</h4>
+                    <ul>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Tuyển Dụng</a></li>
+                        <li><a href="#">Đối Tác</a></li>
+                        <li><a href="#">Chứng Nhận</a></li>
+                        <li><a href="#">Báo Chí</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright text-center">
+        <div
+            class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+                <div>
+                    © Bản quyền <strong><span>Grandoria Hotel</span></strong>. Đã đăng ký bản quyền
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+                    Thiết kế bởi <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+
+            <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<style>
+    html {
+        overflow-y: scroll;
+        /* Luôn hiện thanh cuộn để tránh rung khi xuất hiện/ẩn */
+    }
+
+    .user-menu {
+        position: relative;
+    }
+
+    /* Liên kết chính */
+    .user-menu>a {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        gap: 6px;
+        text-decoration: none;
+        padding: 6px 10px;
+        position: relative;
+        z-index: 3;
+        /* nâng cao hơn menu con */
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+    .user-menu>a:hover {
+        color: #ffc107;
+    }
+
+    .user-menu>a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        z-index: 10;
+    }
+
+    /* Menu con */
+    .user-menu ul {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 4px);
+        /* Tách nhẹ khỏi link chính */
+        background: #fff;
+        list-style: none;
+        margin: 0;
+        padding: 8px 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        min-width: 180px;
+        z-index: 2;
+    }
+
+    /* Hiển thị menu khi hover toàn khối */
+    .user-menu:hover ul {
+        display: block;
+    }
+
+    /* Item trong menu */
+    .user-menu ul li a {
+        display: block;
+        padding: 8px 16px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .user-menu ul li a:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+
+<!-- Vendor JS Files -->
+<script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/vendor/php-email-form/validate.js"></script>
+<script src="~/assets/vendor/aos/aos.js"></script>
+<script src="~/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="~/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!-- Main JS File -->
+<script src="~/assets/js/main.js"></script>

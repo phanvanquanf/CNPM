@@ -1,0 +1,108 @@
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="tw-bg-success tw-flex tw-items-center tw-justify-between tw-px-4 tw-py-3 tw-rounded-t-lg">
+                <div class="tw-flex tw-items-center tw-gap-2">
+                    <i data-lucide="user-plus" class="tw-w-5 tw-h-5 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-mt-1">Thêm nhân viên</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Form -->
+            <form id="addForm" method="post" action="/Admin/NhanVien/Create">
+                <div class="modal-body tw-py-4 tw-px-5">
+                    <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+
+                        <!-- Tài khoản -->
+                        <div class="tw-col mb-3 flex flex-col">
+                            <label for="create-idtaikhoan" class="form-label">Tài khoản</label>
+                            <select id="create-idtaikhoan" name="IDTaiKhoan" class="form-select"
+                                asp-items="ViewBag.TaiKhoan">
+                                <option value="0">-- Không có --</option>
+                            </select>
+                        </div>
+
+                        <!-- Họ và tên -->
+                        <div class="tw-col mb-3">
+                            <label for="create-name">Họ và tên</label>
+                            <input type="text" id="create-name" name="HoTen" class="form-control"
+                                style="margin-top:6px;" placeholder="Nhập họ và tên..." />
+                            <span class="text-danger" id="error-HoTen"></span>
+                        </div>
+
+                        <!-- Giới tính -->
+                        <div class="tw-col mb-3">
+                            <label for="create-gioitinh">Giới tính</label>
+                            <select id="create-gioitinh" name="GioiTinh" class="form-select">
+                                <option value="">-- Chọn --</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select>
+                            <span class="text-danger" id="error-GioiTinh"></span>
+                        </div>
+
+                        <!-- CCCD -->
+                        <div class="tw-col mb-3">
+                            <label for="create-cccd">CCCD</label>
+                            <input type="text" id="create-cccd" name="CCCD" class="form-control"
+                                placeholder="Nhập CCCD..." />
+                            <span class="text-danger" id="error-CCCD"></span>
+                        </div>
+
+                        <!-- SDT -->
+                        <div class="tw-col mb-3">
+                            <label for="create-sdt">Số điện thoại</label>
+                            <input type="text" id="create-sdt" name="SDT" class="form-control"
+                                placeholder="Nhập số điện thoại..." />
+                            <span class="text-danger" id="error-SDT"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="tw-col mb-3">
+                            <label for="create-email">Email</label>
+                            <input type="email" id="create-email" name="Email" class="form-control"
+                                placeholder="Nhập email..." />
+                            <span class="text-danger" id="error-Email"></span>
+                        </div>
+
+                        <!-- Chức vụ -->
+                        <div class="tw-col mb-3">
+                            <label for="create-chucvu">Chức vụ</label>
+                            <input type="text" id="create-chucvu" name="ChucVu" class="form-control"
+                                placeholder="Nhập chức vụ..." />
+                            <span class="text-danger" id="error-ChucVu"></span>
+                        </div>
+
+                        <!-- Địa chỉ chiếm cả hàng -->
+                        <div class="tw-col-span-2 mb-3">
+                            <label for="create-address">Địa chỉ</label>
+                            <input type="text" id="create-address" name="DiaChi" class="form-control"
+                                placeholder="Nhập địa chỉ..." />
+                            <span class="text-danger" id="error-DiaChi"></span>
+                        </div>
+
+                        <!-- Trạng thái -->
+                        <div class="tw-col mb-3">
+                            <label for="create-trangthai">Trạng thái</label>
+                            <select id="create-trangthai" name="TrangThai" class="form-select">
+                                <option value="0">Đang làm</option>
+                                <option value="1">Nghỉ</option>
+                            </select>
+                            <span class="text-danger" id="error-TrangThai"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Thêm nhân viên</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

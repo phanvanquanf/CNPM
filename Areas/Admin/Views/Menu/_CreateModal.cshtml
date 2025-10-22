@@ -1,0 +1,93 @@
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="tw-flex tw-items-center tw-gap-1.5">
+                    <i data-lucide="list-plus" class="tw-w-5 tw-h-5"></i>
+                    <h5 class="modal-title tw-mt-0.5" id="modalCenterTitle">Thêm Menu mới</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Form -->
+            <form id="addForm" method="post" asp-area="Admin" asp-controller="Menu" asp-action="Create">
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+
+                    <!-- Menu Name -->
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="MenuName" class="form-label">Tên Menu</label>
+                            <input type="text" id="MenuName" name="MenuName" class="form-control"
+                                placeholder="Nhập tên menu">
+                        </div>
+                    </div>
+
+                    <!-- Levels & Parent Menu -->
+                    <div class="row g-2">
+                        <div class="col mb-3">
+                            <label for="Levels" class="form-label">Cấp độ</label>
+                            <select id="Levels" name="Levels" class="form-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="ParentID" class="form-label">Thuộc Menu</label>
+                            <select id="ParentID" name="ParentID" class="form-select" asp-items="ViewBag.Parents">
+                                <option value="0">-- Không có --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Link -->
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="Link" class="form-label">Đường dẫn</label>
+                            <input type="text" id="Link" name="Link" class="form-control" placeholder="Nhập đường dẫn">
+                        </div>
+                    </div>
+
+                    <!-- Menu Order & Position -->
+                    <div class="row g-2">
+                        <div class="col mb-0">
+                            <label for="MenuOrder" class="form-label">Thứ Tự</label>
+                            <input type="text" id="MenuOrder" name="MenuOrder" class="form-control"
+                                placeholder="Nhập thứ tự">
+                        </div>
+                        <div class="col mb-0">
+                            <label for="Position" class="form-label">Vị Trí</label>
+                            <select id="Position" name="Position" class="form-select">
+                                <option value="1">Header</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Is Active Checkbox -->
+                    <div class="row">
+                        <div class="col mt-3">
+                            <div class="form-check">
+                                @Html.CheckBox("IsActive", false, new { @class = "form-check-input" })
+                                <label class="form-label"> Hiển thị </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary tw-flex tw-items-center tw-gap-2">
+                        <i data-lucide="check" class="tw-w-4 tw-h-4"></i>
+                        Hoàn tất
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

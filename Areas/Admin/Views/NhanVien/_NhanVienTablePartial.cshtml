@@ -1,0 +1,310 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Areas.Admin.Models.tblNhanVien>
+
+<div id="product-container">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        @if (ViewBag.Message != null)
+        {
+            <div class="tw-text-center tw-text-sm tw-text-neutral-500 tw-py-6">
+                @ViewBag.Message
+            </div>
+        }
+        else
+        {
+        <table class="tw-min-w-full">
+            <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                <tr class="tw-bg-neutral-50 tw-text-center">
+                    <th class="tw-px-4 tw-py-3">#</th>
+                    <th class="tw-px-4 tw-py-3">Tên đăng nhập</th>
+                    <th class="tw-px-4 tw-py-3">Họ tên</th>
+                    <th class="tw-px-4 tw-py-3">CCCD</th>
+                    <th class="tw-px-4 tw-py-3">Giới tính</th>
+                    <th class="tw-px-4 tw-py-3">SĐT</th>
+                    <th class="tw-px-4 tw-py-3">Email</th>
+                    <th class="tw-px-4 tw-py-3">Chức vụ</th>
+                    <th class="tw-px-4 tw-py-3">Địa chỉ</th>
+                    <th class="tw-px-4 tw-py-3">Trạng thái</th>
+                    <th class="tw-px-4 tw-py-3">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                @foreach (var item in Model.Select((nv, index) => new { nv, index }))
+                {
+                    <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
+                        <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.TaiKhoan?.TenDangNhap</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.HoTen</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.CCCD</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.GioiTinh</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.SDT</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.Email</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.ChucVu</td>
+                        <td class="tw-px-4 tw-py-3">@item.nv.DiaChi</td>
+                        <td class="tw-px-4 tw-py-3">
+                            @if (item.nv.TrangThai == 0)
+                            {
+                                <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-green-100 tw-text-green-500">
+                                    Đang làm
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-red-100 tw-text-red-500">
+                                    Nghỉ
+                                </span>
+                            }
+                        </td>
+                        <td class="tw-px-4 tw-py-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu !tw-text-xs">
+                                   <button class="dropdown-item edit-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#editModal"
+                                        data-id="@item.nv.IDNhanVien"
+                                        data-idtaikhoan="@item.nv.IDTaiKhoan"
+                                        data-name="@item.nv.HoTen"
+                                        data-gioitinh="@item.nv.GioiTinh"
+                                        data-cccd="@item.nv.CCCD"
+                                        data-sdt="@item.nv.SDT"
+                                        data-email="@item.nv.Email"
+                                        data-address="@item.nv.DiaChi"
+                                        data-chucvu="@item.nv.ChucVu"
+                                        data-trangthai="@item.nv.TrangThai">
+                                    <i class="bx bx-edit-alt me-2"></i> Sửa
+                                </button>
+
+                                    <button class="dropdown-item delete-btn"
+                                            data-id="@item.nv.IDNhanVien"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal">
+                                        <i class="bx bx-trash me-2"></i> Xóa
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @await Html.PartialAsync("CreateNV")
+        @await Html.PartialAsync("EditNV", new tblNhanVien(), new ViewDataDictionary(ViewData))
+        @await Html.PartialAsync(partialViewName: "DeleteNV")
+        }
+    </div>
+
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage"
+                class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+                data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+                class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+                data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    const searchInput = document.getElementById("searchInput");
+    const employeeList = document.getElementById("employeeList"); 
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const statusFilter = document.getElementById("statusFilter");
+    const dropdownBtn = statusFilter.previousElementSibling; 
+
+    statusFilter.addEventListener("click", function (event) {
+        const item = event.target.closest("a[data-value]");
+        if (!item) return;
+
+        const status = item.getAttribute("data-value");
+        const label = item.textContent.trim();
+
+        dropdownBtn.textContent = label;
+
+        filterByStatus(status);
+    });
+
+    function filterByStatus(status) {
+        fetch(`/Admin/NhanVien/FilterByStatus?status=${encodeURIComponent(status)}`)
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("employeeList").innerHTML = html;
+            })
+            .catch(err => console.error("Lỗi khi lọc trạng thái:", err));
+        }
+    });
+
+    function searchEmployee() {
+        const keyword = searchInput.value.trim();
+        fetch(`/Admin/NhanVien/Search?keyword=${encodeURIComponent(keyword)}`)
+            .then(res => res.text())
+            .then(html => {
+                employeeList.innerHTML = html;
+            })
+            .catch(err => console.error("Lỗi khi tìm kiếm:", err));
+    }
+
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            searchEmployee();
+        }
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        function loadPage(page) {
+            if (page < 1) return;
+            const url = `@Url.Action("Index")?page=${page}`;
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("product-container").innerHTML = html;
+                    lucide.createIcons();
+                    bindPagination();
+                    bindAddButtons();
+                    bindEditButtons();
+                    bindDeleteButtons();
+                });
+        }
+
+        function bindAddButtons() {
+        // Event submit cho form thêm nhân viên
+        $(document).off('submit', '#addForm'); // gỡ các sự kiện cũ nếu có
+        $(document).on('submit', '#addForm', function(e){
+            e.preventDefault();
+            var valid = true;
+
+            // Xóa các message lỗi cũ
+            $('.text-danger').text('');
+
+            // Kiểm tra từng field
+            if($('#create-idtaikhoan').val() === ''){
+                $('#error-IDTaiKhoan').text('Phải chọn tài khoản');
+                valid = false;
+            }
+            if($('#create-name').val().trim() === ''){
+                $('#error-HoTen').text('Họ tên không được để trống');
+                valid = false;
+            }
+            if($('#create-gioitinh').val() === ''){
+                $('#error-GioiTinh').text('Phải chọn giới tính');
+                valid = false;
+            }
+            if($('#create-cccd').val().trim() === ''){
+                $('#error-CCCD').text('CCCD không được để trống');
+                valid = false;
+            }
+            if($('#create-sdt').val().trim() === ''){
+                $('#error-SDT').text('Số điện thoại không được để trống');
+                valid = false;
+            }
+            if($('#create-email').val().trim() === ''){
+                $('#error-Email').text('Email không được để trống');
+                valid = false;
+            }
+            if($('#create-chucvu').val().trim() === ''){
+                $('#error-ChucVu').text('Chức vụ không được để trống');
+                valid = false;
+            }
+            if($('#create-address').val().trim() === ''){
+                $('#error-DiaChi').text('Địa chỉ không được để trống');
+                valid = false;
+            }
+
+            if(!valid) return;
+
+            // Submit form bằng AJAX
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function(res){
+                    $('#addModal').modal('hide');
+                    // reload danh sách nhân viên
+                    if(typeof loadEmployeeList === 'function'){
+                        loadEmployeeList();
+                    }
+                },
+                error: function(err){
+                    console.error('Lỗi submit form:', err);
+                }
+            });
+        });
+    }
+
+        function bindEditButtons() {
+            var editModal = document.getElementById('editModal');
+
+            editModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget; 
+
+                var id = button.getAttribute('data-id');
+                var idKH = button.getAttribute('data-idtaikhoan');
+                var name = button.getAttribute('data-name');
+                var gioiTinh = button.getAttribute('data-gioitinh');
+                var cccd = button.getAttribute('data-cccd');
+                var sdt = button.getAttribute('data-sdt');
+                var email = button.getAttribute('data-email');
+                var address = button.getAttribute('data-address');
+                var chucVu = button.getAttribute('data-chucvu');
+                var trangThai = button.getAttribute('data-trangthai');
+
+                document.getElementById('edit-id').value = id;
+                document.getElementById('edit-idtaikhoan').value = idKH
+                document.getElementById('edit-name').value = name;
+                document.getElementById('edit-gioitinh').value = gioiTinh;
+                document.getElementById('edit-cccd').value = cccd;
+                document.getElementById('edit-sdt').value = sdt;
+                document.getElementById('edit-email').value = email;
+                document.getElementById('edit-address').value = address;
+                document.getElementById('edit-chucvu').value = chucVu;
+                document.getElementById('edit-trangthai').value = trangThai;
+            });
+        }
+
+        function bindDeleteButtons() {
+            document.querySelectorAll(".delete-btn").forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const id = this.getAttribute("data-id");
+                    document.getElementById("delete-id").value = id;
+                });
+            });
+        }
+
+        function bindPagination() {
+            const prev = document.getElementById("prevPage");
+            const next = document.getElementById("nextPage");
+
+            if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+            if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
+
+            document.querySelectorAll("#pagination button").forEach(btn => {
+                btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+            });
+        }
+        bindPagination();
+        bindAddButtons()
+        bindEditButtons();
+        bindDeleteButtons();
+    });
+</script>

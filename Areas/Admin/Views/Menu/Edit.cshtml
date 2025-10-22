@@ -1,0 +1,92 @@
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="tw-bg-primary tw-flex tw-items-center tw-justify-between tw-px-4 tw-py-3 tw-rounded-t-lg">
+                <div class="tw-flex tw-items-center tw-gap-2">
+                    <i data-lucide="edit-3" class="tw-w-5 tw-h-5 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-mt-1">Chỉnh sửa Menu</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Form Edit -->
+            <form id="editForm" method="post" asp-area="Admin" asp-controller="Menu" asp-action="Edit">
+                <input type="hidden" name="MenuID" id="edit-id" />
+
+                <div class="modal-body tw-py-4 tw-px-5">
+                    <div class="tw-space-y-4">
+
+                        <!-- Tên Menu -->
+                        <div>
+                            <label for="edit-name" class="tw-font-medium tw-text-gray-700">Tên Menu</label>
+                            <input type="text" class="form-control tw-mt-1" id="edit-name" name="MenuName"
+                                placeholder="Nhập tên menu..." required />
+                        </div>
+
+                        <!-- Levels -->
+                        <div>
+                            <label for="edit-levels" class="tw-font-medium tw-text-gray-700">Levels</label>
+                            <select class="form-select tw-mt-1" id="edit-levels" name="Levels">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+
+                        <!-- Parent ID -->
+                        <div>
+                            <label for="edit-parent" class="tw-font-medium tw-text-gray-700">Parent ID</label>
+                            <select class="form-select tw-mt-1" id="edit-parent" name="ParentID"
+                                asp-items="@(new SelectList(ViewBag.menuList, "Value", "Text"))">
+                            </select>
+                        </div>
+
+                        <!-- Link -->
+                        <div>
+                            <label for="edit-link" class="tw-font-medium tw-text-gray-700">Link</label>
+                            <input type="text" class="form-control tw-mt-1" id="edit-link" name="Link"
+                                placeholder="Nhập đường dẫn..." />
+                        </div>
+
+                        <!-- MenuOrder -->
+                        <div>
+                            <label for="edit-order" class="tw-font-medium tw-text-gray-700">MenuOrder</label>
+                            <input type="number" class="form-control tw-mt-1" id="edit-order" name="MenuOrder"
+                                placeholder="Nhập thứ tự hiển thị..." />
+                        </div>
+
+                        <!-- Position -->
+                        <div>
+                            <label for="edit-position" class="tw-font-medium tw-text-gray-700">Position</label>
+                            <input type="text" class="form-control tw-mt-1" id="edit-position" name="Position"
+                                placeholder="Nhập vị trí hiển thị..." />
+                        </div>
+
+                        <!-- Trạng thái -->
+                        <div>
+                            <label for="edit-active" class="tw-font-medium tw-text-gray-700">Trạng thái hiển thị</label>
+                            <select class="form-select tw-mt-1" id="edit-active" name="IsActive">
+                                <option value="true">Hiển thị</option>
+                                <option value="false">Không hiển thị</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Hủy
+                    </button>
+                    <button type="submit" class="btn btn-primary tw-flex tw-items-center tw-gap-2">
+                        <i data-lucide="save" class="tw-w-4 tw-h-4"></i>Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

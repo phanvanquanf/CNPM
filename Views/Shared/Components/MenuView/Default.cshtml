@@ -1,0 +1,67 @@
+@model IList<tblMenu>
+<header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center dark-background">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a
+                        href="mailto:contact@example.com">contact@grandoria.com</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+84 123 456 789</span></i>
+            </div>
+            <li class="dropdown user-menu">
+                <a href="#">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Nguyễn Văn A</span>
+                </a>
+                <ul>
+                    <li><a href="profile.html">Hồ Sơ Cá Nhân</a></li>
+                    <li><a href="my-bookings.html">Đặt Phòng Của Tôi</a></li>
+                    <li><a href="logout.html">Đăng Xuất</a></li>
+                </ul>
+            </li>
+        </div>
+    </div><!-- End Top Bar -->
+
+    <!-- Menu -->
+    <div class="branding d-flex align-items-center">
+
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="/Home/Index" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.webp" alt=""> -->
+                <h1 class="sitename">Grandoria</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    @foreach (var menu in Model.Where(m => m.Levels == 1).OrderBy(m => m.MenuOrder))
+                    {
+                        var pID = menu.MenuID;
+                        var sMenu = Model.Where(s => s.ParentID == pID)
+                        .OrderBy(s => s.MenuOrder).ToList();
+
+                        if (sMenu.Count == 0)
+                        {
+                            <li><a href="@menu.Link">@menu.MenuName</a></li>
+                        }
+                        else
+                        {
+                            <li class="dropdown">
+                                <a href="@menu.Link"><span>@menu.MenuName</span> <i
+                                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                <ul>
+                                    @foreach (var smn in sMenu)
+                                    {
+                                        <li><a href="@smn.Link">@smn.MenuName</a></li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <!-- End Menu -->
+</header>

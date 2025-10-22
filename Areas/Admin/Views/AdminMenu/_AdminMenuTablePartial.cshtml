@@ -1,0 +1,126 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Areas.Admin.Models.AdminMenu>
+
+<div id="product-container">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        <table class="tw-min-w-full">
+            <thead
+                class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                <tr class="tw-bg-neutral-50 tw-text-center">
+                    <th class="tw-px-4 tw-py-3">#</th>
+                    <th class="tw-px-4 tw-py-3">Menu</th>
+                    <th class="tw-px-4 tw-py-3">Trạng thái</th>
+                    <th class="tw-px-4 tw-py-3">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                @foreach (var item in Model.Select((menu, index) => new { menu, index }))
+                {
+                    <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
+                        <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                        <td class="tw-px-4 tw-py-3">@item.menu.ItemName</td>
+                        <td class="tw-px-4 tw-py-3">
+                            @if (item.menu.IsActive == true)
+                            {
+                                <span
+                                    class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-green-100 tw-text-green-500">
+                                    Hiển thị
+                                </span>
+                            }
+                            else
+                            {
+                                <span
+                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-orange-100 tw-text-orange-500">
+                                    Ẩn
+                                </span>
+                            }
+                        </td>
+                        <td class="tw-px-4 tw-py-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu !tw-text-xs">
+                                    <button class="dropdown-item" asp-area="Admin" asp-controller="AdminMenu"
+                                        asp-action="Edit"><i class="bx bx-edit-alt me-2"></i> Cập nhật</button>
+                                    <button class="dropdown-item delete-btn" data-id="@item.menu.AdminMenuID"
+                                        data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <i class="bx bx-trash me-2"></i> Xóa
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @await Html.PartialAsync(partialViewName: "_DeleteModal")
+    </div>
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function loadPage(page) {
+            if (page < 1) return;
+            const url = `@Url.Action("Index")?page=${page}`;
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("product-container").innerHTML = html;
+                    lucide.createIcons();
+                    bindPagination();
+                    bindDeleteButtons();
+                });
+        }
+
+        function bindDeleteButtons() {
+            document.querySelectorAll(".delete-btn").forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const id = this.getAttribute("data-id");
+                    document.getElementById("delete-id").value = id;
+                });
+            });
+        }
+
+        function bindPagination() {
+            const prev = document.getElementById("prevPage");
+            const next = document.getElementById("nextPage");
+
+            if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+            if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
+
+            document.querySelectorAll("#pagination button").forEach(btn => {
+                btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+            });
+        }
+
+        bindPagination();
+        bindDeleteButtons(); // initial bind
+    });
+</script>
