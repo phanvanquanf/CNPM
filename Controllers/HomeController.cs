@@ -8,6 +8,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
+        ViewBag.Title = "Trang Chủ - Grandoria Hotel";
         return View();
     }
 

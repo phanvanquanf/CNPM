@@ -20,5 +20,7 @@ namespace hotels.Models
         public string? KieuGiuong { get; set; }
 
         public string? MoTa { get; set; }
+
+        public virtual ICollection<tblTienNghi>? TienNghis { get; set; }
     }
 }
