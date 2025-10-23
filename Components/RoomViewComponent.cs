@@ -21,7 +21,7 @@ namespace hotels.Components
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var listOfRoom = (from m in _context.Phongs
-                              where (m.TrangThai == 0) && (m.Position == 1)
+                              where
                               select m).ToList();
             return await Task.FromResult((IViewComponentResult)View("Room", listOfRoom));
         }
