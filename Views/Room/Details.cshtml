@@ -1,4 +1,9 @@
+@model tblPhong
 <main class="main">
+
+    <head>
+        <title>Chi tiết phòng @Model.MaSoPhong</title>
+    </head>
 
     <!-- Tiêu đề trang -->
     <div class="page-title light-background">
@@ -20,48 +25,50 @@
 
             <!-- Tiêu đề phòng với hình ảnh và thông tin cơ bản -->
             <div class="row align-items-center mb-5">
+                @{
+                    var imgMain = Model.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
+                }
+
                 <div class="col-lg-7" data-aos="fade-right" data-aos-delay="200">
                     <div class="room-header-image">
-                        <img src="~/assets/img/hotel/room-15.webp" alt="Phòng Suite Cao cấp Nhìn ra Biển"
-                            class="img-fluid rounded">
+                        <img src="~/@imgMain?.Link" alt="@Model.LoaiPhong" class="img-fluid rounded">
                         <div class="room-badge">
-                            <span class="text-white">Suite Cao cấp</span>
+                            <span class="text-white">@Model.LoaiPhong?.LoaiPhong</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
                     <div class="room-header-content">
                         <div class="room-rating mb-3">
-                            <span class="rating-score">4.8</span>
+                            <span class="rating-score">@Model.Rating</span>
                             <div class="stars">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi @(i <= Math.Round(Model.Rating ?? 0) ? "bi-star-fill" : "bi-star")"></i>
+                                }
                             </div>
-                            <span class="reviews-count">(127 đánh giá)</span>
+                            <span class="reviews-count">(@Model.Reviewer đánh giá)</span>
                         </div>
-                        <h1 class="room-title">Phòng Suite Cao cấp Nhìn ra Biển</h1>
-                        <p class="room-tagline">Trải nghiệm sự sang trọng với tầm nhìn biển ngoạn mục và các tiện nghi
-                            cao cấp</p>
+                        <h1 class="room-title">Phòng @Model.MaSoPhong</h1>
+                        <p class="room-tagline">@Model.TongQuan</p>
                         <div class="room-capacity mb-4">
                             <div class="capacity-item">
                                 <i class="bi bi-people"></i>
-                                <span>Tối đa 4 khách</span>
+                                <span>Tối đa @Model.LoaiPhong?.SucChua khách</span>
                             </div>
                             <div class="capacity-item">
                                 <i class="bi bi-grid"></i>
-                                <span>79 m²</span>
+                                <span>@Model.LoaiPhong?.DienTich m²</span>
                             </div>
                             <div class="capacity-item">
                                 <i class="bi bi-bed"></i>
-                                <span>Giường cỡ lớn + Ghế sofa giường</span>
+                                <span>@Model.LoaiPhong?.KieuGiuong</span>
                             </div>
                         </div>
                         <div class="room-price">
-                            <span class="price-amount">395$</span>
-                            <span class="price-period">mỗi đêm</span>
+                            <span class="price-amount">@String.Format("{0:N0}", Model.GiaPhong) VNĐ</span>
+                            <span class="price-period">/ đêm</span>
                         </div>
                         <a href="/Room/Booking" class="btn btn-book-now">Đặt ngay</a>
                     </div>
@@ -72,25 +79,27 @@
             <div class="room-gallery mb-5" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="section-subtitle mb-4">Thư viện ảnh phòng</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-main">
-                        <a href="~/assets/img/hotel/room-12.webp" class="glightbox">
-                            <img src="~/assets/img/hotel/room-12.webp" alt="Nội thất Suite" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="gallery-thumbnails">
-                        <a href="~/assets/img/hotel/room-8.webp" class="glightbox">
-                            <img src="~/assets/img/hotel/room-8.webp" alt="Tầm nhìn phòng ngủ" class="img-fluid">
-                        </a>
-                        <a href="~/assets/img/hotel/room-6.webp" class="glightbox">
-                            <img src="~/assets/img/hotel/room-6.webp" alt="Khu vực sinh hoạt" class="img-fluid">
-                        </a>
-                        <a href="~/assets/img/hotel/room-18.webp" class="glightbox">
-                            <img src="~/assets/img/hotel/room-18.webp" alt="Tầm nhìn biển" class="img-fluid">
-                        </a>
-                        <a href="~/assets/img/hotel/dining-4.webp" class="glightbox">
-                            <img src="~/assets/img/hotel/dining-4.webp" alt="Phòng tắm" class="img-fluid">
-                        </a>
-                    </div>
+                    @{
+                        var img = Model.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == false);
+                        <div class="gallery-main">
+                            <a href="~/@img?.Link" class="glightbox">
+                                <img src="~/@img?.Link" alt="Nội thất @Model.LoaiPhong?.LoaiPhong" class="img-fluid">
+                            </a>
+                        </div>
+                    }
+
+                    @if (Model.AnhPhongs != null)
+                    {
+                        <div class="gallery-thumbnails">
+                            @foreach (var img4 in Model.AnhPhongs.Skip(count: 1).Take(count: 4))
+                            {
+                                <a href="~/@img4.Link" class="glightbox">
+                                    <img src="~/@img4.Link" class="img-fluid">
+                                </a>
+
+                            }
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -99,13 +108,16 @@
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                     <div class="room-description">
                         <h3 class="section-subtitle">Tổng quan phòng</h3>
-                        <p>Thưởng thức trải nghiệm sang trọng đỉnh cao với Phòng Suite Cao cấp Nhìn ra Biển của chúng
+                        <p>Thưởng thức trải nghiệm sang trọng đỉnh cao với Phòng @Model.MaSoPhong Cao cấp Nhìn ra Biển
+                            của chúng
                             tôi. Căn phòng rộng rãi này có các cửa sổ từ sàn đến trần, mang đến tầm nhìn toàn cảnh tuyệt
                             đẹp ra biển, tạo nên một bầu không khí yên bình, lý tưởng cho các kỳ nghỉ lãng mạn hoặc gia
                             đình. Không gian sinh hoạt được trang trí tinh tế, kết hợp hoàn hảo giữa sự thoải mái hiện
                             đại và nét duyên dáng của vùng ven biển, với nội thất cao cấp và các yếu tố thiết kế chu
                             đáo.</p>
-                        <p>Suite bao gồm một khu vực sinh hoạt riêng biệt với ghế ngồi thoải mái, bàn làm việc cho khách
+                        <p>@Model.LoaiPhong?.LoaiPhong bao gồm một khu vực sinh hoạt riêng biệt với ghế ngồi thoải mái,
+                            bàn làm
+                            việc cho khách
                             công tác, và ban công riêng nơi bạn có thể thưởng thức cà phê sáng trong khi ngắm bình minh
                             trên biển. Phòng ngủ được trang bị giường cỡ lớn với chăn ga cao cấp, đảm bảo giấc ngủ ngon,
                             trong khi ghế sofa giường ở khu vực sinh hoạt cung cấp chỗ ở bổ sung cho tối đa hai khách.
@@ -118,7 +130,9 @@
                             <i class="bi bi-star"></i>
                         </div>
                         <h4>Trải nghiệm cao cấp</h4>
-                        <p>"Căn suite đẹp nhất mà chúng tôi từng ở. Tầm nhìn ra biển thật sự ngoạn mục và sự chú trọng
+                        <p>"Căn @Model.LoaiPhong?.LoaiPhong đẹp nhất mà chúng tôi từng ở. Tầm nhìn ra biển thật sự ngoạn
+                            mục và sự
+                            chú trọng
                             đến chi tiết rất đáng chú ý."</p>
                         <div class="quote-author">
                             <span>- Sarah M., Khách đã xác minh</span>
@@ -307,7 +321,7 @@
                         </div>
                         <div class="col-lg-4 text-center text-lg-end">
                             <div class="price-display">
-                                <span class="price">395$</span>
+                                <span class="price">@String.Format("{0:N0}", Model.GiaPhong) VNĐ</span>
                                 <span class="period">mỗi đêm</span>
                             </div>
                             <a href="/Room/Booking" class="btn btn-primary btn-lg">Kiểm tra tình trạng phòng</a>
@@ -318,6 +332,8 @@
 
         </div>
 
-    </section><!-- Kết thúc Phần Chi tiết phòng -->
+    </section>
+
+    <!-- Kết thúc Phần Chi tiết phòng -->
 
 </main>

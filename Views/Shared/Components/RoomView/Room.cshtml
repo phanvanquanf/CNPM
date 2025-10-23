@@ -53,8 +53,7 @@
                                     <span class="amount">@room.GiaPhong?.ToString("N0")</span>
                                     <span class="period">mỗi đêm</span>
                                 </div>
-                                <a href="@Url.Action("Details", "Room", new { id = room.IDPhong })"
-                                    class="primary-booking-btn">Đặt Phòng</a>
+                                <a href="/Room/Details/@room.IDPhong" class="primary-booking-btn">Đặt Phòng</a>
                             </div>
                         </div>
                     </div>
@@ -78,8 +77,7 @@
                                 <p>@room.TongQuan</p>
                                 <div class="booking-row">
                                     <div class="price">@room.GiaPhong?.ToString("N0")<small>/đêm</small></div>
-                                    <a href="@Url.Action("Details", controller: "Room", new { id = room.IDPhong })"
-                                        class="book-link">Đặt</a>
+                                    <a href="/Room/Details/@room.IDPhong" class="book-link">Đặt</a>
                                 </div>
                             </div>
                         </div>
