@@ -13,7 +13,7 @@ namespace hotels.Models
 
         public string? LoaiPhong { get; set; }
 
-        public float? DienTich { get; set; }
+        public double? DienTich { get; set; }
 
         public int? SucChua { get; set; }
 
