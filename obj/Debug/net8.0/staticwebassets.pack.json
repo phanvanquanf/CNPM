@@ -349,6 +349,26 @@
       "PackagePath": "staticwebassets\\assets\\img\\AnhDaiDien\\admin.jpg"
     },
     {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_1.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_2.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_3.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_4.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_main.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_main.jpg"
+    },
+    {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon.png"
     },
