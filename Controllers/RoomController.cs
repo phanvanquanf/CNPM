@@ -18,7 +18,14 @@ namespace hotels.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var listPhong = _context.Phongs
+            .Include(p => p.LoaiPhong!)
+                .ThenInclude(l => l.TienNghis!)
+            .Include(p => p.AnhPhongs).ToList();
+
+            ViewBag.Title = "Danh sách phòng - Khách sạn Nghệ An";
+
+            return View(listPhong);
         }
 
         public IActionResult Details(long id)
@@ -29,7 +36,6 @@ namespace hotels.Controllers
             .Include(p => p.AnhPhongs)
             .FirstOrDefault(p => p.IDPhong == id);
 
-            // Đặt title động cho view này
             ViewBag.Title = "Chi tiết phòng " + phong?.MaSoPhong;
             if (phong == null)
                 return NotFound();

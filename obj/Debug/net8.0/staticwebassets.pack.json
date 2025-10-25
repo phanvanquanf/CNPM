@@ -369,6 +369,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_main.jpg"
     },
     {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101_main.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\101_main.jpg"
+    },
+    {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\202\\202_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\202\\202_1.jpg"
     },
@@ -409,6 +413,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\303_main.jpg"
     },
     {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\pexels-kadiravsarr-24877163.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\pexels-kadiravsarr-24877163.jpg"
+    },
+    {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\404\\404_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_1.jpg"
     },
@@ -429,6 +437,26 @@
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_main.jpg"
     },
     {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_1.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_2.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_3.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_4.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_main.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_main.jpg"
+    },
+    {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_1.jpg"
     },
@@ -447,6 +475,26 @@
     {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_main.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_1.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_2.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_3.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_4.jpg"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_main.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_main.jpg"
     },
     {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\601_1.jpg",
@@ -831,6 +879,14 @@
     {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\js\\nhanvien.js",
+      "PackagePath": "staticwebassets\\assets\\js\\nhanvien.js"
+    },
+    {
+      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\js\\room.js",
+      "PackagePath": "staticwebassets\\assets\\js\\room.js"
     },
     {
       "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\scss\\Readme.txt",
