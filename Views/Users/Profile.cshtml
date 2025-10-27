@@ -50,6 +50,7 @@
         var loaiGanNhat = phongGanNhat?.LoaiPhong;
         int duration = (dpGanNhat.NgayDi - dpGanNhat.NgayDen)?.Days ?? 0;
         decimal tongTien = (phongGanNhat?.GiaPhong ?? 0) * duration;
+        var img = phongGanNhat.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
 
     <section class="tw-col-span-9 tw-grid tw-grid-cols-9 tw-gap-6 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5">
     <!-- Room Info -->
@@ -126,9 +127,6 @@
             <p class="tw-font-semibold tw-text-sm">Thông Tin Phòng</p>
             <i data-lucide="square-arrow-out-up-right" class="tw-w-4 tw-h-4 tw-cursor-pointer tw-text-gray-500"></i>
         </div>
-                @{
-                    var img = phongGanNhat.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
-                }
             <img src="~/@img?.Link" alt="Room" class="tw-rounded-lg tw-mb-4">
         <div class="tw-space-y-3 tw-text-xs">
             <div class="tw-flex tw-items-center tw-justify-between tw-border-b tw-border-neutral-300 tw-pb-3">
@@ -180,12 +178,10 @@
         <tbody class="tw-text-gray-700 tw-text-sm tw-text-center">
             @foreach (var dp in Model)
             {
-                @{
                     var ctdp = dp.CTDatPhongs?.FirstOrDefault();
                     var phong = ctdp?.Phong;
                     var lp = phong?.LoaiPhong;
                     var img = phong?.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
-                }
                 <tr class="hover:tw-bg-gray-50">
                     <td class="tw-py-3 tw-px-4">
                         <img src="~/@img?.Link" class="tw-h-14 tw-w-20 tw-object-cover tw-rounded-lg tw-inline-block">

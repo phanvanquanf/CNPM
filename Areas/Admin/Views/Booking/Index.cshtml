@@ -1,0 +1,51 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Models.tblDatPhong>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Quản lý Đặt phòng</a></li>
+                <li class="breadcrumb-item active">Danh sách đặt phòng</li>
+            </ol>
+        </nav>
+
+        <div class="card tw-p-8">
+            <div class="tw-flex tw-flex-col tw-pb-5 tw-gap-1">
+                <h1 class="tw-text-xl tw-capitalize tw-font-semibold">Danh sách đặt phòng</h1>
+                <div class="tw-flex tw-items-center tw-justify-between tw-text-neutral-400 tw-text-sm">
+                    <p>Hiển thị @Model.Count trên tổng @Model.TotalItemCount yêu cầu</p>
+                    <div class="tw-flex tw-items-center tw-gap-3">
+                        <div
+                            class="tw-flex tw-items-center tw-gap-2 tw-w-64 tw-h-8 tw-border tw-border-solid tw-border-neutral-200/80 tw-rounded-lg tw-px-2.5">
+                            <i data-lucide="search" class="tw-text-neutral-400 tw-w-4 tw-h-4"></i>
+                            <input type="text" placeholder="Tìm kiếm..." id="searchInput"
+                                class="tw-w-full tw-outline-none tw-text-xs tw-text-neutral-400" />
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="tw-flex tw-items-center tw-gap-1 tw-px-2 tw-h-8 tw-cursor-pointer tw-rounded-lg 
+                                tw-border tw-border-solid tw-border-neutral-200/80 tw-text-xs dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Trạng thái
+                            </button>
+                            <ul class="dropdown-menu !tw-text-xs">
+                                <li><a class="dropdown-item" href="javascript:void(0);">Tất cả</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);">Đã Xác Nhận</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);">Chưa Xác Nhận</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Include Partial Table -->
+            <partial name="_BookingTablePartial" model="Model" />
+        </div>
+    </div>
+</div>

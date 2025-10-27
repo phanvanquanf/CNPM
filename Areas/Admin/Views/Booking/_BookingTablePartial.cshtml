@@ -1,0 +1,147 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Models.tblDatPhong>
+
+<div id="product-container">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        <table class="tw-min-w-full">
+            <thead
+                class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                <tr class="tw-bg-neutral-50 tw-text-center">
+                    <th class="tw-py-3 tw-px-4">#</th>
+                    <th class="tw-py-3 tw-px-4">Booking ID</th>
+                    <th class="tw-py-3 tw-px-4">Ngày Đến</th>
+                    <th class="tw-py-3 tw-px-4">Ngày Đi</th>
+                    <th class="tw-py-3 tw-px-4">Số Khách</th>
+                    <th class="tw-py-3 tw-px-4">Số Phòng</th>
+                    <th class="tw-py-3 tw-px-4">Trạng Thái</th>
+                    <th class="tw-py-3 tw-px-4">Hoạt Động</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                @foreach (var item in Model.Select((dp, index) => new { dp, index }))
+                {
+                    <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
+                        <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                        <td class="tw-px-4 tw-py-3">B-@item.dp.IDMaDatPhong</td>
+                        <td class="tw-px-5 tw-py-3">@item.dp.NgayDen?.ToString("dd/MM/yyyy")</td>
+                        <td class="tw-px-5 tw-py-3">@item.dp.NgayDi?.ToString("dd/MM/yyyy")</td>
+                        <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
+                        <td class="tw-px-4 tw-py-3">@item.dp.TongSoPhong</td>
+                        <td class="tw-px-4 tw-py-3">
+                            @if (item.dp.TrangThai == 1)
+                            {
+                                <span
+                                    class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium tw-bg-green-100 tw-text-green-400">
+                                    Đã Xác Nhận
+                                </span>
+                            }
+                            else if (item.dp.TrangThai == 2)
+                            {
+                                <span
+                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-gray-100 tw-text-gray-400">
+                                    Đã Hủy
+                                </span>
+                            }
+                            else
+                            {
+                                <span
+                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-orange-100 tw-text-orange-400">
+                                    Chưa Xác Nhận
+                                </span>
+                            }
+                        </td>
+                        <td class="tw-px-4 tw-py-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu !tw-text-xs">
+                                    <form method="post" asp-area="Admin" asp-controller="Booking" asp-action="Confirm">
+                                    <input type="hidden" name="id" value="@item.dp.IDMaDatPhong" />
+                                    <input type="hidden" name="trangThaiMoi" value="@(item.dp.TrangThai == 0 ? 1 : item.dp.TrangThai == 1 ? 2 : 0)" />
+                                    <button type="submit" class="dropdown-item edit-btn">
+                                        @if (item.dp.TrangThai == 0)
+                                        {
+                                            <i data-lucide="file-check-2" class="bx bx-edit-alt tw-w-4 tw-h-4 me-2"></i><span> Xác nhận</span>
+                                        } 
+                                        else if (item.dp.TrangThai == 1)
+                                        {
+                                            <i data-lucide="file-minus-2" class="bx bx-edit-alt tw-w-4 tw-h-4 me-2"></i> <span>Hủy</span>
+                                        } 
+                                        else
+                                        {
+                                            <i data-lucide="rotate-ccw" class="bx bx-edit-alt tw-w-4 tw-h-4 me-2"></i> <span> Khôi phục</span>
+                                        }
+                                    </button>
+                                    </form>
+
+                                    <button class="dropdown-item delete-btn">
+                                        <i data-lucide="square-arrow-out-up-right" class="bx bx-trash tw-w-4 tw-h-4 me-2"></i> Chi tiết
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function loadPage(page) {
+            if (page < 1) return;
+            const url = `@Url.Action("Index")?page=${page}`;
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("product-container").innerHTML = html;
+                    lucide.createIcons();
+                    bindPagination();
+                    bindDeleteButtons();
+                    bindEditButtons();
+                });
+        }
+
+        function bindPagination() {
+            const prev = document.getElementById("prevPage");
+            const next = document.getElementById("nextPage");
+
+            if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+            if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
+
+            document.querySelectorAll("#pagination button").forEach(btn => {
+                btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+            });
+        }
+
+        bindPagination();
+    });
+</script>
