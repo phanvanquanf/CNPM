@@ -1,0 +1,212 @@
+@model IList<tblDatPhong>
+
+@{
+    ViewBag.Title = "Hồ Sơ Cá Nhân";
+    var dpGanNhat = ViewBag.dpGanNhat as tblDatPhong;
+}
+
+<main class="tw-container tw-mx-auto tw-p-6 tw-grid tw-grid-cols-12 tw-gap-6 tw-text-gray-600">
+    <!-- Profile Sidebar -->
+    <section class="tw-col-span-3 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5 tw-space-y-4">
+        <div class="tw-flex tw-justify-items-center tw-justify-between">
+            <p class="tw-font-semibold tw-text-sm">Thông Tin Cá Nhân</p>
+            <i data-lucide="ellipsis" class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer"></i>
+        </div>
+        <div class="tw-flex tw-items-center tw-gap-4 tw-border-b tw-border-neutral-100 tw-pb-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWZjFwCtwQqzfXoNAkgKhfsZKL7x4x_qVMA&s" alt="avatar" class="tw-w-16 tw-h-16 tw-rounded-full tw-object-cover">
+            <div>
+                <p class="tw-font-semibold tw-text-lg">Phạm Văn Hùng</p>
+                <p class="tw-text-gray-500 tw-text-sm">G001</p>
+            </div>
+        </div>
+
+        <div class=" tw-border-b tw-border-neutral-100 tw-pb-4 tw-space-y-2.5">
+            <div class="tw-flex tw-items-center tw-gap-2.5">
+            <div class="tw-p-1.5 tw-rounded tw-bg-green-100">
+                <i data-lucide="mail" class="tw-w-4 tw-h-4 tw-text-gray-600"></i>
+            </div>
+                <p class="tw-text-gray-500 tw-text-sm">hungpv@gmail.com</p>
+            </div>
+            <div class="tw-flex tw-items-center tw-gap-2.5">
+            <div class="tw-p-1.5 tw-rounded tw-bg-green-100">
+                <i data-lucide="smartphone" class="tw-w-4 tw-h-4 tw-text-gray-600"></i>
+            </div>
+                <p class="tw-text-gray-500 tw-text-sm">0911112233</p>
+            </div>
+        </div>
+
+        <div>
+            <ul class="tw-text-sm tw-space-y-1.5">
+                <li><span class="tw-font-medium tw-mr-1">Giới Tính:</span> Nam</li>
+                <li><span class="tw-font-medium tw-mr-1">Địa Chỉ:</span> 100 Lê Duẩn, Hà Nội</li>
+            </ul>
+        </div>
+    </section>
+
+    @if (dpGanNhat != null)
+    {
+        var ctGanNhat = dpGanNhat.CTDatPhongs?.FirstOrDefault();
+        var phongGanNhat = ctGanNhat?.Phong;
+        var loaiGanNhat = phongGanNhat?.LoaiPhong;
+        int duration = (dpGanNhat.NgayDi - dpGanNhat.NgayDen)?.Days ?? 0;
+        decimal tongTien = (phongGanNhat?.GiaPhong ?? 0) * duration;
+
+    <section class="tw-col-span-9 tw-grid tw-grid-cols-9 tw-gap-6 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5">
+    <!-- Room Info -->
+    <div class="tw-col-span-6">
+    <div class="tw-flex tw-items-center tw-justify-between">
+            <p class="tw-font-semibold tw-text-sm">Thông Tin Đặt Phòng</p>
+            <i data-lucide="ellipsis" class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer"></i>
+        </div>
+        <div class="tw-pb-4 tw-mt-3">
+       @if (dpGanNhat.TrangThai == 1){
+         <div class="tw-flex tw-items-center tw-justify-center tw-gap-1 tw-bg-green-100 tw-py-1.5 tw-rounded-md tw-text-xs tw-max-w-[106px] tw-font-medium">
+            <i data-lucide="check" class="tw-w-4 tw-h-4"></i>Đã Xác Nhận</div>
+       } else {
+         <div class="tw-flex tw-items-center tw-justify-center tw-gap-1 tw-bg-orange-100 tw-py-1.5 tw-rounded-md tw-text-xs tw-max-w-[106px] tw-font-medium">
+            Chưa Xác Nhận</div>
+       }
+                <p class="tw-font-semibold tw-text-lg tw-mt-2">Booking ID: @dpGanNhat.IDMaDatPhong</p>
+                <p class="tw-text-gray-500 tw-text-xs">@dpGanNhat.NgayTao?.ToString("dd/MM/yyyy HH:mm")</p>
+        </div>
+
+        <div class="tw-space-y-4">
+        <div class="tw-grid tw-grid-cols-3 tw-gap-4 tw-text-sm">
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Loại Phòng</p>
+                <p class="tw-font-medium">@loaiGanNhat?.LoaiPhong</p>
+            </div>
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Số Phòng </p>
+                <p class="tw-font-medium">@phongGanNhat?.MaSoPhong</p>
+            </div>
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Giá Phòng</p>
+                <p class="tw-font-medium">@(phongGanNhat?.GiaPhong?.ToString("N0"))₫/<span class="tw-text-xs tw-text-gray-500">đêm</span></p>
+            </div>
+        </div>
+
+        <div class="tw-grid tw-grid-cols-3 tw-gap-4 tw-text-sm">
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Số người</p>
+                <p class="tw-font-medium">@ctGanNhat?.SoKhach</p>
+            </div>
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Tổng Số Phòng </p>
+                <p class="tw-font-medium">@dpGanNhat.TongSoPhong</p>
+            </div>
+        </div>
+
+        <div class="tw-grid tw-grid-cols-3 tw-gap-4 tw-text-sm">
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Ngày Đến</p>
+                <p class="tw-font-medium">@dpGanNhat.NgayDen?.ToString("dd/MM/yyyy")</p>
+            </div>
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Ngày Đi</p>
+                <p class="tw-font-medium">@dpGanNhat.NgayDi?.ToString("dd/MM/yyyy")</p>
+            </div>
+            <div class="tw-space-y-0.5">
+                <p class="tw-text-xs tw-text-gray-500">Khoảng Thời Gian</p>
+                <p class="tw-font-medium">@duration đêm</p>
+            </div>
+        </div>
+
+        
+        <div class="tw-space-y-0.5 tw-text-sm">
+            <p class="tw-text-xs tw-text-gray-500">Ghi Chú</p>
+            <p class="tw-font-medium">@dpGanNhat.GhiChu</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Booking Info -->
+    <div class="tw-col-span-3 tw-bg-neutral-100 tw-rounded-xl tw-p-[13px]">
+        <div class="tw-flex tw-items-center tw-justify-between tw-mb-2">
+            <p class="tw-font-semibold tw-text-sm">Thông Tin Phòng</p>
+            <i data-lucide="square-arrow-out-up-right" class="tw-w-4 tw-h-4 tw-cursor-pointer tw-text-gray-500"></i>
+        </div>
+                @{
+                    var img = phongGanNhat.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
+                }
+            <img src="~/@img?.Link" alt="Room" class="tw-rounded-lg tw-mb-4">
+        <div class="tw-space-y-3 tw-text-xs">
+            <div class="tw-flex tw-items-center tw-justify-between tw-border-b tw-border-neutral-300 tw-pb-3">
+                <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
+                <i data-lucide="inspection-panel" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat.DienTich m²</span>
+                <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
+                <i data-lucide="bed" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat.KieuGiuong</span>
+                <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
+                <i data-lucide="users" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat.SucChua Người</span>
+            </div>
+            <div class="tw-flex tw-justify-between">
+                <span class="tw-text-gray-800 tw-font-medium">Giá Phòng</span>
+                <span>@tongTien.ToString("N0")₫</span>
+            </div>
+            <div class="tw-flex tw-justify-between">
+                <span class="tw-text-gray-800 tw-font-medium">Dịch vụ</span>
+                <span>--</span>
+            </div>
+            <div class="tw-flex tw-justify-between tw-font-semibold tw-text-sm tw-border-t tw-border-neutral-300 tw-pt-3">
+                <span>Tổng Tiền</span>
+                <span>@tongTien.ToString("N0")₫</span>
+            </div>
+        </div>
+    </div>
+    </section>
+    }
+
+    <!-- Booking History -->
+    <section class="tw-col-span-12 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5">
+        <div class="tw-flex tw-justify-between tw-mb-3">
+            <p class="tw-font-semibold tw-text-sm">Lịch Sử Đặt Phòng</p>
+            <input type="text" placeholder="Search..." class="tw-border tw-rounded-lg tw-px-3 tw-py-1 tw-text-sm">
+        </div>
+
+        <div class="tw-overflow-x-auto tw-rounded-lg">
+        <table class="tw-w-full tw-text-xs tw-text-left tw-border-collapse">
+        <thead class="tw-bg-gray-50 tw-text-neutral-500 tw-text-center">
+            <tr>
+            <th class="tw-py-3 tw-px-4 tw-w-[12%]">Hình Ảnh</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[14%]">Booking ID</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[14%]">Loại Phòng</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[10%]">Số Phòng</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[16%]">Ngày Đến</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[16%]">Ngày Đi</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[10%]">Số Người</th>
+            <th class="tw-py-3 tw-px-4 tw-w-[8%]"></th>
+            </tr>
+        </thead>
+        <tbody class="tw-text-gray-700 tw-text-sm tw-text-center">
+            @foreach (var dp in Model)
+            {
+                @{
+                    var ctdp = dp.CTDatPhongs?.FirstOrDefault();
+                    var phong = ctdp?.Phong;
+                    var lp = phong?.LoaiPhong;
+                    var img = phong?.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
+                }
+                <tr class="hover:tw-bg-gray-50">
+                    <td class="tw-py-3 tw-px-4">
+                        <img src="~/@img?.Link" class="tw-h-14 tw-w-20 tw-object-cover tw-rounded-lg tw-inline-block">
+                    </td>
+                    <td class="tw-py-3 tw-px-4">@dp.IDMaDatPhong</td>
+                    <td class="tw-py-3 tw-px-4">@lp?.LoaiPhong</td>
+                    <td class="tw-py-3 tw-px-4">@phong?.MaSoPhong</td>
+                    <td class="tw-py-3 tw-px-4">@dp.NgayDen?.ToString("dd/MM/yyyy")</td>
+                    <td class="tw-py-3 tw-px-4">@dp.NgayDi?.ToString("dd/MM/yyyy")</td>
+                    <td class="tw-py-3 tw-px-4">@dp.TongSoKhach <text>Người</text></td>
+                    <td class="tw-py-3 tw-px-4">
+                        <div class="tw-flex tw-justify-center">
+                            <i data-lucide="ellipsis" class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer"></i>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </table>
+        </div>
+
+
+    </section>
+</main>

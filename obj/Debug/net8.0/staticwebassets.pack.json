@@ -1,1407 +1,1407 @@
 {
   "Files": [
     {
-      "Id": "D:\\ksNet\\hotels\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\hotels.bundle.scp.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\hotels.bundle.scp.css",
       "PackagePath": "staticwebassets\\hotels.bundle.scp.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\css\\demo.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\css\\demo.css",
       "PackagePath": "staticwebassets\\admin\\assets\\css\\demo.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\avatars\\1.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\avatars\\1.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\avatars\\1.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\avatars\\5.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\avatars\\5.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\avatars\\5.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\avatars\\6.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\avatars\\6.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\avatars\\6.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\avatars\\7.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\avatars\\7.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\avatars\\7.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\backgrounds\\18.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\backgrounds\\18.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\backgrounds\\18.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\1.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\11.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\11.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\11.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\12.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\12.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\12.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\13.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\13.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\13.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\17.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\17.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\17.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\18.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\18.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\18.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\19.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\19.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\19.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\2.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\20.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\20.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\20.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\3.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\4.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\5.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\5.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\5.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\elements\\7.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\elements\\7.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\elements\\7.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\favicon\\favicon.ico",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\favicon\\favicon.ico",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\favicon\\favicon.ico"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\asana.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\asana.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\asana.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\behance.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\behance.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\behance.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\dribbble.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\dribbble.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\dribbble.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\facebook.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\facebook.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\facebook.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\github.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\github.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\github.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\google.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\google.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\google.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\instagram.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\instagram.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\instagram.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\mailchimp.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\mailchimp.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\mailchimp.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\slack.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\slack.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\slack.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\brands\\twitter.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\brands\\twitter.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\brands\\twitter.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\cc-primary.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\cc-primary.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\cc-primary.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\cc-success.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\cc-success.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\cc-success.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\cc-warning.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\cc-warning.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\cc-warning.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\chart-success.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\chart-success.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\chart-success.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\chart.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\chart.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\chart.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\paypal.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\paypal.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\paypal.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\wallet-info.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\wallet-info.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\wallet-info.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\icons\\unicons\\wallet.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\icons\\unicons\\wallet.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\icons\\unicons\\wallet.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\illustrations\\girl-doing-yoga-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\illustrations\\girl-doing-yoga-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\illustrations\\girl-doing-yoga-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\illustrations\\man-with-laptop-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\illustrations\\man-with-laptop-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\illustrations\\man-with-laptop-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\illustrations\\page-misc-error-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\illustrations\\page-misc-error-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\illustrations\\page-misc-error-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\layouts\\layout-container-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\layouts\\layout-container-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\layouts\\layout-container-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\layouts\\layout-fluid-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\layouts\\layout-fluid-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\layouts\\layout-fluid-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\layouts\\layout-without-menu-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\layouts\\layout-without-menu-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\layouts\\layout-without-menu-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\layouts\\layout-without-navbar-light.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\layouts\\layout-without-navbar-light.png",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\layouts\\layout-without-navbar-light.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\img\\logo\\logo.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\logo\\logo.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\logo\\logo.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\config.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\config.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\config.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\dashboards-analytics.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\dashboards-analytics.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\dashboards-analytics.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\extended-ui-perfect-scrollbar.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\extended-ui-perfect-scrollbar.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\extended-ui-perfect-scrollbar.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\form-basic-inputs.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\form-basic-inputs.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\form-basic-inputs.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\main.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\main.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\pages-account-settings-account.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\pages-account-settings-account.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\pages-account-settings-account.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\ui-modals.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\ui-modals.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\ui-modals.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\ui-popover.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\ui-popover.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\ui-popover.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\js\\ui-toasts.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\js\\ui-toasts.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\ui-toasts.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\css\\core.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\css\\core.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\css\\core.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-account-settings.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-account-settings.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\css\\pages\\page-account-settings.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-auth.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-auth.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\css\\pages\\page-auth.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-icons.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-icons.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\css\\pages\\page-icons.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-misc.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\css\\pages\\page-misc.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\css\\pages\\page-misc.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\css\\theme-default.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\css\\theme-default.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\css\\theme-default.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\fonts\\boxicons.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.eot",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.eot",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.eot"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.svg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.svg",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.svg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.ttf",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.ttf",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.ttf"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.woff",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.woff",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.woff"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.woff2",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.woff2",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\fonts\\boxicons\\boxicons.woff2"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\js\\bootstrap.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\js\\helpers.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\js\\helpers.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\js\\helpers.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\js\\menu.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\js\\menu.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\js\\menu.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\apex-charts\\apex-charts.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\apex-charts\\apex-charts.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\apex-charts\\apex-charts.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\apex-charts\\apexcharts.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\apex-charts\\apexcharts.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\apex-charts\\apexcharts.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\highlight\\highlight-github.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\highlight\\highlight-github.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\highlight\\highlight-github.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\highlight\\highlight.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\highlight\\highlight.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\highlight\\highlight.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\highlight\\highlight.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\highlight\\highlight.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\highlight\\highlight.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\jquery\\jquery.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\jquery\\jquery.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\jquery\\jquery.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\masonry\\masonry.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\masonry\\masonry.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\masonry\\masonry.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\admin\\assets\\vendor\\libs\\popper\\popper.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\vendor\\libs\\popper\\popper.js",
       "PackagePath": "staticwebassets\\admin\\assets\\vendor\\libs\\popper\\popper.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\css\\main.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\css\\main.css",
       "PackagePath": "staticwebassets\\assets\\css\\main.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\AnhDaiDien\\KH\\hung.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\AnhDaiDien\\KH\\hung.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\AnhDaiDien\\KH\\hung.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\AnhDaiDien\\KH\\huong.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\AnhDaiDien\\KH\\huong.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\AnhDaiDien\\KH\\huong.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\AnhDaiDien\\NV\\lan.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\AnhDaiDien\\NV\\lan.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\AnhDaiDien\\NV\\lan.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\AnhDaiDien\\NV\\mai.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\AnhDaiDien\\NV\\mai.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\AnhDaiDien\\NV\\mai.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\AnhDaiDien\\admin.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\AnhDaiDien\\admin.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\AnhDaiDien\\admin.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\101\\101_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\101\\101_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\101\\101_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\101\\101_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101\\101_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\101\\101_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101\\101_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\101_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\101_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\101_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\202\\202_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\202\\202_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\202\\202_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\202\\202_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\202\\202_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\202\\202_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\202\\202_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\202\\202_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\202\\202_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\202\\202_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\202\\202_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\202\\202_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\202\\202_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\202\\202_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\202\\202_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\303_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\303\\303_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\303_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\303_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\303\\303_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\303_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\303_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\303\\303_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\303_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\303_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\303\\303_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\303_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\303_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\303\\303_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\303_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\303\\pexels-kadiravsarr-24877163.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\303\\pexels-kadiravsarr-24877163.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\303\\pexels-kadiravsarr-24877163.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\404\\404_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\404\\404_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\404\\404_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\404\\404_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\404\\404_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\404\\404_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\404\\404_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\404\\404_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\404\\404_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\404\\404_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\404\\404_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\303_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\303_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\303_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\303_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\303_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\303_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\303_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\505_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\505_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\505_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\505_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\505\\505_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\505\\505_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\505\\505_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\101_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\101_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\101_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\101_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\101_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\101_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\101_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\601_1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\601_1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\601_1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\601_2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\601_2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\601_2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\601_3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\601_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\601_3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\601_4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\601_4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\601_4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\Room\\601\\601_main.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\Room\\601\\601_main.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\Room\\601\\601_main.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\apple-touch-icon.png",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon.png"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\favicon.png",
-      "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
-    },
-    {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\amenities-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\amenities-2.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-2.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-2.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\amenities-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\amenities-4.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-4.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-4.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\amenities-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\amenities-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\dining-2.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\dining-2.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\dining-2.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\dining-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\dining-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\dining-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\dining-4.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\dining-4.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\dining-4.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\dining-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\dining-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\dining-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-2.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-2.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-2.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-4.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-4.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-4.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-6.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-6.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-6.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\event-9.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\event-9.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\event-9.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-12.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-12.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-12.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-15.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-15.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-15.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-18.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-18.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-18.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\gallery-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\gallery-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\gallery-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-10.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-10.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-10.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-2.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-2.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-2.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-4.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-4.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-4.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-6.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-6.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-6.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\location-9.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\location-9.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\location-9.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-12.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-12.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-12.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-14.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-14.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-14.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-15.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-15.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-15.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-17.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-17.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-17.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-18.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-18.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-18.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-19.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-19.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-19.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-6.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-6.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-6.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\room-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\room-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\room-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\showcase-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\showcase-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\showcase-11.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\showcase-11.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-11.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\showcase-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\showcase-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\showcase-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\showcase-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\showcase-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\showcase-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\hotel\\showcase-9.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\showcase-9.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-9.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\logo.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo-icon.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-icon.jpg"
+    },
+    {
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo.webp",
       "PackagePath": "staticwebassets\\assets\\img\\logo.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\misc\\signature-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\misc\\signature-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\misc\\signature-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\person\\person-f-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\person\\person-f-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\person\\person-f-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\person\\person-f-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\person\\person-f-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\person\\person-f-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\person\\person-m-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\person\\person-m-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\person\\person-m-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\person\\person-m-9.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\person\\person-m-9.webp",
       "PackagePath": "staticwebassets\\assets\\img\\person\\person-m-9.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\dessert-2.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\dessert-2.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\dessert-2.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\dessert-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\dessert-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\dessert-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\drink-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\drink-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\drink-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\drink-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\drink-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\drink-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\main-1.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\main-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\main-1.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\main-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\main-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\main-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\main-4.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\main-4.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\main-4.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\main-7.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\main-7.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\main-7.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\showcase-3.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\showcase-3.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\showcase-3.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\showcase-6.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\showcase-6.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\showcase-6.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\showcase-8.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\showcase-8.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\showcase-8.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\starter-2.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\starter-2.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\starter-2.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\restaurant\\starter-5.webp",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\restaurant\\starter-5.webp",
       "PackagePath": "staticwebassets\\assets\\img\\restaurant\\starter-5.webp"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\Vinfast.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\Vinfast.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\Vinfast.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\hyundai.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\hyundai.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\hyundai.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\kia.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\kia.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\kia.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\mec.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\mec.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\mec.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\shuttle1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\shuttle2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\shuttle3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\shuttle4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\shuttle4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Shuttle\\toyota.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Shuttle\\toyota.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Shuttle\\toyota.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh1.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh1.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh2.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh2.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh3.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh3.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh4.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh4.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh5.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh5.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh6.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh6.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\img\\services\\Spa\\anh7.jpg",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh7.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh7.jpg"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\js\\main.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\js\\nhanvien.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\nhanvien.js",
       "PackagePath": "staticwebassets\\assets\\js\\nhanvien.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\js\\room.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\room.js",
       "PackagePath": "staticwebassets\\assets\\js\\room.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\scss\\Readme.txt",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\scss\\Readme.txt",
       "PackagePath": "staticwebassets\\assets\\scss\\Readme.txt"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\aos\\aos.cjs.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\aos\\aos.cjs.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.cjs.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\aos\\aos.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\aos\\aos.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\aos\\aos.esm.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\aos\\aos.esm.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.esm.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\aos\\aos.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\aos\\aos.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\aos\\aos.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\aos\\aos.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\css\\glightbox.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\css\\glightbox.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\js\\glightbox.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\js\\glightbox.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\imagesloaded\\imagesloaded.pkgd.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\imagesloaded\\imagesloaded.pkgd.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\imagesloaded\\imagesloaded.pkgd.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\isotope-layout\\isotope.pkgd.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\php-email-form\\validate.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\php-email-form\\validate.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\php-email-form\\validate.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\purecounter\\purecounter_vanilla.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\purecounter\\purecounter_vanilla.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\css\\site.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\favicon.ico",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\js\\site.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\ksNet\\hotels\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

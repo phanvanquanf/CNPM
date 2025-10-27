@@ -1,3 +1,7 @@
+@model tblLoaiPhong
+@{
+    ViewBag.Title = "Đặt Phòng";
+}
 <main class="main">
 
     <!-- Tiêu đề trang -->
@@ -29,35 +33,34 @@
 
                     <div class="booking-form-section" data-aos="fade-right" data-aos-delay="300">
                         <div class="form-container">
-                            <form class="reservation-form" action="" method="POST">
-
+                            <form asp-action="BookingPost" asp-controller="Room" method="post" class="reservation-form">
                                 <div class="form-section">
                                     <h4>Chi tiết đặt phòng</h4>
                                     <div class="form-grid">
                                         <div class="form-group">
                                             <label for="arrival-date" class="form-label">Ngày đến</label>
-                                            <input type="date" class="form-control" id="arrival-date"
-                                                name="arrival_date" required="">
+                                            <input type="date" class="form-control" id="NgayDen"
+                                                name="NgayDen" required="">
                                         </div>
                                         <div class="form-group">
                                             <label for="departure-date" class="form-label">Ngày đi</label>
-                                            <input type="date" class="form-control" id="departure-date"
-                                                name="departure_date" required="">
+                                            <input type="date" class="form-control" id="NgayDi"
+                                                name="NgayDi" required="">
                                         </div>
                                         <div class="form-group">
-                                            <label for="guest-count" class="form-label">Tổng số khách</label>
-                                            <select class="form-select" id="guest-count" name="guest_count" required="">
-                                                <option value="">Chọn số khách</option>
-                                                <option value="1">1 Khách</option>
-                                                <option value="2">2 Khách</option>
-                                                <option value="3">3 Khách</option>
-                                                <option value="4">4 Khách</option>
-                                                <option value="5">Trên 5 Khách</option>
+                                            <label for="guest-count" class="form-label">Tổng số người</label>
+                                            <select class="form-select" id="TongSoKhach" name="TongSoKhach" required="">
+                                                <option value="">Chọn số người</option>
+                                                <option value="1">1 Người</option>
+                                                <option value="2">2 Người</option>
+                                                <option value="3">3 Người</option>
+                                                <option value="4">4 Người</option>
+                                                <option value="5">Trên 5 Người</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="room-count" class="form-label">Tổng số phòng</label>
-                                            <select class="form-select" id="room-count" name="room_count" required="">
+                                            <select class="form-select" id="TongSoPhong" name="TongSoPhong" required="">
                                                 <option value="">Chọn số phòng</option>
                                                 <option value="1">1 Phòng</option>
                                                 <option value="2">2 Phòng</option>
@@ -72,24 +75,33 @@
                                     <h4>Ưu tiên phòng</h4>
                                     <div class="form-group">
                                         <label for="accommodation-type" class="form-label">Loại phòng</label>
-                                        <select class="form-select" id="accommodation-type" name="accommodation_type">
-                                            <option value="">Không ưu tiên</option>
-                                            <option value="classic">Phòng Cổ điển</option>
-                                            <option value="premium">Phòng Cao cấp</option>
-                                            <option value="junior-suite">Suite Junior</option>
-                                            <option value="luxury-suite">Suite Sang trọng</option>
-                                            <option value="penthouse">Suite Penthouse</option>
+                                        <select class="form-select" id="LoaiPhong" name="LoaiPhong">
+                                        <option value="">Chọn loại phòng</option>
+                                            @if (ViewBag.LoaiPhongs != null)
+                                            {
+                                                foreach (var lp in ViewBag.LoaiPhongs)
+                                                {
+                                                    if (ViewBag.SelectedLoaiPhong != null && ViewBag.SelectedLoaiPhong == lp.IDLoaiPhong)
+                                                    {
+                                                        <option value="@lp.IDLoaiPhong" selected>Phòng @lp.LoaiPhong</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@lp.IDLoaiPhong">Phòng @lp.LoaiPhong</option>
+                                                    }
+                                                }
+                                            }
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="additional-notes" class="form-label">Yêu cầu bổ sung</label>
-                                        <textarea class="form-control" id="additional-notes" name="additional_notes"
+                                        <textarea class="form-control" id="GhiChu" name="GhiChu"
                                             rows="3"
                                             placeholder="Vui lòng ghi rõ các yêu cầu hoặc ưu tiên đặc biệt..."></textarea>
                                     </div>
                                 </div>
 
-                                <div class="form-section">
+                                <!-- <div class="form-section">
                                     <h4>Thông tin khách</h4>
                                     <div class="form-grid">
                                         <div class="form-group full-width">
@@ -108,7 +120,7 @@
                                                 name="contact_phone" required="">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-actions">
                                     <button type="submit" class="btn btn-primary">

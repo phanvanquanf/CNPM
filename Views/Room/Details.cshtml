@@ -70,7 +70,7 @@
                             <span class="price-amount">@String.Format("{0:N0}", Model.GiaPhong) VNĐ</span>
                             <span class="price-period">/ đêm</span>
                         </div>
-                        <a href="/Room/Booking" class="btn btn-book-now">Đặt ngay</a>
+                        <a href="/Room/Booking?type=@Model.LoaiPhong?.IDLoaiPhong" class="btn btn-book-now">Đặt ngay</a>
                     </div>
                 </div>
             </div>

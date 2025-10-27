@@ -26,5 +26,7 @@ namespace hotels.Models
         public DateTime? NgayTao { get; set; } = DateTime.Now;
 
         public string? GhiChu { get; set; }
+
+        public virtual ICollection<tblCTDatPhong>? CTDatPhongs { get; set; }
     }
 }
