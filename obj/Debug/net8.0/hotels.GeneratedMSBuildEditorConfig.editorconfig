@@ -17,215 +17,439 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = hotels
 build_property.RootNamespace = hotels
-build_property.ProjectDir = D:\Workspace\FullStack\ASP.NET\CNPM\
+build_property.ProjectDir = D:\ksNet\hotels\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Workspace\FullStack\ASP.NET\CNPM
+build_property.MSBuildProjectDirectory = D:\ksNet\hotels
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/AdminMenu/Index.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/AdminMenu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/AdminMenu/_AdminMenuTablePartial.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/AdminMenu/_AdminMenuTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XF9BZG1pbk1lbnVUYWJsZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/AdminMenu/_DeleteModal.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/AdminMenu/_DeleteModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XF9EZWxldGVNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Booking/Index.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Booking/_BookingTablePartial.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Booking/_BookingTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xfQm9va2luZ1RhYmxlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Home/Index.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Menu/Delete.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Menu/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Menu/Edit.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Menu/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Menu/Index.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Menu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Menu/_CreateModal.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Menu/_CreateModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxfQ3JlYXRlTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Menu/_MenuTablePartial.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Menu/_MenuTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxfTWVudVRhYmxlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/NhanVien/CreateNV.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/NhanVien/CreateNV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cQ3JlYXRlTlYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/NhanVien/DeleteNV.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/NhanVien/DeleteNV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cRGVsZXRlTlYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/NhanVien/EditNV.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/NhanVien/EditNV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cRWRpdE5WLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/NhanVien/Index.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/NhanVien/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/NhanVien/_NhanVienTablePartial.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/NhanVien/_NhanVienTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cX05oYW5WaWVuVGFibGVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Room/CreateRoom.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Room/CreateRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxDcmVhdGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Room/DeleteRoom.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Room/DeleteRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxEZWxldGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Room/EditRoom.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Room/EditRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxFZGl0Um9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Room/Index.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Room/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Room/_RoomPartial.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Room/_RoomPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxfUm9vbVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5NZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/TaiKhoan/CreateTK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cQ3JlYXRlVEsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/TaiKhoan/DeleteTK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cRGVsZXRlVEsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/TaiKhoan/EditTK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cRWRpdFRLLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/TaiKhoan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/TaiKhoan/_TaiKhoanPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cX1RhaUtob2FuUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/ksNet/hotels/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Home/About.cshtml]
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/AdminMenu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xBZG1pbk1lbnVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/AdminMenu/_AdminMenuTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xBZG1pbk1lbnVcX0FkbWluTWVudVRhYmxlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/AdminMenu/_DeleteModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xBZG1pbk1lbnVcX0RlbGV0ZU1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xCb29raW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Booking/_BookingTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xCb29raW5nXF9Cb29raW5nVGFibGVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Menu/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xNZW51XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Menu/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xNZW51XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Menu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xNZW51XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Menu/_CreateModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xNZW51XF9DcmVhdGVNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Menu/_MenuTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xNZW51XF9NZW51VGFibGVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/NhanVien/CreateNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xOaGFuVmllblxDcmVhdGVOVi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/NhanVien/DeleteNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xOaGFuVmllblxEZWxldGVOVi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/NhanVien/EditNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xOaGFuVmllblxFZGl0TlYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/NhanVien/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xOaGFuVmllblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/NhanVien/_NhanVienTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xOaGFuVmllblxfTmhhblZpZW5UYWJsZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Room/CreateRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xSb29tXENyZWF0ZVJvb20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Room/DeleteRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xSb29tXERlbGV0ZVJvb20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Room/EditRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xSb29tXEVkaXRSb29tLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Room/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xSb29tXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Room/_RoomPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xSb29tXF9Sb29tUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xTaGFyZWRcQ29tcG9uZW50c1xBZG1pbk1lbnVcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xTaGFyZWRcX0xheW91dEFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxBcmVhc1xBZG1pblxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xIb21lXEFib3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xIb21lXENvbnRhY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Home/Offers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xIb21lXE9mZmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Pages/Gallery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xQYWdlc1xHYWxsZXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xQYWdlc1xQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Pages/Terms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xQYWdlc1xUZXJtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Room/Booking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xSb29tXEJvb2tpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Room/BookingSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xSb29tXEJvb2tpbmdTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Room/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xSb29tXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Room/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xSb29tXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Services/Airport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTZXJ2aWNlc1xBaXJwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Services/Events.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTZXJ2aWNlc1xFdmVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Services/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTZXJ2aWNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Services/Restaurant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTZXJ2aWNlc1xSZXN0YXVyYW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Services/Spa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTZXJ2aWNlc1xTcGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Shared/Components/MenuView/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcQ29tcG9uZW50c1xNZW51Vmlld1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Shared/Components/RoomView/Room.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcQ29tcG9uZW50c1xSb29tVmlld1xSb29tLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Shared/Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcRm9vdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Shared/Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcSGVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/Users/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xVc2Vyc1xQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/CNPM/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Home/Contact.cshtml]
+[D:/ksNet/hotels/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Home/Index.cshtml]
+[D:/ksNet/hotels/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Home/Offers.cshtml]
+[D:/ksNet/hotels/Views/Home/Offers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPZmZlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Pages/Gallery.cshtml]
+[D:/ksNet/hotels/Views/Pages/Gallery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcR2FsbGVyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Pages/Privacy.cshtml]
+[D:/ksNet/hotels/Views/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Pages/Terms.cshtml]
+[D:/ksNet/hotels/Views/Pages/Terms.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcVGVybXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Room/Booking.cshtml]
+[D:/ksNet/hotels/Views/Room/Booking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxCb29raW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Room/BookingSuccess.cshtml]
+[D:/ksNet/hotels/Views/Room/BookingSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxCb29raW5nU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Room/Details.cshtml]
+[D:/ksNet/hotels/Views/Room/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Room/Index.cshtml]
+[D:/ksNet/hotels/Views/Room/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Services/Airport.cshtml]
+[D:/ksNet/hotels/Views/Services/Airport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQWlycG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Services/Events.cshtml]
+[D:/ksNet/hotels/Views/Services/Events.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRXZlbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Services/Index.cshtml]
+[D:/ksNet/hotels/Views/Services/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Services/Restaurant.cshtml]
+[D:/ksNet/hotels/Views/Services/Restaurant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmVzdGF1cmFudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Services/Spa.cshtml]
+[D:/ksNet/hotels/Views/Services/Spa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcU3BhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/Components/MenuView/Default.cshtml]
+[D:/ksNet/hotels/Views/Shared/Components/MenuView/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVZpZXdcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/Components/RoomView/Room.cshtml]
+[D:/ksNet/hotels/Views/Shared/Components/RoomView/Room.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUm9vbVZpZXdcUm9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/Error.cshtml]
+[D:/ksNet/hotels/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/Footer.cshtml]
+[D:/ksNet/hotels/Views/Shared/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/Header.cshtml]
+[D:/ksNet/hotels/Views/Shared/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ksNet/hotels/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Users/Profile.cshtml]
+[D:/ksNet/hotels/Views/Users/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/_ViewImports.cshtml]
+[D:/ksNet/hotels/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/_ViewStart.cshtml]
+[D:/ksNet/hotels/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Workspace/FullStack/ASP.NET/CNPM/Views/Shared/_Layout.cshtml]
+[D:/ksNet/hotels/CNPM/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q05QTVxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-pfiduw7ael
+
+[D:/ksNet/hotels/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-u01g7u5e72

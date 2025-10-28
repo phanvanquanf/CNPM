@@ -21,5 +21,11 @@ namespace hotels.Areas.Admin.Models
         public string? Image { get; set; }
 
         public DateTime NgayTao { get; set; } = DateTime.Now;
+
+        public virtual ICollection<tblNhanVien>? NhanViens { get; set; }
+
+        public virtual ICollection<tblKhachHang>? KhachHangs { get; set; }
+
+
     }
 }
