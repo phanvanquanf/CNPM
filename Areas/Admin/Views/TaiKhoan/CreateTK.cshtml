@@ -1,0 +1,99 @@
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <div class="tw-bg-indigo-600 tw-relative tw-px-6 tw-py-4">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="user-plus" class="tw-w-6 tw-h-6 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold tw-text-lg">
+                        Thêm tài khoản mới
+                    </h5>
+                </div>
+
+                <button type="button"
+                    class="btn-close tw-absolute tw-top-3 tw-right-3 tw-bg-white/30 tw-rounded-full tw-p-2 hover:tw-bg-white/50 tw-transition tw-z-50 tw-shadow-md"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form id="addForm" method="post" asp-area="Admin" asp-controller="TaiKhoan" asp-action="Create"
+                enctype="multipart/form-data">
+
+                <div class="modal-body tw-space-y-8 tw-bg-white tw-px-8 tw-py-6">
+                    <div
+                        class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5 tw-space-y-4">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Ảnh đại diện
+                        </h6>
+
+                        <div
+                            class="tw-flex tw-flex-col tw-items-center tw-gap-3 tw-bg-white tw-p-4 tw-rounded-lg tw-shadow-sm">
+                            <img id="create-preview" src="/assets/img/AnhDaiDien/default.jpg" alt="Ảnh đại diện"
+                                class="tw-w-40 tw-h-40 tw-object-cover tw-rounded-2xl tw-border tw-border-gray-300 tw-shadow-sm hover:tw-scale-105 tw-transition" />
+                            <input type="file" id="create-image" name="Image" accept="image/*"
+                                class="form-control tw-text-sm tw-w-64" />
+                            <small id="create-image-link"
+                                class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center">Chưa có ảnh</small>
+                        </div>
+                    </div>
+
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Thông tin tài khoản
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-5 tw-mt-4">
+                            <div>
+                                <label for="create-username" class="tw-font-medium tw-text-gray-700">Tên đăng
+                                    nhập</label>
+                                <input type="text" id="create-username" name="TenDangNhap" class="form-control tw-mt-1"
+                                    placeholder="Nhập tên đăng nhập..." />
+                                <span class="text-danger" id="error-TenDangNhap"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-password" class="tw-font-medium tw-text-gray-700">Mật khẩu</label>
+                                <input type="password" id="create-password" name="MatKhau" class="form-control tw-mt-1"
+                                    placeholder="Nhập mật khẩu..." />
+                                <span class="text-danger" id="error-MatKhau"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-vaitro" class="tw-font-medium tw-text-gray-700">Vai trò</label>
+                                <select id="create-vaitro" name="VaiTro" class="form-select tw-mt-1">
+                                    <option value="">-- Chọn vai trò --</option>
+                                    <option value="0">Quản trị viên</option>
+                                    <option value="1">Khách hàng</option>
+                                    <option value="2">Nhân viên</option>
+                                </select>
+                                <span class="text-danger" id="error-VaiTro"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-trangthai" class="tw-font-medium tw-text-gray-700">Trạng thái</label>
+                                <select id="create-trangthai" name="TrangThai" class="form-select tw-mt-1">
+                                    <option value="true">Kích hoạt</option>
+                                    <option value="false">Vô hiệu hóa</option>
+                                </select>
+                                <span class="text-danger" id="error-TrangThai"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="create-ngaytao" class="tw-font-medium tw-text-gray-700">Ngày tạo</label>
+                        <input type="text" id="create-ngaytao" name="NgayTao" class="form-control tw-mt-1" readonly />
+                    </div>
+                </div>
+
+                <div class="modal-footer tw-bg-gray-50 tw-border-t tw-border-gray-200 tw-rounded-b-2xl">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bx bx-save me-1"></i> Thêm tài khoản
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

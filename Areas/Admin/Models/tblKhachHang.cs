@@ -4,11 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hotels.Areas.Admin.Models
 {
-    [Table("tblNhanVien")]
-    public class tblNhanVien
+    [Table("tblKhachHang")]
+    public class tblKhachHang
     {
         [Key]
-        public long IDNhanVien { get; set; }
+        public long IDKhachHang { get; set; }
+
+        public long? IDTaiKhoan { get; set; }
+
+        [ForeignKey(nameof(IDTaiKhoan))]
+        public virtual tblTaiKhoan? TaiKhoan { get; set; }
 
         public string? HoTen { get; set; }
 
@@ -22,13 +27,6 @@ namespace hotels.Areas.Admin.Models
 
         public string? DiaChi { get; set; }
 
-        public string? ChucVu { get; set; }
-
         public int TrangThai { get; set; } = 0;
-
-        public long? IDTaiKhoan { get; set; }
-
-        [ForeignKey(nameof(IDTaiKhoan))]
-        public virtual tblTaiKhoan? TaiKhoan { get; set; }
     }
 }

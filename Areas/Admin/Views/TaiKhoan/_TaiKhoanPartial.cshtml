@@ -1,0 +1,166 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Areas.Admin.Models.tblTaiKhoan>
+
+<div id="account-container">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        @if (ViewBag.Message != null)
+        {
+            <div class="tw-text-center tw-text-sm tw-text-neutral-500 tw-py-6">
+                @ViewBag.Message
+            </div>
+        }
+        else
+        {
+            <table class="tw-min-w-full">
+                <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                    <tr class="tw-bg-neutral-50 tw-text-center">
+                        <th class="tw-px-4 tw-py-3">#</th>
+                        <th class="tw-px-4 tw-py-3">Tên đăng nhập</th>
+                        <th class="tw-px-4 tw-py-3">Vai trò</th>
+                        <th class="tw-px-4 tw-py-3">Trạng thái</th>
+                        <th class="tw-px-4 tw-py-3">Ảnh đại diện</th>
+                        <th class="tw-px-4 tw-py-3">Ngày tạo</th>
+                        <th class="tw-px-4 tw-py-3">Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                    @foreach (var item in Model.Select((tk, index) => new { tk, index }))
+                    {
+                        <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80 hover:tw-bg-neutral-50">
+                            <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                            <td class="tw-px-4 tw-py-3">@item.tk.TenDangNhap</td>
+                            <td class="tw-px-4 tw-py-3">
+                                @switch (item.tk.VaiTro)
+                                {
+                                    case 0:
+                                        <span class="tw-font-medium tw-text-green-600">Quản trị</span>;
+                                        break;
+                                    case 1:
+                                        <span class="tw-font-medium tw-text-neutral-600">Khách hàng</span>;
+                                        break;
+                                    default:
+                                        <span class="tw-font-medium tw-text-blue-600">Nhân viên</span>;
+                                        break;
+                                }
+                            </td>
+
+                            <td class="tw-px-4 tw-py-3">
+                                @if (item.tk.TrangThai)
+                                {
+                                    <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-green-100 tw-text-green-600">
+                                        Kích hoạt
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-red-100 tw-text-red-600">
+                                        Vô hiệu hóa
+                                    </span>
+                                }
+                            </td>
+
+                            <td class="tw-px-4 tw-py-3">
+                                @{
+                                    string folder = item.tk.VaiTro switch
+                                    {
+                                        0 => "Admin",
+                                        1 => "KH",
+                                        2 => "NV",
+                                        _ => "Khác"
+                                    };
+
+                                    string imagePath = $"/assets/img/AnhDaiDien/{folder}/{item.tk.Image}";
+                                }
+
+                                @if (!string.IsNullOrEmpty(item.tk.Image))
+                                {
+                                    <div class="tw-flex tw-items-center tw-justify-center">
+                                        <img src="@imagePath"
+                                            alt="Ảnh đại diện"
+                                            data-image="@imagePath"
+                                            class="tw-w-24 tw-h-24 tw-object-cover tw-rounded-xl tw-border tw-border-neutral-200 tw-shadow-md
+                                             hover:tw-scale-105 tw-transition-transform tw-duration-300 tw-cursor-pointer preview-image" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="tw-flex tw-items-center tw-justify-center">
+                                        <i class='bx bx-user tw-text-7xl tw-text-neutral-300'></i>
+                                    </div>
+                                }
+                            </td>
+
+
+                            <td class="tw-px-4 tw-py-3">
+                                @item.tk.NgayTao.ToString("dd/MM/yyyy HH:mm")
+                            </td>
+
+                            <td class="tw-px-4 tw-py-3">
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu !tw-text-xs">
+                                        <button class="dropdown-item edit-btn"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#editModal"
+                                                data-id="@item.tk.IDTaiKhoan"
+                                                data-username="@item.tk.TenDangNhap"
+                                                data-password="@item.tk.MatKhau"
+                                                data-vaitro="@item.tk.VaiTro"
+                                                data-trangthai="@item.tk.TrangThai"
+                                                data-image="@item.tk.Image"
+                                                data-ngaytao="@item.tk.NgayTao">
+                                            <i class="bx bx-edit-alt me-2"></i> Sửa
+                                        </button>
+
+                                        <button class="dropdown-item delete-btn"
+                                                data-id="@item.tk.IDTaiKhoan"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal">
+                                            <i class="bx bx-trash me-2"></i> Xóa
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @await Html.PartialAsync("CreateTK")
+            @await Html.PartialAsync("EditTK", new tblTaiKhoan(), new ViewDataDictionary(ViewData))
+            @await Html.PartialAsync(partialViewName: "DeleteTK")
+        }
+    </div>
+
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-6 tw-text-sm">
+        <button id="prevPage"
+                class="tw-pr-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
+                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+                data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button class="tw-w-8 tw-h-8 tw-rounded tw-font-medium
+                 @(i == Model.PageNumber ? "tw-bg-indigo-600 tw-text-white" : "tw-text-gray-600 tw-hover:bg-indigo-50 tw-transition")"
+                        data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+                class="tw-pl-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
+                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+                data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>
+
+<script src="~/assets/js/taikhoan.js"></script>
