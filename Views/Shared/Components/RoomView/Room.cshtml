@@ -1,250 +1,89 @@
-<!-- Rooms Showcase Section -->
-<section id="rooms-showcase" class="rooms-showcase section">
+@model IList<tblPhong>
 
-    <!-- Section Title -->
+<section id="rooms-showcase" class="rooms-showcase section">
     <div class="container section-title" data-aos="fade-up">
         <span class="description-title">Phòng</span>
         <h2>Phòng</h2>
-        <p>Khám phá các loại phòng và suite sang trọng của chúng tôi được thiết kế để mang lại sự thoải mái tối đa
-        </p>
-    </div><!-- End Section Title -->
+        <p>Khám phá các loại phòng và suite sang trọng của chúng tôi được thiết kế để mang lại sự thoải mái tối
+            đa</p>
+    </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-5">
-            <div class="col-xl-8" data-aos="zoom-in" data-aos-delay="200">
-                <div class="hero-room-showcase">
-                    <div class="showcase-image-container">
-                        <img src="~/assets/img/hotel/room-14.webp" alt="Grand Presidential Suite" class="img-fluid">
-                        <div class="room-category-badge">
-                            <span>Tổng Thống</span>
-                        </div>
-                        <div class="room-details-overlay">
-                            <div class="room-specs">
-                                <span class="spec-item">
-                                    <i class="bi bi-people"></i>
-                                    <span>6 Khách</span>
-                                </span>
-                                <span class="spec-item">
-                                    <i class="bi bi-house"></i>
-                                    <span>180m²</span>
-                                </span>
-                                <span class="spec-item">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <span>Tầng Cao Nhất</span>
-                                </span>
+            @foreach (var room in Model.Take(1))
+            {
+                var mainImage = room.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true)?.Link;
+                <div class="col-xl-8" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="hero-room-showcase">
+                        <div class="showcase-image-container">
+                            <img src="~/@mainImage" alt="@room.LoaiPhong?.LoaiPhong" class="img-fluid">
+                            <div class="room-category-badge">
+                                <span>@room.LoaiPhong?.LoaiPhong</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="showcase-content">
-                        <div class="room-title-section">
-                            <h2>Suite Tổng Thống Grand</h2>
-                            <div class="room-rating">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
+                            <div class="room-details-overlay">
+                                <div class="room-specs">
+                                    <span class="spec-item"><i class="bi bi-people"></i><span>@room.LoaiPhong?.SucChua
+                                            Khách</span></span>
+                                    <span class="spec-item"><i class="bi bi-house"></i><span>@room.LoaiPhong?.DienTich
+                                            m²</span></span>
+                                    <span class="spec-item"><i class="bi bi-geo-alt"></i><span>@room.ViTri</span></span>
                                 </div>
-                                <span class="rating-text">5.0 Xuất Sắc</span>
                             </div>
                         </div>
-                        <p class="room-description">Suite tổng thống rộng rãi với thiết kế nội thất tinh tế, cung
-                            cấp không gian sống sang trọng và tầm nhìn toàn cảnh thành phố. Phòng được trang bị đầy
-                            đủ tiện nghi cao cấp và dịch vụ cá nhân hóa.</p>
-                        <div class="amenities-grid">
-                            <div class="amenity-item">
-                                <i class="bi bi-wifi"></i>
-                                <span>WiFi Cao Cấp</span>
+                        <div class="showcase-content">
+                            <div class="room-title-section">
+                                <h2>@room.LoaiPhong?.LoaiPhong</h2>
+                                <div class="room-rating">
+                                    <div class="stars">
+                                        @{
+                                            int stars = (int)Math.Round(room.Rating ?? 0);
+                                            for (int i = 0; i < stars; i++)
+                                            {
+                                                <i class="bi bi-star-fill"></i>
+                                            }
+                                        }
+                                    </div>
+                                    <span class="rating-text">@room.Rating?.ToString("0.0") Đánh giá</span>
+                                </div>
                             </div>
-                            <div class="amenity-item">
-                                <i class="bi bi-tv"></i>
-                                <span>TV Thông Minh</span>
+                            <p class="room-description">@room.TongQuan</p>
+                            <div class="booking-section">
+                                <div class="price-display">
+                                    <span class="currency">VND</span>
+                                    <span class="amount">@room.GiaPhong?.ToString("N0")</span>
+                                    <span class="period">mỗi đêm</span>
+                                </div>
+                                <a href="/Room/Details/@room.IDPhong" class="primary-booking-btn">Đặt Phòng</a>
                             </div>
-                            <div class="amenity-item">
-                                <i class="bi bi-cup-hot"></i>
-                                <span>Quầy Bar Cà Phê</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="bi bi-snow"></i>
-                                <span>Điều Hòa</span>
-                            </div>
-                        </div>
-                        <div class="booking-section">
-                            <div class="price-display">
-                                <span class="currency">VND</span>
-                                <span class="amount">15.000.000</span>
-                                <span class="period">mỗi đêm</span>
-                            </div>
-                            <a href="room-details.html" class="primary-booking-btn">Đặt Suite</a>
                         </div>
                     </div>
                 </div>
-            </div><!-- End Hero Room -->
+            }
 
             <div class="col-xl-4">
                 <div class="room-list-container">
-                    <div class="standard-room-card" data-aos="slide-left" data-aos-delay="250">
-                        <div class="card-image">
-                            <img src="~/assets/img/hotel/room-6.webp" alt="Executive Room" class="img-fluid">
-                            <div class="view-link">
-                                <i class="bi bi-arrow-up-right"></i>
+                    @foreach (var room in Model.Skip(1).Take(3))
+                    {
+                        var image = room.AnhPhongs?.FirstOrDefault()?.Link;
+                        <div class="standard-room-card" data-aos="slide-left">
+                            <div class="card-image">
+                                <img src="~/@image" alt="@room.LoaiPhong?.LoaiPhong" class="img-fluid">
+                                <div class="view-link">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h4>@room.LoaiPhong?.LoaiPhong</h4>
+                                <p>@room.TongQuan</p>
+                                <div class="booking-row">
+                                    <div class="price">@room.GiaPhong?.ToString("N0")<small>/đêm</small></div>
+                                    <a href="/Room/Details/@room.IDPhong" class="book-link">Đặt</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-content">
-                            <h4>Phòng Doanh Nhân Executive</h4>
-                            <p>Phòng được thiết kế đặc biệt cho các chuyến công tác với không gian làm việc riêng
-                                biệt và đầy đủ tiện nghi.</p>
-                            <div class="features-list">
-                                <span><i class="bi bi-briefcase"></i>Không Gian Làm Việc</span>
-                                <span><i class="bi bi-building"></i>View Thành Phố</span>
-                            </div>
-                            <div class="booking-row">
-                                <div class="price">7.500.000<small>/đêm</small></div>
-                                <a href="room-details.html" class="book-link">Đặt</a>
-                            </div>
-                        </div>
-                    </div><!-- End Standard Room -->
-
-                    <div class="standard-room-card" data-aos="slide-left" data-aos-delay="300">
-                        <div class="card-image">
-                            <img src="~/assets/img/hotel/room-19.webp" alt="Garden View" class="img-fluid">
-                            <div class="view-link">
-                                <i class="bi bi-arrow-up-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h4>Deluxe View Vườn</h4>
-                            <p>Tận hưởng không gian yên bình với tầm nhìn ra khu vườn xanh mát và ban công riêng.
-                            </p>
-                            <div class="features-list">
-                                <span><i class="bi bi-tree"></i>View Vườn</span>
-                                <span><i class="bi bi-door-open"></i>Ban Công Riêng</span>
-                            </div>
-                            <div class="booking-row">
-                                <div class="price">6.200.000<small>/đêm</small></div>
-                                <a href="room-details.html" class="book-link">Đặt</a>
-                            </div>
-                        </div>
-                    </div><!-- End Standard Room -->
-
-                    <div class="standard-room-card" data-aos="slide-left" data-aos-delay="350">
-                        <div class="card-image">
-                            <img src="~/assets/img/hotel/room-12.webp" alt="Family Suite" class="img-fluid">
-                            <div class="view-link">
-                                <i class="bi bi-arrow-up-right"></i>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h4>Suite Gia Đình</h4>
-                            <p>Không gian lý tưởng cho gia đình với phòng ngủ riêng biệt và khu vực vui chơi cho trẻ
-                                em.</p>
-                            <div class="features-list">
-                                <span><i class="bi bi-people"></i>Không Gian Gia Đình</span>
-                                <span><i class="bi bi-controller"></i>Khu Vui Chơi Trẻ Em</span>
-                            </div>
-                            <div class="booking-row">
-                                <div class="price">9.800.000<small>/đêm</small></div>
-                                <a href="room-details.html" class="book-link">Đặt</a>
-                            </div>
-                        </div>
-                    </div><!-- End Standard Room -->
-
+                    }
                 </div>
             </div>
-
-        </div>
-
-        <div class="row mt-6">
-            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="minimal-room-card">
-                    <div class="room-image">
-                        <img src="~/assets/img/hotel/room-1.webp" alt="Classic Room" class="img-fluid">
-                        <div class="hover-overlay">
-                            <a href="room-details.html" class="view-room">
-                                <i class="bi bi-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="room-summary">
-                        <h5>Phòng Đôi Classic</h5>
-                        <div class="price-tag">4.500.000<span>/đêm</span></div>
-                        <div class="basic-amenities">
-                            <i class="bi bi-wifi"></i>
-                            <i class="bi bi-tv"></i>
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Minimal Room -->
-
-            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="450">
-                <div class="minimal-room-card">
-                    <div class="room-image">
-                        <img src="~/assets/img/hotel/room-5.webp" alt="Superior Room" class="img-fluid">
-                        <div class="hover-overlay">
-                            <a href="room-details.html" class="view-room">
-                                <i class="bi bi-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="room-summary">
-                        <h5>Phòng King Superior</h5>
-                        <div class="price-tag">5.900.000<span>/đêm</span></div>
-                        <div class="basic-amenities">
-                            <i class="bi bi-wifi"></i>
-                            <i class="bi bi-cup-hot"></i>
-                            <i class="bi bi-snow"></i>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Minimal Room -->
-
-            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="minimal-room-card">
-                    <div class="room-image">
-                        <img src="~/assets/img/hotel/room-8.webp" alt="Premium Room" class="img-fluid">
-                        <div class="hover-overlay">
-                            <a href="room-details.html" class="view-room">
-                                <i class="bi bi-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="room-summary">
-                        <h5>Phòng Premium View Biển</h5>
-                        <div class="price-tag">8.500.000<span>/đêm</span></div>
-                        <div class="basic-amenities">
-                            <i class="bi bi-water"></i>
-                            <i class="bi bi-door-open"></i>
-                            <i class="bi bi-award"></i>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Minimal Room -->
-
-            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="550">
-                <div class="minimal-room-card">
-                    <div class="room-image">
-                        <img src="~/assets/img/hotel/room-17.webp" alt="Luxury Suite" class="img-fluid">
-                        <div class="hover-overlay">
-                            <a href="room-details.html" class="view-room">
-                                <i class="bi bi-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="room-summary">
-                        <h5>Penthouse Sang Trọng</h5>
-                        <div class="price-tag">28.000.000<span>/đêm</span></div>
-                        <div class="basic-amenities">
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-house"></i>
-                            <i class="bi bi-gem"></i>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Minimal Room -->
-
         </div>
 
         <div class="text-center" data-aos="fade-up" data-aos-delay="600">
@@ -253,7 +92,5 @@
                 <i class="bi bi-arrow-right"></i>
             </a>
         </div>
-
     </div>
-
-</section><!-- /Rooms Showcase Section -->
+</section>

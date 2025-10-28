@@ -26,7 +26,7 @@ namespace hotels.Areas.Admin.Models
 
         public int TrangThai { get; set; } = 0;
 
-        public long IDTaiKhoan { get; set; }
+        public long? IDTaiKhoan { get; set; }
 
         [ForeignKey(nameof(IDTaiKhoan))]
         public virtual tblTaiKhoan? TaiKhoan { get; set; }

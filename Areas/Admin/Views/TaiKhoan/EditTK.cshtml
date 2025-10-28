@@ -1,0 +1,90 @@
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <div class="tw-bg-indigo-600 tw-flex tw-items-center tw-justify-between tw-px-5 tw-py-4 tw-rounded-t-2xl">
+                <div class="tw-flex tw-items-center tw-gap-2">
+                    <i data-lucide="edit-3" class="tw-w-5 tw-h-5 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold">Chỉnh sửa tài khoản</h5>
+                </div>
+                <button type="button"
+                    class="btn-close tw-bg-white/40 tw-rounded-full tw-p-2 hover:tw-bg-white/60 tw-transition"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form id="editForm" method="post" asp-area="Admin" asp-controller="TaiKhoan" asp-action="Edit"
+                enctype="multipart/form-data">
+
+                <input type="hidden" name="IDTaiKhoan" id="edit-id" />
+
+                <div class="modal-body tw-py-5 tw-px-6 tw-bg-white tw-rounded-b-2xl">
+                    <div class="tw-grid tw-grid-cols-2 tw-gap-5">
+
+                        <div class="tw-col-span-2 tw-flex tw-flex-col tw-items-center tw-gap-3 tw-mt-3">
+                            <label class="tw-font-semibold tw-text-gray-700">Ảnh đại diện</label>
+                            <img id="edit-preview" src="/assets/img/AnhDaiDien/default.jpg" alt="Ảnh đại diện"
+                                class="tw-w-40 tw-h-40 tw-object-cover tw-rounded-2xl tw-border tw-border-gray-300 tw-shadow-sm hover:tw-scale-105 tw-transition" />
+                            <input type="file" id="edit-image" name="Image" accept="image/*"
+                                class="form-control tw-text-sm tw-w-64" />
+                            <input type="hidden" id="edit-old-image" name="OldImage" />
+                            <small id="edit-image-link" class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center">
+                                Đường dẫn ảnh sẽ hiển thị tại đây
+                            </small>
+                        </div>
+
+                        <div>
+                            <label for="edit-username" class="tw-font-medium tw-text-gray-700">Tên đăng nhập</label>
+                            <input type="text" id="edit-username" name="TenDangNhap" class="form-control tw-mt-1"
+                                placeholder="Nhập tên đăng nhập..." />
+                            <span class="text-danger" id="error-TenDangNhap"></span>
+                        </div>
+
+                        <div>
+                            <label for="edit-password" class="tw-font-medium tw-text-gray-700">
+                                Mật khẩu
+                            </label>
+                            <input type="text" id="edit-password" name="MatKhau" class="form-control tw-mt-1"
+                                placeholder="Nhập mật khẩu mới nếu muốn đổi..." />
+                            <span class="text-danger" id="error-MatKhau"></span>
+                        </div>
+
+
+                        <div>
+                            <label for="edit-vaitro" class="tw-font-medium tw-text-gray-700">Vai trò</label>
+                            <select id="edit-vaitro" name="VaiTro" class="form-select tw-mt-1">
+                                <option value="0">Quản trị viên</option>
+                                <option value="1">Khách hàng</option>
+                                <option value="2">Nhân viên</option>
+                            </select>
+                            <span class="text-danger" id="error-VaiTro"></span>
+                        </div>
+
+                        <div>
+                            <label for="edit-trangthai" class="tw-font-medium tw-text-gray-700">Trạng thái</label>
+                            <select id="edit-trangthai" name="TrangThai" class="form-select tw-mt-1">
+                                <option value="True">Kích hoạt</option>
+                                <option value="False">Vô hiệu hóa</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="edit-ngaytao" class="tw-font-medium tw-text-gray-700">Ngày tạo</label>
+                            <input type="text" id="edit-ngaytao" name="NgayTao" class="form-control tw-mt-1" readonly />
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="modal-footer tw-bg-gray-50 tw-border-t tw-border-gray-200 tw-rounded-b-2xl">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Hủy
+                    </button>
+                    <button type="submit" class="btn btn-primary tw-flex tw-items-center tw-gap-2">
+                        <i data-lucide="save" class="tw-w-4 tw-h-4"></i> Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

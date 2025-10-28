@@ -1,3 +1,5 @@
+@model IList<tblPhong>
+
 <main class="main">
 
   <!-- Tiêu đề trang -->
@@ -11,11 +13,10 @@
         </ol>
       </nav>
     </div>
-  </div><!-- Kết thúc Tiêu đề trang -->
+  </div>
 
   <!-- Phần Phòng -->
   <section id="rooms-2" class="rooms-2 section">
-
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
       <div class="room-filters" data-aos="fade-up" data-aos-delay="200">
@@ -61,258 +62,54 @@
 
       <div class="rooms-grid" data-aos="fade-up" data-aos-delay="300">
         <div class="row g-4">
-
-          <div class="col-xl-4 col-lg-6">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="~/assets/img/hotel/room-1.webp" alt="Phòng Suite Cao cấp Nhìn ra Biển" class="img-fluid">
-                <div class="room-features">
-                  <span class="feature-badge ocean">Nhìn ra biển</span>
-                  <span class="feature-badge popular">Phổ biến</span>
-                </div>
-              </div>
-              <div class="room-content">
-                <div class="room-header">
-                  <h3>Phòng Suite Cao cấp Nhìn ra Biển</h3>
-                  <div class="room-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
+          @foreach (var phong in Model)
+          {
+            <div class="col-xl-4 col-lg-6">
+              <div class="room-card">
+                <div class="room-image">
+                  @{
+                    var imgMain = phong.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
+                  }
+                  <img src="~/@imgMain?.Link" class="img-fluid" alt="@phong.MaSoPhong">
+                  <div class="room-features">
+                    <span class="feature-badge city">@phong.LoaiPhong?.LoaiPhong</span>
                   </div>
                 </div>
-                <p class="room-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. (Gợi ý: Phòng sang trọng với tầm nhìn tuyệt đẹp ra
-                  biển, mang đến trải nghiệm thư giãn tối đa.)</p>
-                <div class="room-amenities">
-                  <span><i class="bi bi-people"></i> Tối đa 4 khách</span>
-                  <span><i class="bi bi-wifi"></i> WiFi miễn phí</span>
-                  <span><i class="bi bi-tv"></i> TV thông minh</span>
-                </div>
-                <div class="room-footer">
-                  <div class="room-price">
-                    <span class="price-from">Từ</span>
-                    <span class="price-amount">289$</span>
-                    <span class="price-period">/ đêm</span>
+                <div class="room-content">
+                  <div class="room-header">
+                    <h3>@phong.MaSoPhong</h3>
+                    <div class="room-rating">
+                      @for (int i = 1; i <= 5; i++)
+                      {
+                        <i class="bi @(i <= Math.Round(phong.Rating ?? 0) ? "bi-star-fill" : "bi-star")"></i>
+                      }
+                    </div>
                   </div>
-                  <a href="/Room/Details" class="btn-room-details">Xem chi tiết</a>
-                </div>
-              </div>
-            </div>
-          </div><!-- Kết thúc Thẻ phòng -->
-
-          <div class="col-xl-4 col-lg-6">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="~/assets/img/hotel/room-3.webp" alt="Phòng Suite Kinh doanh Cao cấp" class="img-fluid">
-                <div class="room-features">
-                  <span class="feature-badge business">Kinh doanh</span>
-                </div>
-              </div>
-              <div class="room-content">
-                <div class="room-header">
-                  <h3>Phòng Suite Kinh doanh Cao cấp</h3>
-                  <div class="room-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
+                  <p class="room-description">@phong.TongQuan</p>
+                  <div class="room-amenities">
+                    <span><i class="bi bi-people"></i> Tối đa @phong.LoaiPhong?.SucChua khách</span>
+                    @if (phong.LoaiPhong?.TienNghis != null)
+                    {
+                      foreach (var tienNghi in phong.LoaiPhong.TienNghis)
+                      {
+                        <span><i class="@tienNghi.Icon"></i> @tienNghi.TienNghi</span>
+                      }
+                    }
                   </div>
-                </div>
-                <p class="room-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. (Gợi ý: Phòng được thiết kế cho khách công tác, với không gian làm
-                  việc thoải mái và tiện nghi hiện đại.)</p>
-                <div class="room-amenities">
-                  <span><i class="bi bi-people"></i> Tối đa 2 khách</span>
-                  <span><i class="bi bi-laptop"></i> Bàn làm việc</span>
-                  <span><i class="bi bi-telephone"></i> Điện thoại công việc</span>
-                </div>
-                <div class="room-footer">
-                  <div class="room-price">
-                    <span class="price-from">Từ</span>
-                    <span class="price-amount">199$</span>
-                    <span class="price-period">/ đêm</span>
+                  <div class="room-footer">
+                    <div class="room-price">
+                      <span class="price-from">Từ</span>
+                      <span class="price-amount">@String.Format("{0:N0}", phong.GiaPhong) VNĐ</span>
+                      <span class="price-period">/ đêm</span>
+                    </div>
+                    <a href="/Room/Details/@phong.IDPhong" class="btn-room-details">Xem chi tiết</a>
                   </div>
-                  <a href="/Room/Details" class="btn-room-details">Xem chi tiết</a>
                 </div>
               </div>
             </div>
-          </div><!-- Kết thúc Thẻ phòng -->
-
-          <div class="col-xl-4 col-lg-6">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="~/assets/img/hotel/room-7.webp" alt="Phòng Gia đình Nhìn ra Vườn" class="img-fluid">
-                <div class="room-features">
-                  <span class="feature-badge family">Thân thiện gia đình</span>
-                  <span class="feature-badge garden">Nhìn ra vườn</span>
-                </div>
-              </div>
-              <div class="room-content">
-                <div class="room-header">
-                  <h3>Phòng Gia đình Nhìn ra Vườn</h3>
-                  <div class="room-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                  </div>
-                </div>
-                <p class="room-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                  eu fugiat nulla pariatur. (Gợi ý: Phòng rộng rãi, phù hợp cho gia đình với không gian thư giãn và tầm
-                  nhìn ra khu vườn xanh mát.)</p>
-                <div class="room-amenities">
-                  <span><i class="bi bi-people"></i> Tối đa 5 khách</span>
-                  <span><i class="bi bi-cup-hot"></i> Bếp nhỏ</span>
-                  <span><i class="bi bi-controller"></i> Máy chơi game</span>
-                </div>
-                <div class="room-footer">
-                  <div class="room-price">
-                    <span class="price-from">Từ</span>
-                    <span class="price-amount">159$</span>
-                    <span class="price-period">/ đêm</span>
-                  </div>
-                  <a href="/Room/Details" class="btn-room-details">Xem chi tiết</a>
-                </div>
-              </div>
-            </div>
-          </div><!-- Kết thúc Thẻ phòng -->
-
-          <div class="col-xl-4 col-lg-6">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="~/assets/img/hotel/room-12.webp" alt="Phòng Suite Tuần trăng mật Lãng mạn" class="img-fluid">
-                <div class="room-features">
-                  <span class="feature-badge romantic">Lãng mạn</span>
-                  <span class="feature-badge premium">Cao cấp</span>
-                </div>
-              </div>
-              <div class="room-content">
-                <div class="room-header">
-                  <h3>Phòng Suite Tuần trăng mật Lãng mạn</h3>
-                  <div class="room-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <p class="room-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim. (Gợi ý: Không gian lãng mạn lý tưởng cho các cặp đôi, với bồn tắm nước nóng và
-                  giường cỡ lớn.)</p>
-                <div class="room-amenities">
-                  <span><i class="bi bi-people"></i> Tối đa 2 khách</span>
-                  <span><i class="bi bi-heart"></i> Giường cỡ lớn</span>
-                  <span><i class="bi bi-water"></i> Bồn tắm nước nóng</span>
-                </div>
-                <div class="room-footer">
-                  <div class="room-price">
-                    <span class="price-from">Từ</span>
-                    <span class="price-amount">349$</span>
-                    <span class="price-period">/ đêm</span>
-                  </div>
-                  <a href="/Room/Details" class="btn-room-details">Xem chi tiết</a>
-                </div>
-              </div>
-            </div>
-          </div><!-- Kết thúc Thẻ phòng -->
-
-          <div class="col-xl-4 col-lg-6">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="~/assets/img/hotel/room-15.webp" alt="Phòng Tiêu chuẩn Nhìn ra Thành phố" class="img-fluid">
-                <div class="room-features">
-                  <span class="feature-badge city">Nhìn ra thành phố</span>
-                </div>
-              </div>
-              <div class="room-content">
-                <div class="room-header">
-                  <h3>Phòng Tiêu chuẩn Nhìn ra Thành phố</h3>
-                  <div class="room-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                  </div>
-                </div>
-                <p class="room-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                  doloremque laudantium. (Gợi ý: Phòng tiện nghi với tầm nhìn ra khung cảnh thành phố sôi động.)</p>
-                <div class="room-amenities">
-                  <span><i class="bi bi-people"></i> Tối đa 2 khách</span>
-                  <span><i class="bi bi-wifi"></i> WiFi miễn phí</span>
-                  <span><i class="bi bi-car-front"></i> Bãi đỗ xe</span>
-                </div>
-                <div class="room-footer">
-                  <div class="room-price">
-                    <span class="price-from">Từ</span>
-                    <span class="price-amount">129$</span>
-                    <span class="price-period">/ đêm</span>
-                  </div>
-                  <a href="/Room/Details" class="btn-room-details">Xem chi tiết</a>
-                </div>
-              </div>
-            </div>
-          </div><!-- Kết thúc Thẻ phòng -->
-
-          <div class="col-xl-4 col-lg-6">
-            <div class="room-card">
-              <div class="room-image">
-                <img src="~/assets/img/hotel/room-18.webp" alt="Phòng Cao cấp Nhìn ra Biển" class="img-fluid">
-                <div class="room-features">
-                  <span class="feature-badge ocean">Nhìn ra biển</span>
-                  <span class="feature-badge luxury">Sang trọng</span>
-                </div>
-              </div>
-              <div class="room-content">
-                <div class="room-header">
-                  <h3>Phòng Cao cấp Nhìn ra Biển</h3>
-                  <div class="room-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <p class="room-description">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt. (Gợi ý: Phòng cao cấp với tầm nhìn biển ngoạn mục và tiện nghi
-                  sang trọng.)</p>
-                <div class="room-amenities">
-                  <span><i class="bi bi-people"></i> Tối đa 3 khách</span>
-                  <span><i class="bi bi-cup-hot"></i> Máy pha cà phê</span>
-                  <span><i class="bi bi-safe"></i> Két an toàn</span>
-                </div>
-                <div class="room-footer">
-                  <div class="room-price">
-                    <span class="price-from">Từ</span>
-                    <span class="price-amount">259$</span>
-                    <span class="price-period">/ đêm</span>
-                  </div>
-                  <a href="/Room/Details" class="btn-room-details">Xem chi tiết</a>
-                </div>
-              </div>
-            </div>
-          </div><!-- Kết thúc Thẻ phòng -->
-
+          }
         </div>
       </div>
-
-      <div class="load-more-section" data-aos="fade-up" data-aos-delay="400">
-        <div class="text-center">
-          <button class="btn-load-more">
-            <i class="bi bi-arrow-down-circle"></i>
-            Tải thêm phòng
-          </button>
-        </div>
-      </div>
-
     </div>
-
-  </section><!-- Kết thúc Phần Phòng -->
-
+  </section>
 </main>

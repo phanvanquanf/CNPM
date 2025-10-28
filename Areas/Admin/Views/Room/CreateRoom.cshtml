@@ -1,0 +1,168 @@
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <!-- Header -->
+            <div class="tw-bg-success tw-relative tw-px-6 tw-py-4">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="plus-circle" class="tw-w-6 tw-h-6 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold tw-text-lg">
+                        Thêm phòng mới
+                    </h5>
+                </div>
+
+                <!-- Nút đóng -->
+                <button type="button" class="btn-close tw-absolute tw-top-3 tw-right-3 tw-bg-white/30 tw-rounded-full
+                     tw-p-2 hover:tw-bg-white/50 tw-transition tw-z-50 tw-shadow-md" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <!-- Form -->
+            <form id="addForm" method="post" asp-area="Admin" asp-controller="Room" asp-action="Create"
+                enctype="multipart/form-data">
+                <div class="modal-body tw-space-y-8 tw-bg-white tw-px-8 tw-py-6">
+                    <!-- Ảnh chính -->
+                    <input type="hidden" id="AnhChinhLink" name="AnhChinhLink" />
+
+                    <!-- Ảnh phụ -->
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <input type="hidden" id="AnhPhu@(i)Link" name="AnhPhuLinks" />
+                    }
+                    <!-- PHẦN 1: Hình ảnh phòng -->
+                    <div
+                        class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5 tw-space-y-4">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Hình ảnh phòng
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-5 tw-gap-6">
+                            <!-- Ảnh chính -->
+                            <div
+                                class="tw-col-span-2 tw-flex tw-flex-col tw-items-center tw-gap-3 tw-bg-white tw-p-4 tw-rounded-lg tw-shadow-sm">
+                                <label class="tw-font-medium tw-text-gray-700">Ảnh chính</label>
+                                <img id="create-anh-preview" src="" alt="Ảnh chính" class="tw-w-60 tw-h-40 tw-object-cover tw-rounded-xl tw-border tw-border-gray-300
+                                     tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
+                                <input type="file" id="create-anhchinh" name="AnhChinh" accept="image/*"
+                                    class="form-control tw-text-sm tw-mt-2" />
+                                <small id="create-anh-link"
+                                    class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center tw-max-w-[14rem]">Chưa
+                                    có ảnh</small>
+                            </div>
+
+                            <!-- Ảnh phụ -->
+                            <div class="tw-col-span-3">
+                                <label class="tw-block tw-font-medium tw-text-gray-700 tw-mb-2">Ảnh phụ</label>
+                                <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4">
+                                    @for (int i = 1; i <= 4; i++)
+                                    {
+                                        <div
+                                            class="tw-flex tw-flex-col tw-items-center tw-gap-2 tw-bg-white tw-p-3 tw-rounded-lg
+                                                                    tw-border tw-border-gray-200 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
+                                            <img id="create-anh-preview-@i" src="" alt="Ảnh phụ @i"
+                                                class="tw-w-28 tw-h-28 tw-object-cover tw-rounded-lg tw-border tw-border-gray-300 tw-cursor-pointer"
+                                                onclick="document.getElementById('create-anhphu-@i').click()">
+                                            <input type="file" id="create-anhphu-@i" name="AnhPhu@i" class="tw-hidden"
+                                                accept="image/*" />
+                                            <small id="create-anh-link-@i"
+                                                class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center tw-max-w-[7rem]">Chưa
+                                                có ảnh</small>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PHẦN 2: Thông tin phòng -->
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Thông tin phòng
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-5 tw-mt-4">
+                            <div>
+                                <label for="create-masophong" class="tw-font-medium tw-text-gray-700">Mã số
+                                    phòng</label>
+                                <input type="text" id="create-masophong" name="MaSoPhong" class="form-control tw-mt-1"
+                                    placeholder="Nhập mã phòng..." required />
+                                <span class="text-danger" id="error-MaSoPhong"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-vitri" class="tw-font-medium tw-text-gray-700">Vị trí</label>
+                                <input type="text" id="create-vitri" name="ViTri" class="form-control tw-mt-1"
+                                    placeholder="Nhập vị trí phòng..." />
+                                <span class="text-danger" id="error-ViTri"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-giaphong" class="tw-font-medium tw-text-gray-700">Giá phòng
+                                    (VNĐ)</label>
+                                <input type="number" id="create-giaphong" name="GiaPhong" class="form-control tw-mt-1"
+                                    placeholder="Nhập giá phòng..." />
+                                <span class="text-danger" id="error-GiaPhong"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-rating" class="tw-font-medium tw-text-gray-700">Đánh giá (Rating
+                                    ⭐)</label>
+                                <input type="number" id="create-rating" name="Rating" class="form-control tw-mt-1"
+                                    placeholder="Nhập điểm (1 - 5)" min="1" max="5" step="0.1" />
+                                <span class="text-danger" id="error-Rating"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-viewer" class="tw-font-medium tw-text-gray-700">Lượt xem (Viewer
+                                    👁️)</label>
+                                <input type="number" id="create-viewer" name="Reviewer" class="form-control tw-mt-1"
+                                    placeholder="Nhập lượt xem..." min="0" />
+                                <span class="text-danger" id="error-Viewer"></span>
+                            </div>
+
+                            <div>
+                                <label for="create-idloaiphong" class="tw-font-medium tw-text-gray-700">Loại
+                                    phòng</label>
+                                <select id="create-idloaiphong" name="IDLoaiPhong" class="form-select tw-mt-1"
+                                    asp-items="ViewBag.LoaiPhong">
+                                    <option value="0">-- Chọn loại phòng --</option>
+                                </select>
+                                <span class="text-danger" id="error-IDLoaiPhong"></span>
+                            </div>
+
+                            <div class="tw-col-span-2">
+                                <label for="create-tongquan" class="tw-font-medium tw-text-gray-700">Tổng quan
+                                    phòng</label>
+                                <textarea id="create-tongquan" name="TongQuan" class="form-control tw-mt-1" rows="3"
+                                    placeholder="Nhập mô tả tổng quan..."></textarea>
+                                <span class="text-danger" id="error-TongQuan"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PHẦN 3: Trạng thái -->
+                    <div
+                        class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5 tw-flex tw-items-center tw-justify-between">
+                        <label for="create-trangthai" class="tw-font-semibold tw-text-gray-700 tw-text-base">Trạng thái
+                            phòng</label>
+                        <select id="create-trangthai" name="TrangThai"
+                            class="form-select tw-w-1/3 tw-text-gray-700 tw-font-medium tw-mt-1">
+                            <option value="0">Trống</option>
+                            <option value="1">Đang sử dụng</option>
+                            <option value="2">Bảo trì</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Thêm phòng</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

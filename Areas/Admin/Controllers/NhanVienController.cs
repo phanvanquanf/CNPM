@@ -22,41 +22,44 @@ namespace hotels.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult Search(string keyword)
+        public IActionResult Search(string keyword = "", string? status = "", int page = 1)
         {
-            var list = _context.NhanViens.AsQueryable();
+            ViewBag.TaiKhoan = new SelectList(_context.TaiKhoans.ToList(), "IDTaiKhoan", "TenDangNhap");
+            var query = _context.NhanViens
+                                .Include(nv => nv.TaiKhoan)
+                                .AsQueryable();
 
             if (!string.IsNullOrEmpty(keyword))
             {
-                list = list.Where(nv => (nv.HoTen ?? "").Contains(keyword) ||
-                                        (nv.Email ?? "").Contains(keyword) ||
-                                        (nv.SDT ?? "").Contains(keyword));
+                query = query.Where(nv => (nv.HoTen ?? "").Contains(keyword) ||
+                                          (nv.Email ?? "").Contains(keyword) ||
+                                          (nv.SDT ?? "").Contains(keyword));
             }
 
-            var result = list.ToList();
+            if (!string.IsNullOrEmpty(status) && int.TryParse(status, out int statusInt))
+            {
+                query = query.Where(nv => nv.TrangThai == statusInt);
+            }
 
-            if (!result.Any())
+            query = query.OrderByDescending(nv => nv.IDNhanVien);
+
+            var pagedList = query.ToPagedList(page, 3);
+
+            if (!pagedList.Any())
             {
                 ViewBag.Message = "Không tìm thấy nhân viên nào phù hợp.";
             }
 
-            var pagedList = result.ToPagedList(1, result.Count == 0 ? 1 : result.Count);
             return PartialView("_NhanVienTablePartial", pagedList);
         }
 
+
         [HttpGet]
-        public IActionResult FilterByStatus(string? status)
+        public IActionResult FilterByStatus(string? status, int page = 1)
         {
-            var query = _context.NhanViens.Include(nv => nv.TaiKhoan).AsQueryable();
-
-            if (!string.IsNullOrEmpty(status))
-            {
-                query = query.Where(nv => nv.TrangThai.ToString() == status);
-            }
-
-            var result = query.OrderByDescending(nv => nv.IDNhanVien).ToPagedList(1, 8);
-            return PartialView("_NhanVienTablePartial", result);
+            return Search("", status, page);
         }
+
 
         public IActionResult Index(int page = 1)
         {
@@ -64,7 +67,7 @@ namespace hotels.Areas.Admin.Controllers
             ViewBag.TaiKhoan = new SelectList(_context.TaiKhoans.ToList(), "IDTaiKhoan", "TenDangNhap");
             var nvList = _context.NhanViens.Include(m => m.TaiKhoan)
                                 .OrderByDescending(m => m.IDNhanVien)
-                                .ToPagedList(page, 8);
+                                .ToPagedList(page, 3);
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
                 return PartialView("_NhanVienTablePartial", nvList);

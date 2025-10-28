@@ -8,7 +8,7 @@ namespace hotels.Models
     public class tblPhong
     {
         [Key]
-        public long IDRoom { get; set; }
+        public long IDPhong { get; set; }
 
         public string? MaSoPhong { get; set; }
 
@@ -18,7 +18,7 @@ namespace hotels.Models
 
         public string? TongQuan { get; set; }
 
-        public float? Rating { get; set; }
+        public double? Rating { get; set; }
 
         public int? Reviewer { get; set; }
 
@@ -28,6 +28,6 @@ namespace hotels.Models
 
         [ForeignKey(nameof(IDLoaiPhong))]
         public virtual tblLoaiPhong? LoaiPhong { get; set; }
-
+        public virtual ICollection<tblAnhPhong>? AnhPhongs { get; set; }
     }
 }

@@ -262,3 +262,4 @@ D:\ksNet\hotels\bin\Debug\net8.0\package.json
 D:\ksNet\hotels\bin\Debug\net8.0\X.PagedList.dll
 D:\ksNet\hotels\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 D:\ksNet\hotels\obj\Debug\net8.0\hotels.MvcApplicationPartsAssemblyInfo.cs
+D:\ksNet\hotels\obj\Debug\net8.0\hotels.sourcelink.json

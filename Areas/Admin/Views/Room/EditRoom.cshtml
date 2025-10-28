@@ -1,0 +1,161 @@
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <div class="tw-bg-primary tw-relative tw-px-6 tw-py-4">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="edit-3" class="tw-w-6 tw-h-6 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold tw-text-lg">
+                        Chỉnh sửa thông tin phòng
+                    </h5>
+                </div>
+
+                <button type="button" class="btn-close tw-absolute tw-top-3 tw-right-3 tw-bg-white/30 tw-rounded-full
+                     tw-p-2 hover:tw-bg-white/50 tw-transition tw-z-50 tw-shadow-md" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+
+            <form id="editForm" method="post" asp-area="Admin" asp-controller="Room" asp-action="Edit"
+                enctype="multipart/form-data">
+                <input type="hidden" name="IDPhong" id="edit-id" />
+                <input type="hidden" id="AnhChinhLink" name="AnhChinhLink" />
+                <input type="hidden" id="AnhPhu1Link" name="AnhPhuLinks[0]" />
+                <input type="hidden" id="AnhPhu2Link" name="AnhPhuLinks[1]" />
+                <input type="hidden" id="AnhPhu3Link" name="AnhPhuLinks[2]" />
+                <input type="hidden" id="AnhPhu4Link" name="AnhPhuLinks[3]" />
+                <div class="modal-body tw-space-y-8 tw-bg-white tw-px-8 tw-py-6">
+                    <div
+                        class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5 tw-space-y-4">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Hình ảnh phòng
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-5 tw-gap-6">
+
+                            <div
+                                class="tw-col-span-2 tw-flex tw-flex-col tw-items-center tw-gap-3 tw-bg-white tw-p-4 tw-rounded-lg tw-shadow-sm">
+                                <label class="tw-font-medium tw-text-gray-700">Ảnh chính</label>
+                                <img id="edit-anh-preview" src="" alt="Ảnh chính"
+                                    class="tw-w-60 tw-h-40 tw-object-cover
+                                 tw-rounded-xl tw-border tw-border-gray-300 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
+                                <input type="file" id="edit-anhphong" name="AnhChinh" accept="image/*"
+                                    class="form-control tw-text-sm tw-mt-2" />
+                                <small id="edit-anh-link"
+                                    class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center tw-max-w-[14rem]">Chưa
+                                    có đường dẫn</small>
+                            </div>
+
+                            <div class="tw-col-span-3">
+                                <label class="tw-block tw-font-medium tw-text-gray-700 tw-mb-2">Ảnh phụ</label>
+                                <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4">
+                                    @for (int i = 1; i <= 4; i++)
+                                    {
+                                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2 tw-bg-white tw-p-3 tw-rounded-lg tw-border
+                                                tw-border-gray-200 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
+                                            <img id="edit-anh-preview-@i" src="" alt="Ảnh phụ @i"
+                                                class="tw-w-28 tw-h-28 tw-object-cover tw-rounded-lg tw-border tw-border-gray-300 tw-cursor-pointer"
+                                                onclick="document.getElementById('edit-anhphu-@i').click()">
+                                            <input type="file" id="edit-anhphu-@i" name="AnhPhuFiles" class="tw-hidden"
+                                                accept="image/*" />
+                                            <small id="edit-anh-link-@i"
+                                                class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center tw-max-w-[7rem]">Chưa
+                                                có đường dẫn</small>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Thông tin phòng
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-5 tw-mt-4">
+                            <div>
+                                <label for="edit-masophong" class="tw-font-medium tw-text-gray-700">Mã số
+                                    phòng</label>
+                                <input type="text" class="form-control tw-mt-1" id="edit-masophong" name="MaSoPhong"
+                                    placeholder="Nhập mã số phòng..." required />
+                            </div>
+
+                            <div>
+                                <label for="edit-vitri" class="tw-font-medium tw-text-gray-700">Vị trí</label>
+                                <input type="text" class="form-control tw-mt-1" id="edit-vitri" name="ViTri"
+                                    placeholder="Nhập vị trí phòng..." />
+                            </div>
+
+                            <div>
+                                <label for="edit-giaphong" class="tw-font-medium tw-text-gray-700">Giá phòng
+                                    (VNĐ)</label>
+                                <input type="number" class="form-control tw-mt-1" id="edit-giaphong" name="GiaPhong"
+                                    placeholder="Nhập giá phòng..." />
+                            </div>
+
+                            <div>
+                                <label for="edit-rating" class="tw-font-medium tw-text-gray-700">Đánh giá (Rating
+                                    ⭐)</label>
+                                <input type="number" id="edit-rating" name="Rating" class="form-control tw-mt-1"
+                                    placeholder="Nhập điểm (1 - 5)" min="1" max="5" step="0.1" />
+                                <span class="text-danger" id="error-Rating"></span>
+                            </div>
+
+                            <div>
+                                <label for="edit-viewer" class="tw-font-medium tw-text-gray-700">Lượt xem (Viewer
+                                    👁️)</label>
+                                <input type="number" id="edit-viewer" name="Reviewer" class="form-control tw-mt-1"
+                                    placeholder="Nhập lượt xem..." min="0" />
+                                <span class="text-danger" id="error-Viewer"></span>
+                            </div>
+
+                            <div>
+                                <label for="edit-idloaiphong" class="tw-font-medium tw-text-gray-700">Loại
+                                    phòng</label>
+                                <select id="edit-idloaiphong" name="IDLoaiPhong" class="form-select tw-mt-1"
+                                    asp-items="ViewBag.LoaiPhong">
+                                    <option value="0">-- Chọn loại phòng --</option>
+                                </select>
+                            </div>
+
+                            <div class="tw-col-span-2">
+                                <label for="edit-tongquan" class="tw-font-medium tw-text-gray-700">Tổng quan
+                                    phòng</label>
+                                <textarea class="form-control tw-mt-1" id="edit-tongquan" name="TongQuan" rows="3"
+                                    placeholder="Nhập mô tả tổng quan..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm
+                         tw-bg-gray-50 tw-p-5 tw-flex tw-items-center tw-justify-between">
+                        <label for="edit-trangthai" class="tw-font-semibold tw-text-gray-700 tw-text-base">Trạng
+                            thái
+                            phòng</label>
+                        <select class="form-select tw-w-1/3 tw-text-gray-700 tw-font-medium" id="edit-trangthai"
+                            name="TrangThai">
+                            <option value="0">Trống</option>
+                            <option value="1">Đang sử dụng</option>
+                            <option value="2">Bảo trì</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer tw-bg-gray-100 tw-border-t tw-py-4 tw-px-6 tw-flex tw-justify-end tw-gap-3">
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" class="btn btn-success">Lưu thay đổi</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Areas.Admin.Models.tblTaiKhoan>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Quản lý tài khoản</a></li>
+                <li class="breadcrumb-item active">Danh sách tài khoản</li>
+            </ol>
+        </nav>
+
+        <div class="card tw-p-8">
+            <div class="tw-flex tw-flex-col tw-pb-5 tw-gap-1">
+                <h1 class="tw-text-xl tw-capitalize tw-font-semibold">Danh sách tài khoản</h1>
+
+                <div class="tw-flex tw-items-center tw-justify-between tw-text-neutral-400 tw-text-sm">
+                    <p>Hiển thị @Model.Count trên tổng @Model.TotalItemCount nhân viên</p>
+
+                    <div class="tw-flex tw-items-center tw-gap-3">
+                        <div
+                            class="tw-flex tw-items-center tw-gap-2 tw-w-64 tw-h-8 tw-border tw-border-solid tw-border-neutral-200/80 tw-rounded-lg tw-px-2.5">
+                            <i data-lucide="search" class="tw-text-neutral-400 tw-w-4 tw-h-4"></i>
+                            <input type="text" placeholder="Tìm kiếm tài khoản..." id="searchInput"
+                                class="tw-w-full tw-outline-none tw-text-xs tw-text-neutral-400" />
+                        </div>
+
+                        <div class="btn-group">
+                            <button type="button" class="tw-flex tw-items-center tw-gap-1 tw-px-2 tw-h-8 tw-cursor-pointer tw-rounded-lg 
+                                tw-border tw-border-solid tw-border-neutral-200/80 tw-text-xs dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Trạng thái
+                            </button>
+
+                            <ul class="dropdown-menu !tw-text-xs" id="roleFilter">
+                                <li>
+                                    <a class="dropdown-item" href="javascript:void(0);" data-value="">
+                                        Tất cả
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="javascript:void(0);" data-value="0">
+                                        Quản trị viên
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="javascript:void(0);" data-value="1">
+                                        Khách hàng
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="javascript:void(0);" data-value="2">
+                                        Nhân viên
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button type="submit"
+                            class="btn btn-primary tw-flex tw-items-center tw-gap-1 tw-px-2 tw-h-8 tw-text-xs"
+                            data-bs-toggle="modal" data-bs-target="#addModal">
+                            <i data-lucide="user-plus" class="tw-w-4 tw-h-4"></i>Thêm mới
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="employeeList" class="tw-mt-4">
+                <partial name="_TaiKhoanPartial" model="Model" />
+            </div>
+        </div>
+    </div>
+</div>
