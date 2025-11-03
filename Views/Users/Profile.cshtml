@@ -52,7 +52,7 @@
         var loaiGanNhat = phongGanNhat?.LoaiPhong;
         int duration = (dpGanNhat.NgayDi - dpGanNhat.NgayDen)?.Days ?? 0;
         decimal tongTien = (phongGanNhat?.GiaPhong ?? 0) * duration;
-        var img = phongGanNhat.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
+        var img = phongGanNhat?.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
 
         <section
             class="tw-col-span-9 tw-grid tw-grid-cols-9 tw-gap-6 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5">
@@ -142,11 +142,11 @@
                     <div class="tw-flex tw-items-center tw-justify-between tw-border-b tw-border-neutral-300 tw-pb-3">
                         <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
                             <i data-lucide="inspection-panel"
-                                class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat.DienTich m²</span>
+                                class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat?.DienTich m²</span>
                         <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
-                            <i data-lucide="bed" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat.KieuGiuong</span>
+                            <i data-lucide="bed" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat?.KieuGiuong</span>
                         <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
-                            <i data-lucide="users" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat.SucChua
+                            <i data-lucide="users" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiGanNhat?.SucChua
                             Người</span>
                     </div>
                     <div class="tw-flex tw-justify-between">

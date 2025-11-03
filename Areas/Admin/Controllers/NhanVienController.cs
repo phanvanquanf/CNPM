@@ -22,6 +22,17 @@ namespace hotels.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public IActionResult CheckUnique(string sdt, string cccd, string email, long idTaiKhoan)
+        {
+            bool sdtExists = _context.NhanViens.Any(x => x.SDT == sdt);
+            bool cccdExists = _context.NhanViens.Any(x => x.CCCD == cccd);
+            bool emailExists = _context.NhanViens.Any(x => x.Email == email);
+            bool taiKhoanExists = _context.NhanViens.Any(x => x.IDTaiKhoan == idTaiKhoan);
+
+            return Ok(new { sdtExists, cccdExists, emailExists, taiKhoanExists });
+        }
+
+        [HttpGet]
         public IActionResult Search(string keyword = "", string? status = "", int page = 1)
         {
             ViewBag.TaiKhoan = new SelectList(_context.TaiKhoans.ToList(), "IDTaiKhoan", "TenDangNhap");
@@ -92,15 +103,22 @@ namespace hotels.Areas.Admin.Controllers
         public IActionResult Edit(tblNhanVien nv)
         {
             ViewBag.TaiKhoan = new SelectList(_context.TaiKhoans.ToList(), "IDTaiKhoan", "TenDangNhap");
-            if (ModelState.IsValid)
-            {
-                _context.NhanViens.Update(nv);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
 
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _context.NhanViens.Update(nv);
+            _context.SaveChanges();
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                var nvList = _context.NhanViens.Include(m => m.TaiKhoan)
+                                              .OrderByDescending(m => m.IDNhanVien)
+                                              .ToPagedList(1, 3);
+                return PartialView("_NhanVienTablePartial", nvList);
             }
 
-            return View(nv);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -113,6 +131,5 @@ namespace hotels.Areas.Admin.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }
