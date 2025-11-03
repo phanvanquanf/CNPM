@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OYN0GWC7iBQgGFWNDFDX6g1LJOEYvbJFW5dh+5VnNhw=",
+  "Hash": "oYODJEwbLLnjKPrmefIWsDW/cHZP6y+aHrdYQQJKwAo=",
   "Source": "hotels",
   "BasePath": "_content/hotels",
   "Mode": "Default",
@@ -910,6 +910,25 @@
       "OriginalItemSpec": "wwwroot\\admin\\assets\\img\\layouts\\layout-without-navbar-light.png"
     },
     {
+      "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\logo\\logo-icon.jpg",
+      "SourceId": "hotels",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\",
+      "BasePath": "_content/hotels",
+      "RelativePath": "admin/assets/img/logo/logo-icon.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\assets\\img\\logo\\logo-icon.jpg"
+    },
+    {
       "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\logo\\logo.jpg",
       "SourceId": "hotels",
       "SourceType": "Discovered",
@@ -1706,6 +1725,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\apple-touch-icon.png"
+    },
+    {
+      "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\google-logo.png",
+      "SourceId": "hotels",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\",
+      "BasePath": "_content/hotels",
+      "RelativePath": "assets/img/google-logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\google-logo.png"
     },
     {
       "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-1.webp",
@@ -2715,12 +2753,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\hotel\\showcase-9.webp"
     },
     {
-      "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo-icon.jpg",
+      "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo-icon.png",
       "SourceId": "hotels",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\",
       "BasePath": "_content/hotels",
-      "RelativePath": "assets/img/logo-icon.jpg",
+      "RelativePath": "assets/img/logo-icon.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2731,7 +2769,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\logo-icon.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\logo-icon.png"
     },
     {
       "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo.webp",
@@ -4195,6 +4233,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\services\\Spa\\anh7.jpg"
+    },
+    {
+      "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\khachhang.js",
+      "SourceId": "hotels",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\",
+      "BasePath": "_content/hotels",
+      "RelativePath": "assets/js/khachhang.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\khachhang.js"
     },
     {
       "Identity": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\main.js",

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using hotels.Models;
 using X.PagedList;
 using X.PagedList.Extensions;
@@ -44,5 +45,26 @@ public class BookingController : Controller
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
+
+    // BookingController.cs
+        [HttpGet]
+        public IActionResult Detail(long id)
+        {
+            var booking = _context.DatPhongs
+                .Include(dp => dp.CTDatPhongs!)
+                    .ThenInclude(ctdp => ctdp.Phong!)
+                        .ThenInclude(p => p.LoaiPhong!)
+                .Include(dp => dp.CTDatPhongs!)
+                    .ThenInclude(ctdp => ctdp.Phong!)
+                        .ThenInclude(p => p.AnhPhongs!)
+                .FirstOrDefault(dp => dp.IDMaDatPhong == id);
+
+            if (booking == null)
+                return NotFound();
+
+            return PartialView("_BookingDetail", booking);
+        }
+
+
 
 }

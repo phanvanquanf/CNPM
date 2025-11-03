@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\admin\\assets\\img\\layouts\\layout-without-navbar-light.png"
     },
     {
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\logo\\logo-icon.jpg",
+      "PackagePath": "staticwebassets\\admin\\assets\\img\\logo\\logo-icon.jpg"
+    },
+    {
       "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\admin\\assets\\img\\logo\\logo.jpg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\logo\\logo.jpg"
     },
@@ -521,6 +525,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon.png"
     },
     {
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\google-logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\google-logo.png"
+    },
+    {
       "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\hotel\\amenities-1.webp",
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\amenities-1.webp"
     },
@@ -733,8 +741,8 @@
       "PackagePath": "staticwebassets\\assets\\img\\hotel\\showcase-9.webp"
     },
     {
-      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo-icon.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\logo-icon.jpg"
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-icon.png"
     },
     {
       "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\logo.webp",
@@ -875,6 +883,10 @@
     {
       "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\img\\services\\Spa\\anh7.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services\\Spa\\anh7.jpg"
+    },
+    {
+      "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\khachhang.js",
+      "PackagePath": "staticwebassets\\assets\\js\\khachhang.js"
     },
     {
       "Id": "D:\\Workspace\\FullStack\\ASP.NET\\CNPM\\wwwroot\\assets\\js\\main.js",

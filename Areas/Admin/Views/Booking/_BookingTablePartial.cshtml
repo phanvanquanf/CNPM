@@ -87,6 +87,9 @@
             </tbody>
         </table>
     </div>
+
+    @await Html.PartialAsync(partialViewName: "_BookingDetail")
+
     <!-- Pagination -->
     <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
         <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
@@ -114,34 +117,101 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
+    // ==========================
+    // 📄 Hàm load phân trang Ajax
+    // ==========================
+    function loadPage(page) {
+        if (page < 1) return;
+        const url = `@Url.Action("Index")?page=${page}`;
+        fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("product-container").innerHTML = html;
+                lucide.createIcons();
+                bindAllEvents(); // Gắn lại sự kiện sau khi load lại
+            })
+            .catch(err => console.error("Lỗi load trang:", err));
+    }
 
-        function loadPage(page) {
-            if (page < 1) return;
-            const url = `@Url.Action("Index")?page=${page}`;
-            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById("product-container").innerHTML = html;
-                    lucide.createIcons();
-                    bindPagination();
-                    bindDeleteButtons();
-                    bindEditButtons();
-                });
-        }
+    // ==========================
+    // ⏩ Gắn sự kiện phân trang
+    // ==========================
+    function bindPagination() {
+        const prev = document.getElementById("prevPage");
+        const next = document.getElementById("nextPage");
 
-        function bindPagination() {
-            const prev = document.getElementById("prevPage");
-            const next = document.getElementById("nextPage");
+        if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+        if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
 
-            if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
-            if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
+        document.querySelectorAll("#pagination button").forEach(btn => {
+            btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+        });
+    }
 
-            document.querySelectorAll("#pagination button").forEach(btn => {
-                btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+    // ==========================
+    // 🔍 Gắn sự kiện nút “Chi tiết”
+    // ==========================
+    function bindDetailButtons() {
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const row = btn.closest("tr");
+                const bookingText = row.querySelector("td:nth-child(2)")?.innerText; // Ví dụ: B-12
+                const bookingId = bookingText?.replace("B-", "").trim();
+
+                if (!bookingId) {
+                    alert("Không tìm thấy mã đặt phòng!");
+                    return;
+                }
+
+                const url = `@Url.Action("Detail", "Booking", new { area = "Admin" })?id=${bookingId}`;
+                fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                    .then(res => res.text())
+                    .then(html => showModal(html))
+                    .catch(err => console.error("Lỗi khi tải chi tiết:", err));
+            });
+        });
+    }
+
+    // ==========================
+    // 🪟 Tạo modal hiển thị chi tiết
+    // ==========================
+    function showModal(contentHtml) {
+        let modal = document.getElementById("bookingDetailModal");
+        if (!modal) {
+            modal = document.createElement("div");
+            modal.id = "bookingDetailModal";
+            modal.className = "tw-fixed tw-inset-0 tw-bg-black/40 tw-flex tw-items-center tw-justify-center tw-z-50";
+            modal.innerHTML = `
+                <div class="tw-bg-white tw-rounded-xl tw-shadow-xl tw-max-w-4xl tw-w-full tw-mx-4 tw-overflow-y-auto tw-max-h-[90vh] tw-animate-fadeIn">
+                    <div class="tw-flex tw-justify-between tw-items-center tw-border-b tw-px-6 tw-py-3">
+                        <h3 class="tw-text-lg tw-font-semibold">Chi tiết đặt phòng</h3>
+                        <button id="closeModalBtn" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-xl">&times;</button>
+                    </div>
+                    <div id="modalContent" class="tw-p-6"></div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            modal.addEventListener("click", e => {
+                if (e.target.id === "bookingDetailModal" || e.target.id === "closeModalBtn") {
+                    modal.remove();
+                }
             });
         }
 
+        modal.querySelector("#modalContent").innerHTML = contentHtml;
+        lucide.createIcons();
+    }
+
+    // ==========================
+    // 🔁 Gắn lại tất cả sự kiện sau Ajax
+    // ==========================
+    function bindAllEvents() {
         bindPagination();
-    });
+        bindDetailButtons();
+    }
+
+    bindAllEvents(); // Khởi động ban đầu
+});
 </script>
