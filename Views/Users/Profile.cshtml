@@ -1,5 +1,5 @@
 @model IList<tblDatPhong>
-
+@using hotels.Utilities;
 @{
     ViewBag.Title = "Hồ Sơ Cá Nhân";
     var dpGanNhat = ViewBag.dpGanNhat as tblDatPhong;
@@ -11,13 +11,20 @@
         class="tw-col-span-3 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5 tw-space-y-4">
         <div class="tw-flex tw-justify-items-center tw-justify-between">
             <p class="tw-font-semibold tw-text-sm">Thông Tin Cá Nhân</p>
-            <i data-lucide="ellipsis" class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer"></i>
+            <div class="dropdown" data-bs-display="static">
+                <i data-lucide="ellipsis" class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer dropdown-toggle"
+                    id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="/Users/EditProfile">Chỉnh sửa</a></li>
+                </ul>
+            </div>
         </div>
         <div class="tw-flex tw-items-center tw-gap-4 tw-border-b tw-border-neutral-100 tw-pb-4">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWZjFwCtwQqzfXoNAkgKhfsZKL7x4x_qVMA&s"
                 alt="avatar" class="tw-w-16 tw-h-16 tw-rounded-full tw-object-cover">
             <div>
-                <p class="tw-font-semibold tw-text-lg">Phạm Văn Hùng</p>
+                <p class="tw-font-semibold tw-text-lg">@Functions._TenNguoiDung</p>
                 <p class="tw-text-gray-500 tw-text-sm">G001</p>
             </div>
         </div>
@@ -27,21 +34,14 @@
                 <div class="tw-p-1.5 tw-rounded tw-bg-green-100">
                     <i data-lucide="mail" class="tw-w-4 tw-h-4 tw-text-gray-600"></i>
                 </div>
-                <p class="tw-text-gray-500 tw-text-sm">hungpv@gmail.com</p>
+                <p class="tw-text-gray-500 tw-text-sm">@Functions._Email</p>
             </div>
             <div class="tw-flex tw-items-center tw-gap-2.5">
                 <div class="tw-p-1.5 tw-rounded tw-bg-green-100">
-                    <i data-lucide="smartphone" class="tw-w-4 tw-h-4 tw-text-gray-600"></i>
+                    <i data-lucide="user" class="tw-w-4 tw-h-4 tw-text-gray-600"></i>
                 </div>
-                <p class="tw-text-gray-500 tw-text-sm">0911112233</p>
+                <p class="tw-text-gray-500 tw-text-sm">@Functions._TenDangNhap</p>
             </div>
-        </div>
-
-        <div>
-            <ul class="tw-text-sm tw-space-y-1.5">
-                <li><span class="tw-font-medium tw-mr-1">Giới Tính:</span> Nam</li>
-                <li><span class="tw-font-medium tw-mr-1">Địa Chỉ:</span> 100 Lê Duẩn, Hà Nội</li>
-            </ul>
         </div>
     </section>
 

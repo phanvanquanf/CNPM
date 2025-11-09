@@ -1,4 +1,5 @@
 @model IList<tblMenu>
+@using hotels.Utilities;
 <header id="header" class="header sticky-top">
 
     <div class="topbar d-flex align-items-center dark-background">
@@ -9,15 +10,24 @@
                 <i class="bi bi-phone d-flex align-items-center ms-4"><span>+84 123 456 789</span></i>
             </div>
             <li class="dropdown user-menu">
-                <a href="#">
+                <a href="/Users/Profile">
                     <i class="bi bi-person-circle"></i>
-                    <span>Nguyễn Văn A</span>
+                    <span>@Functions._TenNguoiDung</span>
                 </a>
-                <ul>
-                    <li><a href="/Users/Profile">Hồ Sơ Cá Nhân</a></li>
-                    <li><a href="my-bookings.html">Đặt Phòng Của Tôi</a></li>
-                    <li><a href="logout.html">Đăng Xuất</a></li>
-                </ul>
+                @if (Functions.IsLogin())
+                {
+                    <ul>
+                        <li><a href="/Users/Profile">Hồ Sơ Cá Nhân</a></li>
+                        <li><a href="/Login/Logout">Đăng Xuất</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul>
+                        <li><a href="/Login/Index">Đăng Nhập</a></li>
+                        <li><a href="/Register/Index">Đăng Ký</a></li>
+                    </ul>
+                }
             </li>
         </div>
     </div><!-- End Top Bar -->

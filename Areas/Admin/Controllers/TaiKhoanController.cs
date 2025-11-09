@@ -199,5 +199,44 @@ namespace hotels.Areas.Admin.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(IFormFile Image, long IDTaiKhoan)
+        {
+            try
+            {
+                if (Image == null || Image.Length == 0)
+                    return Json(new { success = false, message = "Chưa chọn file" });
+
+                var taiKhoan = await _context.TaiKhoans.FindAsync(IDTaiKhoan);
+                if (taiKhoan == null)
+                    return Json(new { success = false, message = "Không tìm thấy tài khoản" });
+
+                var fileName = $"{Guid.NewGuid()}_{Path.GetFileName(Image.FileName)}";
+
+                var imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/img/AnhDaiDien/KH");
+                if (!Directory.Exists(imagesFolder))
+                    Directory.CreateDirectory(imagesFolder);
+
+                var filePath = Path.Combine(imagesFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Image.CopyToAsync(stream);
+                }
+
+                taiKhoan.Image = fileName;
+                _context.Update(taiKhoan);
+                await _context.SaveChangesAsync();
+
+                var relativePath = $"/assets/img/AnhDaiDien/KH/{fileName}";
+
+                return Json(new { success = true, filePath = relativePath });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
     }
 }

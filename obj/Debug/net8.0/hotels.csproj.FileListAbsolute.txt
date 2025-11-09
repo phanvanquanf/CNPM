@@ -528,3 +528,6 @@ D:\ksNet\hotels\obj\Debug\net8.0\refint\hotels.dll
 D:\ksNet\hotels\obj\Debug\net8.0\hotels.pdb
 D:\ksNet\hotels\obj\Debug\net8.0\hotels.genruntimeconfig.cache
 D:\ksNet\hotels\obj\Debug\net8.0\ref\hotels.dll
+D:\ksNet\hotels\bin\Debug\net8.0\Slugify.Core.dll
+D:\ksNet\hotels\bin\Debug\net8.0\System.Text.Encoding.CodePages.dll
+D:\ksNet\hotels\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Text.Encoding.CodePages.dll

@@ -16,7 +16,7 @@ namespace hotels.Areas.Admin.Models
 
         public bool TrangThai { get; set; } = true;
 
-        public int VaiTro { get; set; } = 2;
+        public int VaiTro { get; set; }
 
         public string? Image { get; set; }
 

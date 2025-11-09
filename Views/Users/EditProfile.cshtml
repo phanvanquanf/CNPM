@@ -1,0 +1,325 @@
+@model hotels.Areas.Admin.Models.tblKhachHang
+@{
+    ViewBag.Title = "Chỉnh sửa thông tin cá nhân";
+}
+
+<div class="edit-profile-container">
+    <!-- Header -->
+    <div class="header-section">
+        <h1 class="page-title">Chỉnh sửa thông tin cá nhân</h1>
+        <p class="page-subtitle">Cập nhật thông tin và quản lý tài khoản của bạn</p>
+    </div>
+
+    <form asp-action="EditProfile" method="post" class="profile-form" enctype="multipart/form-data">
+        <input type="hidden" asp-for="IDKhachHang" />
+
+        <!-- Ảnh đại diện -->
+        <div class="avatar-section">
+            <div class="avatar-container">
+                <label for="imageInput" class="avatar-circle">
+                    <img id="imagePreview" src="~/assets/img/AnhDaiDien/KH/@Model.TaiKhoan?.Image" alt="Ảnh đại diện"
+                        class="avatar-image" />
+                    <i class="fas fa-user avatar-icon"></i>
+                </label>
+                <input type="file" id="imageInput" data-taikhoan-id="@Model.TaiKhoan?.IDTaiKhoan" class="hidden"
+                    accept="image/*" />
+            </div>
+        </div>
+
+        <!-- Thông tin cá nhân -->
+        <div class="card-section">
+            <h2 class="section-title">Thông tin cá nhân</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="HoTen" class="form-label">Họ và tên <span class="required">*</span></label>
+                    <input asp-for="HoTen" class="form-control" placeholder="Nhập họ và tên" />
+                    <span asp-validation-for="HoTen" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GioiTinh" class="form-label">Giới tính</label>
+                    <select asp-for="GioiTinh" class="form-select">
+                        <option value="">-- Chọn giới tính --</option>
+                        <option value="Nam" selected="@(Model.GioiTinh == "Nam")">Nam</option>
+                        <option value="Nữ" selected="@(Model.GioiTinh == "Nữ")">Nữ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiaChi" class="form-label">Địa chỉ</label>
+                    <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label">Email <span class="required">*</span></label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Nhập email" />
+                    <span asp-validation-for="Email" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SDT" class="form-label">Số điện thoại <span class="required">*</span></label>
+                    <input asp-for="SDT" class="form-control" placeholder="Nhập số điện thoại" />
+                    <span asp-validation-for="SDT" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CCCD" class="form-label">Căn cước công dân <span class="required">*</span></label>
+                    <input asp-for="CCCD" class="form-control" placeholder="Nhập CCCD" />
+                    <span asp-validation-for="CCCD" class="validation-error"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Đổi mật khẩu -->
+        <div class="card-section">
+            <h2 class="section-title">Đổi mật khẩu</h2>
+            <p class="section-subtitle">Để trống nếu không muốn thay đổi mật khẩu</p>
+            <div class="password-grid">
+                <div class="form-group">
+                    <label class="form-label">Mật khẩu cũ</label>
+                    <input type="password" name="MatKhauCu" class="form-control" placeholder="Nhập mật khẩu cũ" />
+                    <span class="text-danger">@ViewBag.ErrorMatKhauCu</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Mật khẩu mới</label>
+                    <input type="password" name="MatKhauMoi" class="form-control" placeholder="Nhập mật khẩu mới" />
+                    <span class="text-danger">@ViewBag.ErrorMatKhauMoi</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Xác nhận mật khẩu mới</label>
+                    <input type="password" name="XacNhanMatKhauMoi" class="form-control"
+                        placeholder="Nhập lại mật khẩu mới" />
+                    <span class="text-danger">@ViewBag.ErrorXacNhanMatKhau</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a href="#" class="btn-secondary"><i class="fas fa-times"></i> Hủy bỏ</a>
+        </div>
+    </form>
+</div>
+
+
+<style>
+    :root {
+        --primary: #3B82F6;
+        --primary-dark: #2563EB;
+        --secondary: #6B7280;
+        --success: #10B981;
+        --danger: #EF4444;
+        --light: #F9FAFB;
+        --dark: #1F2937;
+        --border: #E5E7EB;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .edit-profile-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+    }
+
+    .header-section {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+    .profile-form {
+        padding: 2rem;
+    }
+
+    .avatar-section {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .avatar-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+
+    .avatar-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid var(--primary);
+        background-color: var(--light);
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        font-size: 3rem;
+        color: var(--secondary);
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .avatar-circle:hover {
+        transform: scale(1.05);
+        background-color: #e0e7ff;
+    }
+
+    .avatar-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .avatar-icon {
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .card-section {
+        background-color: var(--light);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+    }
+
+    .form-grid,
+    .password-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .required {
+        color: var(--danger);
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        padding: 0.75rem;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        outline: none;
+    }
+
+    .password-input-wrapper {
+        position: relative;
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: var(--secondary);
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .validation-error {
+        color: var(--danger);
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary-dark);
+    }
+
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: white;
+        color: var(--secondary);
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 500;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+        background-color: #f0f0f0;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
+<script src="~/assets/js/user.js"></script>

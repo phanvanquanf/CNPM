@@ -1,0 +1,210 @@
+@model hotels.Areas.Admin.Models.tblTaiKhoan
+@using hotels.Utilities
+
+@{
+    ViewBag.Title = "Đăng ký";
+}
+
+<div class="register-container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="register-card shadow-lg p-4 p-md-5 rounded-4 bg-white position-relative">
+        <div class="text-center mb-4">
+            <img src="~/assets/img/register.png" alt="Đăng ký" class="register-image mx-auto d-block" />
+            <h3 class="fw-bold text-primary mt-3">Tạo tài khoản mới</h3>
+            <p class="text-muted small">Nhập thông tin để đăng ký trở thành khách hàng</p>
+        </div>
+
+        <form class="row g-3" asp-controller="Register" asp-action="Index" method="post" id="registerForm">
+            <!-- Tên đăng nhập -->
+            <div class="col-12">
+                <label for="TenDangNhap" class="form-label">Tên đăng nhập</label>
+                <input asp-for="TenDangNhap" class="form-control" id="TenDangNhap" value="@ViewBag.TenDangNhap" />
+                <span class="text-danger" id="TenDangNhapError">@Html.ValidationMessageFor(m => m.TenDangNhap)</span>
+            </div>
+
+            <div class="col-12">
+                <label for="MatKhau" class="form-label">Mật khẩu</label>
+                <input asp-for="MatKhau" type="password" class="form-control" id="MatKhau" value="@ViewBag.MatKhau" />
+                <span class="text-danger" id="MatKhauError">@Html.ValidationMessageFor(m => m.MatKhau)</span>
+            </div>
+
+            <!-- Họ tên -->
+            <div class="col-12">
+                <label for="HoTen" class="form-label">Họ và tên</label>
+                <input type="text" name="HoTen" class="form-control" id="HoTen" value="@ViewBag.HoTen" />
+                <span class="text-danger" id="HoTenError"></span>
+            </div>
+
+            <!-- Giới tính -->
+            <div class="col-12">
+                <label for="GioiTinh" class="form-label">Giới tính</label>
+                <select name="GioiTinh" id="GioiTinh" class="form-select">
+                    <option value="">-- Chọn giới tính --</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                    <option value="Khác">Khác</option>
+                </select>
+                <span class="text-danger" id="GioiTinhError"></span>
+            </div>
+
+            <!-- CCCD -->
+            <div class="col-12">
+                <label for="CCCD" class="form-label">Số CCCD</label>
+                <input type="text" name="CCCD" class="form-control" id="CCCD" value="@ViewBag.CCCD" />
+                <span class="text-danger"
+                    id="CCCDError">@ViewData.ModelState["CCCD"]?.Errors.FirstOrDefault()?.ErrorMessage</span>
+            </div>
+
+            <!-- SDT -->
+            <div class="col-12">
+                <label for="SDT" class="form-label">Số điện thoại</label>
+                <input type="text" name="SDT" class="form-control" id="SDT" value="@ViewBag.SDT" />
+                <span class="text-danger"
+                    id="SDTError">@ViewData.ModelState["SDT"]?.Errors.FirstOrDefault()?.ErrorMessage</span>
+            </div>
+
+            <!-- Email -->
+            <div class="col-12">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" name="Email" class="form-control" id="Email" value="@ViewBag.Email" />
+                <span class="text-danger"
+                    id="EmailError">@ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage</span>
+            </div>
+
+            <!-- Địa chỉ -->
+            <div class="col-12">
+                <label for="DiaChi" class="form-label">Địa chỉ</label>
+                <input type="text" name="DiaChi" class="form-control" id="DiaChi" value="@ViewBag.DiaChi" />
+                <span class="text-danger" id="DiaChiError"></span>
+            </div>
+
+            <!-- Hidden fields -->
+            <input asp-for="TrangThai" type="hidden" value="true" />
+            <input asp-for="VaiTro" type="hidden" value="1" />
+
+            <!-- Điều khoản -->
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" name="terms" type="checkbox" id="acceptTerms" />
+                    <label class="form-check-label agreement" for="acceptTerms">
+                        Tôi đồng ý với <a href="#">điều khoản & điều kiện</a>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Nút tạo tài khoản -->
+            <div class="col-12">
+                <button class="btn btn-register w-100" type="submit">Tạo tài khoản</button>
+            </div>
+
+            <!-- Đăng nhập -->
+            <div class="col-12 text-center login-redirect">
+                <p class="small mb-0">Đã có tài khoản? <a href="/Login">Đăng nhập ngay</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    body {
+        background: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        background-attachment: fixed;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .register-container {
+        padding: 2rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .register-card {
+        max-width: 480px;
+        width: 100%;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+    }
+
+    .register-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #f8f9fa;
+        padding: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .register-image:hover {
+        transform: scale(1.05);
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #2a2a2a;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 12px;
+        padding: 10px 14px;
+        border: 1px solid #ced4da;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 6px rgba(42, 82, 152, 0.4);
+    }
+
+    .btn-register {
+        background: linear-gradient(to right, #1e3c72, #2a5298);
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 12px;
+        padding: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-register:hover {
+        background: linear-gradient(to right, #2a5298, #1e3c72);
+        transform: scale(1.03);
+    }
+
+    .agreement {
+        font-size: 0.9rem;
+        color: #444;
+    }
+
+    .agreement a {
+        color: #2a5298;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .agreement a:hover {
+        text-decoration: underline;
+    }
+
+    .login-redirect a {
+        color: #2a5298;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .login-redirect a:hover {
+        text-decoration: underline;
+    }
+
+    fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<script src="~/assets/js/register.js"></script>

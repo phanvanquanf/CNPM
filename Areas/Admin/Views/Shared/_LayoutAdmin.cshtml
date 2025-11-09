@@ -1,3 +1,4 @@
+@using hotels.Utilities
 <!DOCTYPE html>
 <html lang="vi" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
     data-assets-path="~/admin/assets/" data-template="vertical-menu-template-free">
@@ -172,7 +173,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">Nguyễn Văn A</span>
+                                                    <span class="fw-semibold d-block">@Functions._TenNguoiDung
+                                                    </span>
                                                     <small class="text-muted">Quản lý</small>
                                                 </div>
                                             </div>
@@ -188,16 +190,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-cog me-2"></i>
-                                            <span class="align-middle">Cài đặt</span>
-                                        </a>
-                                    </li>
-                                    <li>
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                        <a class="dropdown-item" href="/Login/Index">
                                             <i class="bx bx-power-off me-2"></i>
                                             <span class="align-middle">Đăng xuất</span>
                                         </a>

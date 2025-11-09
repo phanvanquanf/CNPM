@@ -1,0 +1,169 @@
+@model hotels.Areas.Admin.Models.tblTaiKhoan
+@using hotels.Utilities
+
+@{
+    ViewBag.Title = "Đăng nhập";
+}
+
+<div class="login-wrapper d-flex align-items-center justify-content-center min-vh-100">
+    <div class="login-card shadow-lg p-4 p-md-5 rounded-4 position-relative bg-white">
+        <div class="text-center mb-4">
+            <div class="image-wrapper mx-auto mb-3">
+                <img src="~/assets/img/login.png" alt="Đăng nhập" class="login-image" />
+            </div>
+            <h2 class="fw-bold text-primary">Chào mừng bạn trở lại!</h2>
+            <p class="text-muted small">Vui lòng đăng nhập để tiếp tục sử dụng hệ thống</p>
+        </div>
+
+        <form class="row g-3 needs-validation" asp-controller="Login" asp-action="Index" method="post" novalidate>
+            <!-- Tên đăng nhập -->
+            <div class="col-12">
+                <label for="TenDangNhap" class="form-label">Tên đăng nhập</label>
+                <input asp-for="TenDangNhap" class="form-control" id="TenDangNhap" placeholder="Nhập tên đăng nhập"
+                    required />
+                <div class="invalid-feedback">Vui lòng nhập tên đăng nhập!</div>
+            </div>
+
+            <!-- Mật khẩu -->
+            <div class="col-12">
+                <label for="MatKhau" class="form-label">Mật khẩu</label>
+                <input asp-for="MatKhau" type="password" class="form-control" id="MatKhau" placeholder="Nhập mật khẩu"
+                    required />
+                <div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
+            </div>
+
+            <!-- Thông báo -->
+            <div class="col-12 text-center text-danger">
+                <strong>@Functions._Message</strong>
+            </div>
+
+            <!-- Ghi nhớ -->
+            <div class="col-12">
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="checkbox" name="remember" value="true" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Nhớ mật khẩu</label>
+                </div>
+            </div>
+
+            <!-- Nút đăng nhập -->
+            <div class="col-12">
+                <button class="btn btn-login w-100" type="submit">Đăng nhập</button>
+            </div>
+
+            <!-- Đăng ký -->
+            <div class="col-12 text-center register-redirect">
+                <p class="small mb-0">
+                    Chưa có tài khoản? <a href="/Register/Index">Đăng ký ngay</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Nền sang trọng */
+    body {
+        background: linear-gradient(135deg, rgba(30, 60, 114, 0.95), rgba(42, 82, 152, 0.95)),
+            url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        background-attachment: fixed;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Hiệu ứng fade in */
+    .login-wrapper {
+        animation: fadeIn 1s ease-in-out;
+        padding: 1rem;
+    }
+
+    /* Card chính */
+    .login-card {
+        max-width: 420px;
+        border-radius: 25px;
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Ảnh chính giữa */
+    .image-wrapper {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #ffffff, #e0e0e0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        border: 4px solid #2a5298;
+    }
+
+    .login-image {
+        width: 85px;
+        height: 85px;
+        object-fit: contain;
+        filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.15));
+    }
+
+    /* Label và input */
+    .form-label {
+        font-weight: 500;
+        color: #2a2a2a;
+    }
+
+    .form-control {
+        border-radius: 14px;
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        background-color: #fdfdfd;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 8px rgba(42, 82, 152, 0.4);
+    }
+
+    /* Nút đăng nhập */
+    .btn-login {
+        background: linear-gradient(90deg, #1e3c72, #2a5298);
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 14px;
+        padding: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
+    }
+
+    .btn-login:hover {
+        background: linear-gradient(90deg, #2a5298, #1e3c72);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(42, 82, 152, 0.45);
+    }
+
+    /* Link đăng ký */
+    .register-redirect a {
+        color: #2a5298;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .register-redirect a:hover {
+        text-decoration: underline;
+        color: #1e3c72;
+    }
+
+    /* Hiệu ứng xuất hiện */
+    fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

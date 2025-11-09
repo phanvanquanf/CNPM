@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using hotels.Models;
 using X.PagedList;
 using X.PagedList.Extensions;
@@ -21,7 +22,7 @@ public class BookingController : Controller
     {
         var dp = _context.DatPhongs
                             .OrderBy(dp => dp.TrangThai)
-                            .ThenByDescending(dp => dp.IDMaDatPhong) 
+                            .ThenByDescending(dp => dp.IDMaDatPhong)
                             .ToPagedList(page, 8);
 
         if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
@@ -38,11 +39,9 @@ public class BookingController : Controller
         {
             return NotFound();
         }
-
         dp.TrangThai = trangThaiMoi;
 
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
-
 }
