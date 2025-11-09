@@ -34,12 +34,17 @@ public class BookingController : Controller
     [HttpPost]
     public IActionResult Confirm(long id, int trangThaiMoi)
     {
+        var idKhachHang = HttpContext.Session.GetInt32("IDKhachHang");
         var dp = _context.DatPhongs.Find(id);
         if (dp == null)
         {
             return NotFound();
         }
+
         dp.TrangThai = trangThaiMoi;
+
+        if (idKhachHang != null)
+            dp.IDKhachHang = idKhachHang.Value;
 
         _context.SaveChanges();
         return RedirectToAction("Index");

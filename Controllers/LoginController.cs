@@ -72,6 +72,12 @@ namespace hotels.Controllers
             HttpContext.Session.SetInt32("VaiTro", check.VaiTro);
             HttpContext.Session.SetInt32("IDTaiKhoan", (int)check.IDTaiKhoan);
 
+            var khachHang = check.KhachHangs?.FirstOrDefault();
+            if (khachHang != null)
+            {
+                HttpContext.Session.SetInt32("IDKhachHang", (int)khachHang.IDKhachHang);
+            }
+
             if (check.VaiTro == 0 || check.VaiTro == 2)
                 return RedirectToAction("Index", "Home", new { area = "Admin" });
             else
@@ -81,6 +87,8 @@ namespace hotels.Controllers
 
         public IActionResult Logout()
         {
+            HttpContext.Session.Clear();
+
             Functions._MaTaiKhoan = 0;
             Functions._TenDangNhap = string.Empty;
             Functions._TenNguoiDung = "Chưa đăng nhập";

@@ -35,6 +35,7 @@
                         <div class="form-container">
                             <form asp-action="BookingPost" asp-controller="Room" method="post" class="reservation-form">
                                 <div class="form-section">
+                                    <input type="hidden" name="IDKhachHang" value="@Context.Session.GetInt32("IDKhachHang")" />
                                     <h4>Chi tiết đặt phòng</h4>
                                     <div class="form-grid">
                                         <div class="form-group">

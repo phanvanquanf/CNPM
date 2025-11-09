@@ -18,7 +18,21 @@ namespace hotels.Controllers
 
         public IActionResult Profile()
         {
-            long userId = 1;
+            var idTaiKhoan = HttpContext.Session.GetInt32("IDTaiKhoan");
+            if (idTaiKhoan == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
+
+            var khachHang = _context.KhachHangs
+                .FirstOrDefault(kh => kh.IDTaiKhoan == idTaiKhoan);
+
+            if (khachHang == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
+
+            long userId = khachHang.IDKhachHang;
 
             var datPhongs = _context.DatPhongs
             .Include(dp => dp.CTDatPhongs!)

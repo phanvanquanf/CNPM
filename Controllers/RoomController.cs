@@ -46,11 +46,18 @@ namespace hotels.Controllers
         [HttpGet]
         public IActionResult Booking(int? type)
         {
-           var loaiPhongs = _context.LoaiPhongs.ToList();
-           ViewBag.LoaiPhongs = loaiPhongs;
-           ViewBag.SelectedLoaiPhong = type;
+            var loaiPhongs = _context.LoaiPhongs.ToList();
+            var idTaiKhoan = HttpContext.Session.GetInt32("IDTaiKhoan");
 
-            return View();        
+            if (idTaiKhoan == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            ViewBag.LoaiPhongs = loaiPhongs;
+            ViewBag.SelectedLoaiPhong = type;
+
+            return View();
         }
 
 
@@ -63,19 +70,19 @@ namespace hotels.Controllers
             var phong = _context.Phongs.FirstOrDefault(p => p.IDLoaiPhong == LoaiPhong);
 
             if (phong != null)
-        {
-            var ct = new tblCTDatPhong
             {
-                IDPhong = phong.IDPhong,
-                SoKhach = dp.TongSoKhach,
-                IDMaDatPhong = dp.IDMaDatPhong
-            };
+                var ct = new tblCTDatPhong
+                {
+                    IDPhong = phong.IDPhong,
+                    SoKhach = dp.TongSoKhach,
+                    IDMaDatPhong = dp.IDMaDatPhong
+                };
 
-            _context.CTDatPhongs.Add(ct);
-            _context.SaveChanges();
-        }
+                _context.CTDatPhongs.Add(ct);
+                _context.SaveChanges();
+            }
 
-            return RedirectToAction("BookingSuccess");        
+            return RedirectToAction("BookingSuccess");
         }
 
 
