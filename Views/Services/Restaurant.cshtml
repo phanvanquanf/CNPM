@@ -297,38 +297,49 @@
 </style>
 
 <script>
-    function formatCurrency(num) {
-        return num.toLocaleString('vi-VN') + ' đ';
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    const checkboxes = document.querySelectorAll(".dish-checkbox");
+    const qtyInputs = document.querySelectorAll(".dish-qty");
+    const grandTotalSpan = document.getElementById("grandTotal");
+    const grandTotalInput = document.getElementById("GrandTotalInput");
+
+    if (!form || checkboxes.length === 0) return;
 
     function updateTotals() {
         let grandTotal = 0;
-        document.querySelectorAll('.card').forEach(card => {
-            const checkbox = card.querySelector('.dish-checkbox');
-            const qtyInput = card.querySelector('.dish-qty');
+
+        checkboxes.forEach((chk, i) => {
+            const qtyInput = qtyInputs[i];
+            const card = chk.closest('.card');
             const totalEl = card.querySelector('.dish-total');
             const hiddenInput = card.querySelector('.dish-total-input');
 
-            if (checkbox.checked) {
-                const price = parseInt(qtyInput.dataset.price);
-                const qty = parseInt(qtyInput.value);
-                const total = price * qty;
-                totalEl.textContent = formatCurrency(total);
-                hiddenInput.value = total;
-                grandTotal += total;
-            } else {
-                totalEl.textContent = '0 đ';
-                hiddenInput.value = 0;
-            }
+            const price = parseInt(chk.dataset.price) || 0;
+            const qty = parseInt(qtyInput.value) || 0;
+            const total = chk.checked ? price * qty : 0;
+
+            totalEl.textContent = total.toLocaleString('vi-VN') + " đ";
+            hiddenInput.value = total;
+
+            grandTotal += total;
         });
 
-        document.getElementById('grandTotal').textContent = formatCurrency(grandTotal);
-        document.getElementById('GrandTotalInput').value = grandTotal;
+        grandTotalSpan.textContent = grandTotal.toLocaleString('vi-VN') + " đ";
+        grandTotalInput.value = grandTotal;
     }
 
-    document.querySelectorAll('.dish-checkbox, .dish-qty').forEach(el => {
-        el.addEventListener('change', updateTotals);
-    });
+    form.onsubmit = function(e) {
+        const anyChecked = Array.from(checkboxes).some(chk => chk.checked);
+        if (!anyChecked) {
+            e.preventDefault();
+            alert("⚠️ Vui lòng chọn ít nhất một món ăn trước khi đặt dịch vụ!");
+        }
+    };
 
-    window.addEventListener('load', updateTotals);
+    checkboxes.forEach(chk => chk.addEventListener('change', updateTotals));
+    qtyInputs.forEach(qty => qty.addEventListener('input', updateTotals));
+
+    updateTotals();
+});
 </script>
