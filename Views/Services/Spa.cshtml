@@ -1,6 +1,10 @@
-<main class="main">
+@model IList<hotels.Areas.Admin.Models.tblDichVu>
 
-    <!-- Tiêu đề trang -->
+@{
+    ViewBag.Title = "Dịch vụ Spa";
+}
+
+<main class="main">
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
             <h1 class="mb-2 mb-lg-0">Ưu đãi Spa</h1>
@@ -11,147 +15,258 @@
                 </ol>
             </nav>
         </div>
-    </div><!-- Kết thúc Tiêu đề trang -->
+    </div>
 
-    <!-- Phần Ưu đãi Spa -->
     <section id="offers" class="offers section">
-
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
             <div class="row gy-4">
 
-                <!-- Ưu đãi 1 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="offer-card">
-                        <div class="offer-image">
-                            <img src="~/assets/img/services/Spa/anh1.jpg" alt="Massage thư giãn" class="img-fluid">
-                            <div class="offer-badge">
-                                <span class="discount">GIẢM 30%</span>
-                            </div>
-                        </div>
-                        <div class="offer-content">
-                            <h3>Massage Thư Giãn Toàn Thân</h3>
-                            <p>Thư giãn cơ thể với liệu trình massage chuyên nghiệp, giảm căng thẳng, mệt mỏi, giúp bạn
-                                tái tạo năng lượng.</p>
-                            <div class="offer-details">
-                                <div class="price-info">
-                                    <span class="original-price">$80</span>
-                                    <span class="discounted-price">$56</span>
-                                    <span class="per-session">mỗi buổi</span>
-                                </div>
-                                <div class="validity">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <span>Có hiệu lực đến ngày 30 tháng 11 năm 2025</span>
+                @{
+                    int delay = 200;
+                    var offersLarge = Model.Take(2).ToList();
+                }
+                @foreach (var offer in offersLarge)
+                {
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="@delay">
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="~/assets/img/services/Spa/@offer.Image" alt="@offer.DichVu" class="img-fluid">
+                                <div class="offer-badge">
+                                    <span class="discount">ƯU ĐÃI</span>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary">Đặt ngay</a>
+                            <div class="offer-content">
+                                <h3>@offer.DichVu</h3>
+                                <p>@offer.MoTa</p>
+                                <div class="offer-details">
+                                    <div class="price-info">
+                                        <span class="discounted-price">@offer.GiaDichVu.ToString("N0") đ</span>
+                                        <span class="per-session">mỗi buổi</span>
+                                    </div>
+                                </div>
+                                <a href="#booking" class="btn btn-primary">Đặt ngay</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
 
-                <!-- Ưu đãi 2 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="offer-card">
-                        <div class="offer-image">
-                            <img src="~/assets/img/services/Spa/anh4.jpg" alt="Chăm sóc da mặt" class="img-fluid">
-                            <div class="offer-badge">
-                                <span class="discount">GIẢM 25%</span>
-                            </div>
-                        </div>
-                        <div class="offer-content">
-                            <h3>Chăm Sóc Da Mặt Deluxe</h3>
-                            <p>Liệu trình dưỡng da chuyên sâu với sản phẩm thiên nhiên giúp da sáng khỏe, mịn màng và
-                                trẻ trung hơn.</p>
-                            <div class="offer-details">
-                                <div class="price-info">
-                                    <span class="original-price">$100</span>
-                                    <span class="discounted-price">$75</span>
-                                    <span class="per-session">mỗi buổi</span>
-                                </div>
-                                <div class="validity">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <span>Có hiệu lực đến ngày 15 tháng 12 năm 2025</span>
+                @{
+                    delay = 400;
+                    var offersSmall = Model.Skip(2).Take(4).ToList();
+                }
+                @foreach (var offer in offersSmall)
+                {
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="@delay">
+                        <div class="offer-card compact">
+                            <div class="offer-image">
+                                <img src="~/assets/img/services/Spa/@offer.Image" alt="@offer.DichVu" class="img-fluid">
+                                <div class="offer-badge">
+                                    <span class="discount">ƯU ĐÃI</span>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary">Đặt ngay</a>
+                            <div class="offer-content">
+                                <h4>@offer.DichVu</h4>
+                                <p>@offer.MoTa</p>
+                                <div class="offer-details">
+                                    <div class="price-info">
+                                        <span class="discounted-price">@offer.GiaDichVu.ToString("N0") đ</span>
+                                        <span class="per-session">mỗi buổi</span>
+                                    </div>
+                                </div>
+                                <a href="#booking" class="btn btn-outline-primary">Đặt lịch</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Ưu đãi nhỏ 1 -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="offer-card compact">
-                        <div class="offer-image">
-                            <img src="~/assets/img/services/Spa/anh5.jpg" alt="Xông hơi" class="img-fluid">
-                            <div class="offer-badge">
-                                <span class="discount">MIỄN PHÍ</span>
-                            </div>
-                        </div>
-                        <div class="offer-content">
-                            <h4>Trải Nghiệm Xông Hơi</h4>
-                            <p>Miễn phí trải nghiệm xông hơi với mọi đặt lịch spa trên 2 giờ.</p>
-                            <div class="offer-details">
-                                <div class="validity">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <span>Ưu đãi có thời hạn</span>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-outline-primary">Đặt lịch</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ưu đãi nhỏ 2 -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="450">
-                    <div class="offer-card compact">
-                        <div class="offer-image">
-                            <img src="~/assets/img/services/Spa/anh6.jpg" alt="Tắm trắng" class="img-fluid">
-                            <div class="offer-badge">
-                                <span class="discount">GIẢM 40%</span>
-                            </div>
-                        </div>
-                        <div class="offer-content">
-                            <h4>Tắm Trắng & Dưỡng Thể</h4>
-                            <p>Ưu đãi đặc biệt giúp da trắng sáng, mịn màng, phục hồi sức sống cho làn da.</p>
-                            <div class="offer-details">
-                                <div class="validity">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <span>Chỉ áp dụng trong tuần</span>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-outline-primary">Đặt lịch</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ưu đãi nhỏ 3 -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="offer-card compact">
-                        <div class="offer-image">
-                            <img src="~/assets/img/services/Spa/anh7.jpg" alt="Gói đôi" class="img-fluid">
-                            <div class="offer-badge">
-                                <span class="discount">TIẾT KIỆM 50%</span>
-                            </div>
-                        </div>
-                        <div class="offer-content">
-                            <h4>Gói Spa Cho Cặp Đôi</h4>
-                            <p>Thư giãn cùng người thương với gói spa dành cho hai người, kèm massage và quà tặng đặc
-                                biệt.</p>
-                            <div class="offer-details">
-                                <div class="validity">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <span>Áp dụng cuối tuần</span>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-outline-primary">Đặt cho đôi</a>
-                        </div>
-                    </div>
-                </div>
+                }
 
             </div>
+        </div>
+    </section>
 
+    <section id="booking" class="section booking mt-5">
+        <div class="container section-title text-center" data-aos="fade-up">
+            <span class="description-title">Đặt trước</span>
+            <h2>Lên lịch đặt dịch vụ Spa</h2>
+            <p>Chọn liệu trình yêu thích và đặt lịch trước để chúng tôi chuẩn bị tốt nhất cho bạn.</p>
         </div>
 
-    </section><!-- Kết thúc Phần Ưu đãi Spa -->
+      <div class="container py-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-5 rounded-4 shadow-lg bg-light mx-auto" style="max-width: 950px;">
+                <h2 class="display-4 fw-bold text-center mb-5 text-primary">
+                    💆‍♀️ Đặt lịch Spa thư giãn
+                </h2>
 
+                <form asp-area="Admin" asp-action="BookingSpa" asp-controller="BookingServices" method="post" class="row g-4">
+                    <input type="hidden" name="IDTaiKhoan" value="@Context.Session.GetInt32("IDTaiKhoan")" />
+
+                    <!-- Ngày sử dụng -->
+                    <div class="col-md-6">
+                        <label for="NgaySuDung" class="form-label fw-semibold">
+                            <i class="bi bi-calendar-date me-2 text-success"></i>Ngày sử dụng
+                        </label>
+                        <input type="date" id="NgaySuDung" name="NgaySuDung" class="form-control form-control-lg"
+                            value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                    </div>
+
+                    <!-- Số người -->
+                    <div class="col-md-6">
+                        <label for="SoLuong" class="form-label fw-semibold">
+                            <i class="bi bi-people-fill me-2 text-secondary"></i>Số người
+                        </label>
+                        <input type="number" id="SoLuong" name="SoLuong" class="form-control form-control-lg"
+                            min="1" value="1" required />
+                    </div>
+
+                    <!-- Gói Spa -->
+                    <div class="col-12 mt-3">
+                        <h5 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-spa text-primary me-2"></i>Chọn gói Spa
+                        </h5>
+                       <div class="row g-4">
+                        @foreach (var spa in Model)
+                        {
+                            var price = spa.GiaUuDai > 0 && spa.GiaUuDai < spa.GiaDichVu
+                                ? spa.GiaUuDai
+                                : spa.GiaDichVu;
+
+                            <div class="col-lg-6 col-md-12">
+                                <div class="card border-0 shadow-sm h-100 spa-card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-3 mb-3">
+                                            <img src="~/assets/img/services/Spa/@spa.Image" alt="@spa.DichVu"
+                                                class="rounded" style="width: 90px; height: 90px; object-fit: cover;" />
+                                            <div class="flex-grow-1">
+                                                <div class="form-check">
+                                                    <input class="form-check-input spa-checkbox" type="checkbox"
+                                                        name="SelectedDishes[@spa.IDDichVu].IsSelected"
+                                                        id="spa_@spa.IDDichVu" value="true" data-price="@price" />
+                                                    <label class="form-check-label fw-bold" for="spa_@spa.IDDichVu">
+                                                        @spa.DichVu
+                                                    </label>
+                                                </div>
+                                                <small class="text-muted d-block mb-1">@spa.MoTa</small>
+                                                <span class="fw-bold text-success">@price?.ToString("N0") đ</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-2">
+                                            <label class="form-label small fw-semibold" for="qty_@spa.IDDichVu">
+                                                Số buổi
+                                            </label>
+                                            <input type="number" class="form-control spa-qty" min="1" value="1"
+                                                name="SelectedDishes[@spa.IDDichVu].Quantity"
+                                                id="qty_@spa.IDDichVu" data-price="@price" />
+                                        </div>
+
+                                        <div class="border-top pt-2 mt-2">
+                                            <strong>Thành tiền: </strong>
+                                            <span class="spa-total text-danger fw-bold" id="total_@spa.IDDichVu">0 đ</span>
+                                            <input type="hidden" name="SelectedDishes[@spa.IDDichVu].ThanhTien"
+                                                class="spa-total-input" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+
+                    <!-- Tổng cộng -->
+                    <div class="col-12 text-end mt-4 border-top pt-3">
+                        <h4 class="fw-bold text-dark">
+                            Tổng cộng: <span id="grandTotal" class="text-danger">0 đ</span>
+                        </h4>
+                        <input type="hidden" name="ThanhTien" id="GrandTotalInput" />
+                    </div>
+
+                    <!-- Giờ sử dụng -->
+                    <div class="col-md-6">
+                        <label for="GioSuDung" class="form-label fw-semibold">
+                            <i class="bi bi-clock me-2 text-info"></i>Giờ sử dụng
+                        </label>
+                        <input type="time" id="GioSuDung" name="GioSuDung" class="form-control form-control-lg" required />
+                    </div>
+
+                    <!-- Ghi chú -->
+                    <div class="col-12">
+                        <label for="GhiChu" class="form-label fw-semibold">
+                            <i class="bi bi-chat-left-text me-2 text-muted"></i>Ghi chú
+                        </label>
+                        <textarea id="GhiChu" name="GhiChu" class="form-control form-control-lg" rows="3"
+                                placeholder="VD: Muốn massage Thái, tinh dầu lavender,..."></textarea>
+                    </div>
+
+                    <!-- Nút gửi -->
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">
+                            <i class="bi bi-send-fill me-2"></i> Đặt lịch Spa
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form.booking-form");
+    const checkboxes = document.querySelectorAll(".spa-checkbox");
+    const qtyInputs = document.querySelectorAll(".spa-qty");
+    const totalSpans = document.querySelectorAll(".spa-total");
+    const totalInputs = document.querySelectorAll(".spa-total-input");
+    const grandTotalSpan = document.getElementById("grandTotal");
+    const grandTotalInput = document.getElementById("GrandTotalInput");
+
+    if (!form || checkboxes.length === 0) return;
+// Gắn sự kiện cho checkbox và số lượng
+    checkboxes.forEach(chk => chk.addEventListener("change", updateTotals));
+    qtyInputs.forEach(qty => qty.addEventListener("input", updateTotals));
+
+    // Chặn submit nếu không chọn checkbox nào
+    form.onsubmit = function (e) {
+        const anyChecked = Array.from(checkboxes).some(chk => chk.checked);
+        if (!anyChecked) {
+            e.preventDefault(); // chặn submit
+            alert("⚠️ Vui lòng chọn ít nhất một gói Spa trước khi đặt lịch!");
+            return false; // chắc chắn không submit
+        }
+    };
+    // Hàm tính tổng
+    function updateTotals() {
+        let grandTotal = 0;
+
+        checkboxes.forEach((chk, i) => {
+            const price = parseInt(chk.dataset.price) || 0;
+            const qty = parseInt(qtyInputs[i]?.value) || 0;
+            const total = chk.checked ? price * qty : 0;
+
+            if (totalSpans[i]) totalSpans[i].innerText = total.toLocaleString() + " đ";
+            if (totalInputs[i]) totalInputs[i].value = total;
+
+            grandTotal += total;
+        });
+
+        grandTotalSpan.innerText = grandTotal.toLocaleString() + " đ";
+        grandTotalInput.value = grandTotal;
+    }
+    // Cập nhật lần đầu
+    updateTotals();
+});
+</script>
+
+
+<style>
+.spa-card {
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+}
+.spa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+#grandTotal {
+    font-size: 1.5rem;
+}
+</style>

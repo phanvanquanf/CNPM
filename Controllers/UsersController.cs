@@ -21,7 +21,7 @@ namespace hotels.Controllers
             var idTaiKhoan = HttpContext.Session.GetInt32("IDTaiKhoan");
             if (idTaiKhoan == null)
             {
-                return RedirectToAction("Login", "Users");
+                return RedirectToAction("Index", "Login");
             }
 
             var khachHang = _context.KhachHangs
@@ -29,27 +29,37 @@ namespace hotels.Controllers
 
             if (khachHang == null)
             {
-                return RedirectToAction("Login", "Users");
+                return RedirectToAction("Index", "Login");
             }
 
             long userId = khachHang.IDKhachHang;
 
             var datPhongs = _context.DatPhongs
-            .Include(dp => dp.CTDatPhongs!)
-                .ThenInclude(ctdp => ctdp.Phong!)
-                    .ThenInclude(p => p.LoaiPhong!)
-            .Include(dp => dp.CTDatPhongs!)
-                .ThenInclude(ctdp => ctdp.Phong!)
-                    .ThenInclude(p => p.AnhPhongs!)
-            .Where(dp => dp.IDKhachHang == userId)
-            .OrderByDescending(dp => dp.NgayTao)
-            .ToList();
+                .Include(dp => dp.CTDatPhongs!)
+                    .ThenInclude(ctdp => ctdp.Phong!)
+                        .ThenInclude(p => p.LoaiPhong!)
+                .Include(dp => dp.CTDatPhongs!)
+                    .ThenInclude(ctdp => ctdp.Phong!)
+                        .ThenInclude(p => p.AnhPhongs!)
+                .Where(dp => dp.IDKhachHang == userId)
+                .OrderByDescending(dp => dp.NgayTao)
+                .ToList();
 
             var dpGanNhat = datPhongs.FirstOrDefault();
-
             ViewBag.dpGanNhat = dpGanNhat;
+
+            var lichSuDichVu = _context.DatDVs
+                .Include(d => d.DichVu!)
+                    .ThenInclude(dv => dv.LoaiDichVu!)
+                .Where(d => d.IDTaiKhoan == idTaiKhoan.Value)
+                .OrderByDescending(d => d.NgaySuDung)
+                .ToList();
+
+            ViewBag.LichSuDichVu = lichSuDichVu;
+
             return View(datPhongs);
         }
+
 
         [HttpGet]
         public IActionResult EditProfile()
@@ -189,6 +199,25 @@ namespace hotels.Controllers
                 .FirstOrDefault(k => k.IDKhachHang == model.IDKhachHang);
 
             return View(updatedKhachHang);
+        }
+
+        public IActionResult Cancel(long id)
+        {
+            var datDV = _context.DatDVs.Find(id);
+            if (datDV == null)
+            {
+                return NotFound();
+            }
+
+            if (datDV.TrangThai != 0)
+            {
+                return RedirectToAction("Profile", "Users");
+            }
+
+            datDV.TrangThai = 3;
+            _context.SaveChanges();
+
+            return RedirectToAction("Profile", "Users");
         }
     }
 }

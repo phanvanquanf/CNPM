@@ -25,5 +25,9 @@ namespace hotels.Models
         public DbSet<tblAnhPhong> AnhPhongs { get; set; }
         public DbSet<tblKhachHang> KhachHangs { get; set; }
 
+        public DbSet<tblLoaiDichVu> LoaiDichVus { get; set; }
+
+        public DbSet<tblDichVu> DichVus { get; set; }
+        public DbSet<tblDatDV> DatDVs { get; set; }
     }
 }

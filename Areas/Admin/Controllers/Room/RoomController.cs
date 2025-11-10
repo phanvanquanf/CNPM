@@ -26,6 +26,8 @@ namespace hotels.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Search(string keyword = "", string? status = "", int page = 1)
         {
+            ViewBag.LoaiPhong = new SelectList(_context.LoaiPhongs.ToList(), "IDLoaiPhong", "LoaiPhong");
+
             var query = _context.Phongs
                                 .Include(p => p.LoaiPhong)
                                 .Include(p => p.AnhPhongs)
@@ -118,9 +120,11 @@ namespace hotels.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(tblPhong phong, IFormFile AnhChinh, List<IFormFile> AnhPhuFiles)
         {
-            var listPhong = _context.Phongs
-                .Include(p => p.AnhPhongs)
+            var listPhong = _context.Phongs.Include(p => p.LoaiPhong)
+                                    .Include(p => p.AnhPhongs)
                 .FirstOrDefault(p => p.IDPhong == phong.IDPhong);
+
+            ViewBag.LoaiPhong = new SelectList(_context.LoaiPhongs.ToList(), "IDLoaiPhong", "LoaiPhong");
 
             if (listPhong == null)
                 return NotFound();

@@ -38,6 +38,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XF9EZWxldGVNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ksNet/hotels/Areas/Admin/Views/BookingServices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1NlcnZpY2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/BookingServices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1NlcnZpY2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/BookingServices/_BookingServicePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1NlcnZpY2VzXF9Cb29raW5nU2VydmljZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ksNet/hotels/Areas/Admin/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,6 +136,46 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ksNet/hotels/Areas/Admin/Views/Room/_RoomPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxfUm9vbVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/ServicesTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/ServicesTypes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/ServicesTypes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/ServicesTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/ServicesTypes/_servicesTypes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xfc2VydmljZXNUeXBlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/Services/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/Services/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/Services/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/Services/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Areas/Admin/Views/Services/_ServicesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcX1NlcnZpY2VzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ksNet/hotels/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
@@ -216,6 +268,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ksNet/hotels/Views/Services/Airport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQWlycG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ksNet/hotels/Views/Services/BookingSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQm9va2luZ1N1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ksNet/hotels/Views/Services/Events.cshtml]

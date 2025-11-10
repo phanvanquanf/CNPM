@@ -1,0 +1,56 @@
+<!-- Modal Chi tiết Dịch vụ -->
+<div class="modal fade" id="serviceDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content tw-rounded-xl tw-shadow-xl">
+            <!-- Ảnh chính -->
+            <div class="tw-w-full tw-h-64 md:tw-h-80 tw-bg-gray-100 tw-relative">
+                <img id="detail-service-image-main" src="" alt="Ảnh dịch vụ"
+                    class="tw-w-full tw-h-full tw-object-cover tw-rounded-t-xl">
+            </div>
+
+            <div class="modal-header tw-border-b tw-border-gray-200 tw-pt-4">
+                <h5 class="modal-title tw-font-semibold tw-text-xl">Chi tiết Dịch vụ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body tw-p-6 tw-space-y-6">
+                <!-- Thông tin cơ bản -->
+                <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4 tw-text-sm">
+                    <p><strong>ID Dịch vụ:</strong> <span id="detail-service-id" class="tw-font-medium"></span></p>
+                    <p><strong>Tên dịch vụ:</strong> <span id="detail-service-name" class="tw-font-medium"></span></p>
+                    <p><strong>Loại dịch vụ:</strong> <span id="detail-service-type" class="tw-font-medium"></span></p>
+                    <p><strong>Giá:</strong> <span id="detail-service-price" class="tw-font-medium"></span></p>
+                    <p><strong>Giá ưu đãi:</strong> <span id="detail-service-discount" class="tw-font-medium"></span>
+                    </p>
+                    <p><strong>Thời lượng:</strong> <span id="detail-service-duration" class="tw-font-medium"></span>
+                    </p>
+                    <p><strong>Đặc điểm:</strong> <span id="detail-service-feature" class="tw-font-medium"></span></p>
+                    <p><strong>Trạng thái:</strong> <span id="detail-service-status" class="tw-font-medium"></span></p>
+                </div>
+
+                <!-- Mô tả -->
+                <div>
+                    <strong>Mô tả:</strong>
+                    <p id="detail-service-description"
+                        class="tw-bg-gray-50 tw-p-3 tw-rounded-md tw-text-gray-700 tw-min-h-[2.5rem]"></p>
+                </div>
+
+                <!-- Ảnh phụ (nếu có nhiều ảnh khác) -->
+                <div id="detail-service-images" class="tw-flex tw-gap-3 tw-flex-wrap">
+                    <!-- JS sẽ load ảnh phụ tại đây -->
+                </div>
+
+                <!-- Ghi chú -->
+                <div>
+                    <strong>Ghi chú:</strong>
+                    <p id="detail-service-note"
+                        class="tw-bg-gray-50 tw-p-3 tw-rounded-md tw-text-gray-700 tw-min-h-[2.5rem]"></p>
+                </div>
+            </div>
+
+            <div class="modal-footer tw-justify-end tw-border-t tw-border-gray-200">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>

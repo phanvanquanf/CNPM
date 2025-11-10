@@ -1,6 +1,11 @@
+@model IList<hotels.Areas.Admin.Models.tblDichVu>
+
+@{
+    ViewBag.Title = "Dịch vụ Nhà hàng";
+}
+
 <main class="main">
 
-    <!-- Tiêu đề trang -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
             <h1 class="mb-2 mb-lg-0">Nhà hàng</h1>
@@ -11,14 +16,12 @@
                 </ol>
             </nav>
         </div>
-    </div><!-- Kết thúc Tiêu đề trang -->
+    </div>
 
-    <!-- Phần Nhà hàng -->
     <section id="restaurant" class="restaurant section">
-
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
             <div class="row g-5 align-items-center">
+
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="about-content">
                         <h2>Trải nghiệm Phong cách Độc đáo của Chúng tôi</h2>
@@ -74,191 +77,258 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu section mt-5">
+        <div class="container section-title text-center" data-aos="fade-up">
+            <span class="description-title">Thực đơn nhà hàng</span>
+            <h2>Khám phá các món ngon</h2>
+            <p>Thưởng thức các món ăn hấp dẫn, bổ dưỡng và phù hợp mọi khẩu vị, với nguyên liệu tươi ngon.</p>
         </div>
 
-    </section><!-- Kết thúc Phần Nhà hàng -->
-
-    <!-- Phần Thực đơn -->
-    <section id="menu" class="menu section">
-
-        <!-- Tiêu đề Phần -->
-        <div class="container section-title" data-aos="fade-up">
-            <span class="description-title">Thực đơn</span>
-            <h2>Thực đơn</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- Kết thúc Tiêu đề Phần -->
-
         <div class="container" data-aos="fade-up">
-
-            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-                <div class="menu-filters isotope-filters mb-5">
-                    <ul>
-                        <li data-filter="*" class="filter-active">Tất cả</li>
-                        <li data-filter=".filter-starters">Khai vị</li>
-                        <li data-filter=".filter-main">Món chính</li>
-                        <li data-filter=".filter-dessert">Tráng miệng</li>
-                        <li data-filter=".filter-drinks">Đồ uống</li>
-                    </ul>
-                </div>
-
-                <div class="menu-container isotope-container row gy-4">
-
-                    <!-- Các món thông thường -->
-                    <div class="col-lg-6 isotope-item filter-starters">
-                        <div class="menu-item d-flex align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/starter-2.webp" alt="Khai vị"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Bruschetta Trio <span class="menu-tag">Chay</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$8.95</div>
+            <div class="row g-4">
+                @foreach (var dish in Model)
+                {
+                    <div class="col-lg-6 col-md-12">
+                        <div class="menu-card shadow-sm rounded overflow-hidden d-flex gap-3 align-items-center p-3">
+                            <div class="menu-image position-relative" style="flex: 0 0 150px;">
+                                <img src="~/assets/img/services/Nhà hàng/@dish.Image" alt="@dish.DichVu"
+                                    class="img-fluid rounded">
+                                @if (dish.GiaUuDai.HasValue && dish.GiaUuDai < dish.GiaDichVu)
+                                {
+                                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                                }
+                            </div>
+                            <div class="menu-content" style="flex: 1;">
+                                <h5 class="mb-1">@dish.DichVu</h5>
+                                <p class="text-muted mb-2">@dish.MoTa</p>
+                                <div class="menu-price d-flex align-items-center gap-2">
+                                    @if (dish.GiaUuDai.HasValue && dish.GiaUuDai < dish.GiaDichVu)
+                                    {
+                                        <span class="text-decoration-line-through text-muted">@dish.GiaDichVu.ToString("N0")
+                                            đ</span>
+                                        <span class="fw-bold text-primary">@dish.GiaUuDai.Value.ToString("N0") đ</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="fw-bold text-dark">@dish.GiaDichVu.ToString("N0") đ</span>
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 isotope-item filter-starters">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/starter-5.webp" alt="Khai vị"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Calamari Fritti <span class="menu-tag">Hải sản</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$10.95</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 isotope-item filter-main">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/main-1.webp" alt="Món chính"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Risotto Nấm Rừng <span class="menu-tag">Chay</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$18.95</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 isotope-item filter-main">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/main-4.webp" alt="Món chính"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Sườn Cừu Om <span class="menu-tag">Lựa chọn của Đầu bếp</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$26.95</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 isotope-item filter-dessert">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/dessert-2.webp" alt="Tráng miệng"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Bánh Lava Sô-cô-la <span class="menu-tag">Không Gluten</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$9.95</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 isotope-item filter-dessert">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/dessert-7.webp" alt="Tráng miệng"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Tiramisu <span class="menu-tag">Cổ điển</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$8.95</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 isotope-item filter-drinks">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/drink-3.webp" alt="Đồ uống"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Cocktail Đặc trưng <span class="menu-tag">Có cồn</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$12.95</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 isotope-item filter-drinks">
-                        <div class="d-flex menu-item align-items-center gap-4">
-                            <img src="~/assets/img/restaurant/drink-8.webp" alt="Đồ uống"
-                                class="menu-img img-fluid rounded-3">
-                            <div class="menu-content">
-                                <h5>Sinh tố Dâu <span class="menu-tag">Không cồn</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur sed.</p>
-                                <div class="price">$7.95</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                }
             </div>
 
             <div class="text-center mt-5" data-aos="fade-up">
-                <a href="#" class="download-menu">
-                    <i class="bi bi-file-earmark-pdf"></i> Tải xuống Thực đơn Đầy đủ
+                <a href="#" class="btn btn-outline-primary d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-file-earmark-pdf"></i> Tải xuống Thực đơn đầy đủ
                 </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Món Đặc biệt của Đầu bếp -->
-            <div class="col-12 mt-5" data-aos="fade-up">
-                <div class="specials-badge">
-                    <span><i class="bi bi-award"></i> Món Đặc biệt của Đầu bếp</span>
-                </div>
-                <div class="specials-container">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="menu-item special-item">
-                                <div class="menu-item-img">
-                                    <img src="~/assets/img/restaurant/main-3.webp" alt="Món Đặc biệt" class="img-fluid">
-                                    <div class="menu-item-badges">
-                                        <span class="badge-special">Đặc biệt</span>
-                                        <span class="badge-vegan">Chay</span>
-                                    </div>
-                                </div>
-                                <div class="menu-item-content">
-                                    <h4>Cá Hồi Nướng Địa Trung Hải</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut aliquam
-                                        metus. Vivamus fermentum magna quis.</p>
-                                    <div class="menu-item-price">$24.99</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="menu-item special-item">
-                                <div class="menu-item-img">
-                                    <img src="~/assets/img/restaurant/main-7.webp" alt="Món Đặc biệt" class="img-fluid">
-                                    <div class="menu-item-badges">
-                                        <span class="badge-special">Đặc biệt</span>
-                                        <span class="badge-spicy">Cay</span>
-                                    </div>
-                                </div>
-                                <div class="menu-item-content">
-                                    <h4>Bít tết Ribeye Đặc trưng</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam accumsan risus ut
-                                        dui pretium, eget elementum nisi.</p>
-                                    <div class="menu-item-price">$32.99</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <section id="booking" class="section booking mt-5">
+        <div class="container section-title text-center" data-aos="fade-up">
+            <span class="description-title">Đặt trước</span>
+            <h2>Lên lịch đặt dịch vụ Nhà hàng</h2>
+            <p>Chọn món yêu thích và đặt trước để chúng tôi chuẩn bị tốt nhất cho bạn.</p>
         </div>
 
-    </section><!-- Kết thúc Phần Thực đơn -->
+       <div class="container py-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-5 rounded-4 shadow-lg bg-light mx-auto" style="max-width: 950px;">
+                <h2 class="display-4 fw-bold text-center mb-5 text-primary">
+                    🍽️ Đặt món ăn nhà hàng
+                </h2>
 
+                <form asp-area="Admin" asp-action="Booking" asp-controller="BookingServices" method="post" class="row g-4">
+                    <input type="hidden" name="IDTaiKhoan" value="@Context.Session.GetInt32("IDTaiKhoan")" />
+
+                    <!-- Ngày sử dụng -->
+                    <div class="col-md-6">
+                        <label for="NgaySuDung" class="form-label fw-semibold">
+                            <i class="bi bi-calendar-date me-2 text-success"></i>Ngày sử dụng
+                        </label>
+                        <input type="date" id="NgaySuDung" name="NgaySuDung" class="form-control form-control-lg"
+                            value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                    </div>
+
+                    <!-- Số hành khách -->
+                    <div class="col-md-6">
+                        <label for="SoHanhKhach" class="form-label fw-semibold">
+                            <i class="bi bi-people-fill me-2 text-secondary"></i>Số hành khách
+                        </label>
+                        <input type="number" id="SoHanhKhach" name="SoHanhKhach"
+                            class="form-control form-control-lg" placeholder="VD: 4" min="1" value="1" required />
+                    </div>
+
+                    <!-- Danh sách món ăn -->
+                    <div class="col-12 mt-3">
+                        <h5 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-list-check text-primary me-2"></i>Chọn món ăn
+                        </h5>
+
+                        <div class="row g-4">
+                            @foreach (var dish in Model)
+                            {
+                                var price = dish.GiaUuDai.HasValue && dish.GiaUuDai < dish.GiaDichVu
+                                    ? dish.GiaUuDai.Value
+                                    : dish.GiaDichVu;
+
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="card border-0 shadow-sm h-100 dish-card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center gap-3 mb-3">
+                                                <img src="~/assets/img/services/Nhà hàng/@dish.Image"
+                                                    alt="@dish.DichVu"
+                                                    class="rounded"
+                                                    style="width: 90px; height: 90px; object-fit: cover;" />
+                                                <div class="flex-grow-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input dish-checkbox" type="checkbox"
+                                                            name="SelectedDishes[@dish.IDDichVu].IsSelected"
+                                                            id="dish_@dish.IDDichVu" value="true"
+                                                            data-price="@price" />
+                                                        <label class="form-check-label fw-bold" for="dish_@dish.IDDichVu">
+                                                            @dish.DichVu
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted d-block mb-1">@dish.MoTa</small>
+                                                    <span class="fw-bold text-success">@price.ToString("N0") đ</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-2">
+                                                <label class="form-label small fw-semibold" for="qty_@dish.IDDichVu">
+                                                    Số lượng
+                                                </label>
+                                                <input type="number" class="form-control dish-qty" min="1" value="1"
+                                                    name="SelectedDishes[@dish.IDDichVu].Quantity"
+                                                    id="qty_@dish.IDDichVu" data-price="@price" />
+                                            </div>
+
+                                            <div class="border-top pt-2 mt-2">
+                                                <strong>Thành tiền:</strong>
+                                                <span class="dish-total text-danger fw-bold" id="total_@dish.IDDichVu">0 đ</span>
+                                                <input type="hidden" name="SelectedDishes[@dish.IDDichVu].ThanhTien"
+                                                    class="dish-total-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Tổng cộng -->
+                    <div class="col-12 text-end mt-4 border-top pt-3">
+                        <h4 class="fw-bold text-dark">
+                            Tổng cộng: <span id="grandTotal" class="text-danger">0 đ</span>
+                        </h4>
+                        <input type="hidden" name="ThanhTien" id="GrandTotalInput" />
+                    </div>
+
+                    <!-- Ghi chú -->
+                    <div class="col-12">
+                        <label for="GhiChu" class="form-label fw-semibold">
+                            <i class="bi bi-chat-left-text me-2 text-muted"></i>Ghi chú (nếu có)
+                        </label>
+                        <textarea id="GhiChu" name="GhiChu" class="form-control form-control-lg" rows="3"
+                                placeholder="VD: Không cay, nhiều rau, ..."></textarea>
+                    </div>
+
+                    <!-- Giờ sử dụng -->
+                    <div class="col-md-6">
+                        <label for="GioSuDung" class="form-label fw-semibold">
+                            <i class="bi bi-clock me-2 text-info"></i>Giờ sử dụng
+                        </label>
+                        <input type="time" id="GioSuDung" name="GioSuDung" class="form-control form-control-lg" required />
+                    </div>
+
+                    <!-- Nút gửi -->
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">
+                            <i class="bi bi-send-fill me-2"></i> Đặt dịch vụ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </main>
+
+<style>
+    .dish-card {
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        border-radius: 1rem;
+    }
+    .dish-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    #grandTotal {
+        font-size: 1.5rem;
+    }
+    .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .menu-card img {
+        width: 150px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .booking-form {
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    }
+
+    .booking-form .form-label {
+        font-weight: 500;
+    }
+</style>
+
+<script>
+    function formatCurrency(num) {
+        return num.toLocaleString('vi-VN') + ' đ';
+    }
+
+    function updateTotals() {
+        let grandTotal = 0;
+        document.querySelectorAll('.card').forEach(card => {
+            const checkbox = card.querySelector('.dish-checkbox');
+            const qtyInput = card.querySelector('.dish-qty');
+            const totalEl = card.querySelector('.dish-total');
+            const hiddenInput = card.querySelector('.dish-total-input');
+
+            if (checkbox.checked) {
+                const price = parseInt(qtyInput.dataset.price);
+                const qty = parseInt(qtyInput.value);
+                const total = price * qty;
+                totalEl.textContent = formatCurrency(total);
+                hiddenInput.value = total;
+                grandTotal += total;
+            } else {
+                totalEl.textContent = '0 đ';
+                hiddenInput.value = 0;
+            }
+        });
+
+        document.getElementById('grandTotal').textContent = formatCurrency(grandTotal);
+        document.getElementById('GrandTotalInput').value = grandTotal;
+    }
+
+    document.querySelectorAll('.dish-checkbox, .dish-qty').forEach(el => {
+        el.addEventListener('change', updateTotals);
+    });
+
+    window.addEventListener('load', updateTotals);
+</script>

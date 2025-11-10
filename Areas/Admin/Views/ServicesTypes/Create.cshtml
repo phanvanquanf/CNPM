@@ -1,0 +1,69 @@
+<div class="modal fade" id="addServiceTypeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <!-- Header -->
+            <div class="tw-bg-success tw-relative tw-px-6 tw-py-4">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="plus-circle" class="tw-w-6 tw-h-6 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold tw-text-lg">
+                        Thêm loại dịch vụ mới
+                    </h5>
+                </div>
+
+                <button type="button" class="btn-close tw-absolute tw-top-3 tw-right-3 tw-bg-white/30 tw-rounded-full
+                     tw-p-2 hover:tw-bg-white/50 tw-transition tw-z-50 tw-shadow-md" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <!-- Form -->
+            <form id="addServiceTypeForm" method="post" asp-area="Admin" asp-controller="ServicesTypes"
+                asp-action="Create">
+                <div class="modal-body tw-space-y-6 tw-bg-white tw-px-8 tw-py-6">
+
+                    <!-- Thông tin loại dịch vụ -->
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Thông tin loại dịch vụ
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-1 tw-gap-5 tw-mt-4">
+                            <div>
+                                <label for="service-type-name" class="tw-font-medium tw-text-gray-700">Tên loại dịch
+                                    vụ</label>
+                                <input type="text" id="service-type-name" name="LoaiDichVu" class="form-control tw-mt-1"
+                                    placeholder="Nhập tên loại dịch vụ..." required />
+                                <span class="text-danger" id="error-LoaiDichVu"></span>
+                            </div>
+
+                            <div>
+                                <label for="service-type-description" class="tw-font-medium tw-text-gray-700">Mô
+                                    tả</label>
+                                <textarea id="service-type-description" name="Mota" class="form-control tw-mt-1"
+                                    rows="3" placeholder="Nhập mô tả loại dịch vụ..." required></textarea>
+                                <span class="text-danger" id="error-Mota"></span>
+                            </div>
+
+                            <div>
+                                <label for="service-type-status" class="tw-font-medium tw-text-gray-700">Trạng
+                                    thái</label>
+                                <select id="service-type-status" name="TrangThai" class="form-select tw-mt-1">
+                                    <option value="0">Còn hoạt động</option>
+                                    <option value="1">Ngừng hoạt động</option>
+                                </select>
+                                <span class="text-danger" id="error-TrangThai"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Thêm loại dịch vụ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

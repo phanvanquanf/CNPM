@@ -1,0 +1,128 @@
+<!-- Edit Modal - Dịch vụ -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <!-- Header -->
+            <div class="tw-bg-primary tw-relative tw-px-6 tw-py-4">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="edit-3" class="tw-w-6 tw-h-6 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold tw-text-lg">
+                        Chỉnh sửa thông tin dịch vụ
+                    </h5>
+                </div>
+                <button type="button" class="btn-close tw-absolute tw-top-3 tw-right-3 tw-bg-white/30 tw-rounded-full
+                    tw-p-2 hover:tw-bg-white/50 tw-transition tw-z-50 tw-shadow-md" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <!-- Form -->
+            <form id="editForm" method="post" asp-area="Admin" asp-controller="Services" asp-action="Edit"
+                enctype="multipart/form-data">
+                <input type="hidden" name="IDDichVu" id="edit-id" />
+                <input type="hidden" id="edit-image-link" name="Image" />
+
+                <div class="modal-body tw-space-y-8 tw-bg-white tw-px-8 tw-py-6">
+
+                    <!-- Ảnh dịch vụ -->
+                    <div
+                        class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5 tw-space-y-4">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Hình ảnh dịch vụ
+                        </h6>
+
+                        <div
+                            class="tw-flex tw-flex-col tw-items-center tw-gap-3 tw-bg-white tw-p-4 tw-rounded-lg tw-shadow-sm">
+                            <label class="tw-font-medium tw-text-gray-700">Ảnh dịch vụ</label>
+                            <img id="edit-preview-image" src="" alt="Ảnh dịch vụ"
+                                class="tw-w-60 tw-h-40 tw-object-cover tw-rounded-xl tw-border tw-border-gray-300 tw-shadow-sm hover:tw-scale-[1.02] tw-transition" />
+                            <input type="file" id="edit-image" name="ImageFile" accept="image/*"
+                                class="form-control tw-text-sm tw-mt-2" />
+                            <small id="edit-image-path"
+                                class="tw-text-xs tw-text-gray-500 tw-break-all tw-text-center tw-max-w-[14rem]">
+                                Chưa có đường dẫn
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Thông tin dịch vụ -->
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Thông tin dịch vụ
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-5 tw-mt-4">
+                            <div>
+                                <label for="edit-dichvu" class="tw-font-medium tw-text-gray-700">Tên dịch vụ</label>
+                                <input type="text" id="edit-dichvu" name="DichVu" class="form-control tw-mt-1"
+                                    placeholder="Nhập tên dịch vụ..." required />
+                            </div>
+
+                            <div>
+                                <label for="edit-giadv" class="tw-font-medium tw-text-gray-700">Giá dịch vụ
+                                    (VNĐ)</label>
+                                <input type="number" id="edit-giadv" name="GiaDichVu" class="form-control tw-mt-1"
+                                    placeholder="Nhập giá dịch vụ..." required />
+                            </div>
+
+                            <div>
+                                <label for="edit-giauudai" class="tw-font-medium tw-text-gray-700">Giá ưu đãi
+                                    (VNĐ)</label>
+                                <input type="number" id="edit-giauudai" name="GiaUuDai" class="form-control tw-mt-1"
+                                    placeholder="Nhập giá ưu đãi (nếu có)" />
+                            </div>
+
+                            <div>
+                                <label for="edit-thoiluong" class="tw-font-medium tw-text-gray-700">Thời lượng
+                                    (phút)</label>
+                                <input type="number" id="edit-thoiluong" name="ThoiLuong" class="form-control tw-mt-1"
+                                    placeholder="Nhập thời lượng dịch vụ..." />
+                            </div>
+
+                            <div>
+                                <label for="edit-dacdiem" class="tw-font-medium tw-text-gray-700">Đặc điểm</label>
+                                <input type="text" id="edit-dacdiem" name="DacDiem" class="form-control tw-mt-1"
+                                    placeholder="Nhập đặc điểm dịch vụ..." />
+                            </div>
+
+                            <div>
+                                <label for="edit-idloaidv" class="tw-font-medium tw-text-gray-700">Loại dịch vụ</label>
+                                <select id="edit-idloaidv" name="IDLoaiDichVu" class="form-select tw-mt-1"
+                                    asp-items="ViewBag.LoaiDichVu">
+                                    <option value="">-- Chọn loại dịch vụ --</option>
+                                </select>
+                            </div>
+
+                            <div class="tw-col-span-2">
+                                <label for="edit-mota" class="tw-font-medium tw-text-gray-700">Mô tả</label>
+                                <textarea id="edit-mota" name="MoTa" rows="3" class="form-control tw-mt-1"
+                                    placeholder="Nhập mô tả chi tiết về dịch vụ..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trạng thái -->
+                    <div
+                        class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5 tw-flex tw-items-center tw-justify-between">
+                        <label for="edit-trangthai" class="tw-font-semibold tw-text-gray-700 tw-text-base">
+                            Trạng thái dịch vụ
+                        </label>
+                        <select id="edit-trangthai" name="TrangThai"
+                            class="form-select tw-w-1/3 tw-text-gray-700 tw-font-medium">
+                            <option value="0">Còn hoạt động</option>
+                            <option value="1">Không hoạt động</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer tw-bg-gray-100 tw-border-t tw-py-4 tw-px-6 tw-flex tw-justify-end tw-gap-3">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

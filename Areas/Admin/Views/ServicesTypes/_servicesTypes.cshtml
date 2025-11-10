@@ -1,0 +1,110 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Areas.Admin.Models.tblLoaiDichVu>
+
+<div id="serviceType-container">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        @if (ViewBag.Message != null)
+        {
+            <div class="tw-text-center tw-text-sm tw-text-neutral-500 tw-py-6">
+                @ViewBag.Message
+            </div>
+        }
+        else
+        {
+            <table class="tw-min-w-full">
+                <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                    <tr class="tw-bg-neutral-50 tw-text-center">
+                        <th class="tw-px-4 tw-py-3">#</th>
+                        <th class="tw-px-4 tw-py-3">Tên loại dịch vụ</th>
+                        <th class="tw-px-4 tw-py-3">Mô tả</th>
+                        <th class="tw-px-4 tw-py-3">Trạng thái</th>
+                        <th class="tw-px-4 tw-py-3">Chức năng</th>
+                    </tr>
+                </thead>
+
+                <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                    @foreach (var item in Model.Select((st, index) => new { st, index }))
+                    {
+                        <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80 hover:tw-bg-gray-50/40">
+                            <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                            <td class="tw-px-4 tw-py-3 tw-font-medium">@item.st.LoaiDichVu</td>
+                            <td class="tw-px-4 tw-py-3">@item.st.MoTa</td>
+                            <td class="tw-px-4 tw-py-3">
+                                @if (item.st.TrangThai == 0)
+                                {
+                                    <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-green-100 tw-text-green-500">
+                                        Còn hoạt động
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-red-100 tw-text-red-500">
+                                        Ngừng hoạt động
+                                    </span>
+                                }
+                            </td>
+                            <td class="tw-px-4 tw-py-3">
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu !tw-text-xs">
+                                        <button class="dropdown-item edit-btn"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#editServiceTypeModal"
+                                                data-id="@item.st.IDLoaiDichVu"
+                                                data-name="@item.st.LoaiDichVu"
+                                                data-mota="@item.st.MoTa"
+                                                data-trangthai="@item.st.TrangThai">
+                                            <i class="bx bx-edit-alt me-2"></i> Sửa
+                                        </button>
+
+                                        <button class="dropdown-item delete-btn"
+                                                data-id="@item.st.IDLoaiDichVu"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal">
+                                            <i class="bx bx-trash me-2"></i> Xóa
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @await Html.PartialAsync("Create")
+            @await Html.PartialAsync("Edit")
+            @await Html.PartialAsync("Delete")
+        }
+    </div>
+
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-6 tw-text-sm">
+        <button id="prevPage"
+                class="tw-pr-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
+                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+                data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button class="tw-w-8 tw-h-8 tw-rounded tw-font-medium
+                 @(i == Model.PageNumber ? "tw-bg-indigo-600 tw-text-white" : "tw-text-gray-600 tw-hover:bg-indigo-50 tw-transition")"
+                        data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+                class="tw-pl-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
+                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+                data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>

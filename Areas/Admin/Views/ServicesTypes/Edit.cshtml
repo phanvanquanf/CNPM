@@ -1,0 +1,66 @@
+<!-- Edit Modal - Loại dịch vụ -->
+<div class="modal fade" id="editServiceTypeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content tw-rounded-2xl tw-shadow-2xl overflow-visible">
+
+            <!-- Header -->
+            <div class="tw-bg-primary tw-relative tw-px-6 tw-py-4">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="edit-3" class="tw-w-6 tw-h-6 tw-text-white"></i>
+                    <h5 class="modal-title tw-text-white tw-font-semibold tw-text-lg">
+                        Chỉnh sửa loại dịch vụ
+                    </h5>
+                </div>
+                <button type="button" class="btn-close tw-absolute tw-top-3 tw-right-3 tw-bg-white/30 tw-rounded-full
+                    tw-p-2 hover:tw-bg-white/50 tw-transition tw-z-50 tw-shadow-md" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <!-- Form -->
+            <form id="editServiceTypeForm" method="post" asp-area="Admin" asp-controller="ServicesTypes"
+                asp-action="Edit">
+                <input type="hidden" name="IDLoaiDichVu" id="edit-id" />
+
+                <div class="modal-body tw-space-y-6 tw-bg-white tw-px-8 tw-py-6">
+
+                    <!-- Thông tin loại dịch vụ -->
+                    <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-5">
+                        <h6
+                            class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-2">
+                            Thông tin loại dịch vụ
+                        </h6>
+
+                        <div class="tw-grid tw-grid-cols-1 tw-gap-5 tw-mt-4">
+                            <div>
+                                <label for="edit-loaidv" class="tw-font-medium tw-text-gray-700">Tên loại dịch
+                                    vụ</label>
+                                <input type="text" id="edit-loaidv" name="LoaiDichVu" class="form-control tw-mt-1"
+                                    placeholder="Nhập tên loại dịch vụ..." required />
+                            </div>
+
+                            <div>
+                                <label for="edit-mota" class="tw-font-medium tw-text-gray-700">Mô tả</label>
+                                <textarea id="edit-mota" name="Mota" rows="3" class="form-control tw-mt-1"
+                                    placeholder="Nhập mô tả loại dịch vụ..."></textarea>
+                            </div>
+
+                            <div>
+                                <label for="edit-trangthai" class="tw-font-medium tw-text-gray-700">Trạng thái</label>
+                                <select id="edit-trangthai" name="TrangThai" class="form-select tw-mt-1">
+                                    <option value="0">Còn hoạt động</option>
+                                    <option value="1">Ngừng hoạt động</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer tw-bg-gray-100 tw-border-t tw-py-4 tw-px-6 tw-flex tw-justify-end tw-gap-3">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

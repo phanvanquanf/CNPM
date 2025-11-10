@@ -1,4 +1,5 @@
 @model IList<tblDatPhong>
+@using hotels.Areas.Admin.Models
 @using hotels.Utilities;
 @{
     ViewBag.Title = "Hồ Sơ Cá Nhân";
@@ -217,7 +218,127 @@
                 </tbody>
             </table>
         </div>
+    </section>
+    <!-- Service Booking History -->
+    <!-- Service Booking History -->
+    <section class="tw-col-span-12 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5 tw-mt-6">
+        <div class="tw-flex tw-justify-between tw-mb-3">
+            <p class="tw-font-semibold tw-text-sm">Lịch Sử Đặt Dịch Vụ</p>
+            <input type="text" placeholder="Tìm kiếm..." class="tw-border tw-rounded-lg tw-px-3 tw-py-1 tw-text-sm"
+                id="searchServiceInput" />
+        </div>
 
+        <div class="tw-overflow-x-auto tw-rounded-lg">
+            <table class="tw-w-full tw-text-xs tw-text-left tw-border-collapse">
+                <thead class="tw-bg-gray-50 tw-text-neutral-500 tw-text-center">
+                    <tr>
+                        <th class="tw-py-3 tw-px-4 tw-w-[10%]">Hình Ảnh</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[12%]">Dịch Vụ</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[10%]">Ngày Sử Dụng</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[8%]">Giờ Sử Dụng</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[8%]">Số Lượng</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[10%]">Đơn Giá</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[10%]">Thành Tiền</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[10%]">Trạng Thái</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[12%]">Ghi Chú</th>
+                        <th class="tw-py-3 tw-px-4 tw-w-[10%]">Hành Động</th>
+                    </tr>
+                </thead>
 
+                <tbody class="tw-text-gray-700 tw-text-sm tw-text-center">
+                    @if (ViewBag.LichSuDichVu != null && ((IList<tblDatDV>)ViewBag.LichSuDichVu).Any())
+                    {
+                        var lichSuDV = (IList<tblDatDV>)ViewBag.LichSuDichVu;
+
+                        var nhomTheoLoai = lichSuDV
+                        .Where(d => d.DichVu?.LoaiDichVu != null)
+                        .GroupBy(d => d.DichVu?.LoaiDichVu?.LoaiDichVu)
+                        .OrderBy(g => g.Key);
+
+                        foreach (var group in nhomTheoLoai)
+                        {
+                            <tr class="tw-bg-gray-100 tw-text-gray-800 tw-font-semibold">
+                                <td colspan="10" class="tw-text-left tw-pl-4 tw-py-2 tw-text-base tw-uppercase">
+                                    @group.Key
+                                </td>
+                            </tr>
+
+                            @foreach (var dv in group)
+                            {
+                                <tr class="hover:tw-bg-gray-50">
+                                    <td class="tw-py-3 tw-px-4">
+                                        <img src="~/assets/img/services/@dv.DichVu?.LoaiDichVu?.LoaiDichVu/@dv.DichVu?.Image"
+                                            alt="@dv.DichVu?.DichVu"
+                                            class="tw-h-14 tw-w-20 tw-object-cover tw-rounded-lg mx-auto" />
+                                    </td>
+                                    <td class="tw-py-3 tw-px-4">@dv.DichVu?.DichVu</td>
+                                    <td class="tw-py-3 tw-px-4">@dv.NgaySuDung.ToString("dd/MM/yyyy")</td>
+                                    <td class="tw-py-3 tw-px-4">
+                                        @((dv.GioSuDung.HasValue) ? dv.GioSuDung.Value.ToString(@"hh\:mm") : "-")
+                                    </td>
+                                    <td class="tw-py-3 tw-px-4">@dv.SoLuong</td>
+                                    <td class="tw-py-3 tw-px-4">@dv.DichVu?.GiaDichVu.ToString("N0") đ</td>
+                                    <td class="tw-py-3 tw-px-4">@dv.ThanhTien.ToString("N0") đ</td>
+                                    <td class="tw-py-3 tw-px-4">
+                                        @switch (dv.TrangThai)
+                                        {
+                                            case 0:
+                                                <span
+                                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-orange-100 tw-text-orange-400">
+                                                    Chờ xác nhận
+                                                </span>
+                                                break;
+                                            case 1:
+                                                <span
+                                                    class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium tw-bg-green-100 tw-text-green-400">
+                                                    Đã xác nhận
+                                                </span>
+                                                break;
+                                            case 2:
+                                                <span
+                                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-gray-100 tw-text-gray-400">
+                                                    Đã thanh toán
+                                                </span>
+                                                break;
+                                            case 3:
+                                                <span
+                                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-blue-100 tw-text-blue-400">
+                                                    Hủy
+                                                </span>
+                                                break;
+                                        }
+                                    </td>
+                                    <td class="tw-py-3 tw-px-4">@dv.GhiChu</td>
+                                    <td class="tw-py-3 tw-px-4">
+                                        @if (dv.TrangThai == 0)
+                                        {
+                                            <form method="post" asp-controller="Users" asp-action="Cancel"
+                                                onsubmit="return confirm('Bạn có chắc muốn hủy dịch vụ này không?');">
+                                                <input type="hidden" name="id" value="@dv.IDDatDichVu" />
+                                                <button type="submit"
+                                                    class="tw-bg-red-500 tw-text-white tw-px-3 tw-py-1 tw-rounded-md hover:tw-bg-red-600">
+                                                    Hủy
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <span class="tw-text-gray-400">-</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="10" class="tw-text-center tw-py-4">Bạn chưa đặt dịch vụ nào</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
     </section>
 </main>

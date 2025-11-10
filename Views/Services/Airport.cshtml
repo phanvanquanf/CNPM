@@ -1,6 +1,10 @@
+@model IList<hotels.Areas.Admin.Models.tblDichVu>
+@{
+    ViewBag.TiTle = "Dịch vụ Đưa đón sân bay";
+}
+
 <main class="main">
 
-    <!-- Tiêu đề trang -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
             <h1 class="mb-2 mb-lg-0">Dịch vụ Đưa đón Sân bay</h1>
@@ -11,9 +15,8 @@
                 </ol>
             </nav>
         </div>
-    </div><!-- Kết thúc Tiêu đề trang -->
+    </div>
 
-    <!-- Giới thiệu dịch vụ -->
     <section id="shuttle-service" class="section shuttle-service">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-5 align-items-center">
@@ -58,9 +61,8 @@
                 </div>
             </div>
         </div>
-    </section><!-- Kết thúc Giới thiệu dịch vụ -->
+    </section>
 
-    <!-- Các gói xe -->
     <section id="car-types" class="section car-types">
         <div class="container section-title" data-aos="fade-up">
             <span class="description-title">Loại xe</span>
@@ -71,125 +73,165 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
-                <!-- Toyota -->
-                <div class="col-md-3">
-                    <div class="car-card text-center p-4 rounded shadow-sm">
-                        <img src="~/assets/img/services/Shuttle/toyota.jpg" alt="Toyota" class="img-fluid mb-3 rounded"
-                            style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
-                        <h5>Toyota</h5>
-                        <p>Thương hiệu đáng tin cậy, bền bỉ và tiết kiệm nhiên liệu.</p>
-                        <div class="price">Từ <strong>250.000đ</strong> / lượt</div>
+                @foreach (var car in Model)
+                {
+                    <div class="col-md-3">
+                        <div class="car-card text-center p-4 rounded shadow-sm">
+                            <img src="~/assets/img/services/Đưa đón sân bay/@car.Image" alt="@car.DichVu"
+                                class="img-fluid mb-3 rounded"
+                                style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
+                            <h5>@car.DichVu</h5>
+                            <p>@car.MoTa</p>
+                            <div class="price">Từ <strong>@car.GiaDichVu.ToString("N0") đ</strong> / lượt</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Hyundai -->
-                <div class="col-md-3">
-                    <div class="car-card text-center p-4 rounded shadow-sm">
-                        <img src="~/assets/img/services/Shuttle/hyundai.jpg" alt="Hyundai"
-                            class="img-fluid mb-3 rounded"
-                            style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
-                        <h5>Hyundai</h5>
-                        <p>Phong cách hiện đại, tiện nghi và an toàn tối ưu.</p>
-                        <div class="price">Từ <strong>300.000đ</strong> / lượt</div>
-                    </div>
-                </div>
-
-                <!-- Kia -->
-                <div class="col-md-3">
-                    <div class="car-card text-center p-4 rounded shadow-sm">
-                        <img src="~/assets/img/services/Shuttle/kia.jpg" alt="Kia" class="img-fluid mb-3 rounded"
-                            style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
-                        <h5>Kia</h5>
-                        <p>Xe nhỏ gọn, thiết kế tinh tế, lý tưởng cho nhóm nhỏ.</p>
-                        <div class="price">Từ <strong>280.000đ</strong> / lượt</div>
-                    </div>
-                </div>
-
-                <!-- VinFast -->
-                <div class="col-md-3">
-                    <div class="car-card text-center p-4 rounded shadow-sm">
-                        <img src="~/assets/img/services/Shuttle/VinFast.jpg" alt="VinFast"
-                            class="img-fluid mb-3 rounded"
-                            style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
-                        <h5>VinFast</h5>
-                        <p>Xe Việt hiện đại, êm ái và thân thiện với môi trường.</p>
-                        <div class="price">Từ <strong>350.000đ</strong> / lượt</div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
 
-    <!-- Form đặt xe -->
-    <section id="booking" class="section booking">
-        <div class="container section-title" data-aos="fade-up">
+    <section id="booking" class="section booking mt-5">
+        <div class="container section-title text-center" data-aos="fade-up">
             <span class="description-title">Đặt xe</span>
             <h2>Đặt Dịch vụ Đưa đón Sân bay</h2>
-            <p>Điền thông tin dưới đây để chúng tôi chuẩn bị phương tiện phù hợp nhất cho hành trình của bạn.</p>
+            <p>Vui lòng điền đầy đủ thông tin dưới đây để chúng tôi sắp xếp phương tiện phù hợp nhất cho bạn.</p>
         </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <form action="#" method="post" class="booking-form p-5 rounded shadow-sm bg-white">
-                <div class="row g-4">
+        <div class="container py-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-5 rounded-4 shadow-lg bg-light mx-auto" style="max-width: 850px;">
+                <h1 class="display-4 fw-bold text-center mb-4 text-primary">
+                    🚗 Đặt xe đưa đón
+                </h1>
+                
+                <form asp-area="Admin" asp-action="Create" asp-controller="BookingServices" method="post"
+                    class="row g-4">
+                    <input type="hidden" name="IDTaiKhoan" value="@Context.Session.GetInt32("IDTaiKhoan")" />
+
+                    <!-- Điểm đón -->
                     <div class="col-md-6">
-                        <label for="name" class="form-label">Họ và tên</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn" required>
+                        <label for="DiemDon" class="form-label fw-semibold">
+                            <i class="bi bi-geo-alt me-2 text-danger"></i>Điểm đón
+                        </label>
+                        <input type="text" id="DiemDon" name="DiemDon" class="form-control form-control-lg"
+                            placeholder="VD: Sân bay Nội Bài" required />
                     </div>
 
+                    <!-- Ngày sử dụng -->
                     <div class="col-md-6">
-                        <label for="phone" class="form-label">Số điện thoại</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+                        <label for="NgaySuDung" class="form-label fw-semibold">
+                            <i class="bi bi-calendar-date me-2 text-success"></i>Ngày sử dụng
+                        </label>
+                        <input type="date" id="NgaySuDung" name="NgaySuDung"
+                            value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control form-control-lg"
+                            required />
                     </div>
 
+                    <!-- Giờ sử dụng -->
                     <div class="col-md-6">
-                        <label for="pickup" class="form-label">Điểm đón</label>
-                        <input type="text" class="form-control" id="pickup" placeholder="VD: Sân bay Nội Bài" required>
+                        <label for="GioSuDung" class="form-label fw-semibold">
+                            <i class="bi bi-clock me-2 text-info"></i>Giờ sử dụng
+                        </label>
+                        <input type="time" id="GioSuDung" name="GioSuDung" class="form-control form-control-lg"
+                            required />
                     </div>
 
+                    <!-- Loại xe -->
                     <div class="col-md-6">
-                        <label for="dropoff" class="form-label">Điểm đến</label>
-                        <input type="text" class="form-control" id="dropoff" placeholder="VD: Khách sạn Central Hà Nội"
-                            required>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="date" class="form-label">Ngày đón</label>
-                        <input type="date" class="form-control" id="date" required>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="time" class="form-label">Thời gian đón</label>
-                        <input type="time" class="form-control" id="time" required>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="carType" class="form-label">Loại xe</label>
-                        <select id="carType" class="form-select" required>
+                        <label for="IDDichVu" class="form-label fw-semibold">
+                            <i class="bi bi-car-front me-2 text-warning"></i>Chọn loại xe
+                        </label>
+                        <select id="IDDichVu" name="IDDichVu" class="form-select form-select-lg" required>
                             <option value="">-- Chọn loại xe --</option>
-                            <option value="sedan">Xe Sedan</option>
-                            <option value="suv">Xe SUV</option>
-                            <option value="van">Xe Van (7-16 chỗ)</option>
+                            @foreach (var car in Model)
+                            {
+                                <option value="@car.IDDichVu" data-gia="@car.GiaDichVu">
+                                    @car.DichVu - @car.GiaDichVu.ToString("N0") đ
+                                </option>
+                            }
                         </select>
                     </div>
 
+                    <!-- Thành tiền -->
                     <div class="col-md-6">
-                        <label for="passengers" class="form-label">Số hành khách</label>
-                        <input type="number" class="form-control" id="passengers" placeholder="VD: 4" min="1" required>
+                        <label for="ThanhTien" class="form-label fw-semibold">
+                            <i class="bi bi-cash-coin me-2 text-success"></i>Thành tiền
+                        </label>
+                        <div class="input-group">
+                            <input type="number" id="ThanhTien" name="ThanhTien" class="form-control form-control-lg"
+                                placeholder="0" min="1" required />
+                            <span class="input-group-text fs-5">đ</span>
+                        </div>
                     </div>
 
-                    <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary px-5 py-3 mt-4" style="font-size: 1.1rem;">
-                            <i class="bi bi-send me-2"></i> Gửi Yêu cầu Đặt xe
+                    <!-- Số hành khách -->
+                    <div class="col-md-6">
+                        <label for="SoHanhKhach" class="form-label fw-semibold">
+                            <i class="bi bi-people-fill me-2 text-secondary"></i>Số hành khách
+                        </label>
+                        <input type="number" id="SoHanhKhach" name="SoHanhKhach" class="form-control form-control-lg"
+                            placeholder="VD: 4" min="1" required />
+                    </div>
+
+                    <!-- Ghi chú -->
+                    <div class="col-12">
+                        <label for="GhiChu" class="form-label fw-semibold">
+                            <i class="bi bi-chat-text me-2 text-muted"></i>Ghi chú (nếu có)
+                        </label>
+                        <textarea id="GhiChu" name="GhiChu" class="form-control form-control-lg" rows="3"
+                            placeholder="VD: Có hành lý lớn, cần ghế trẻ em..."></textarea>
+                    </div>
+
+                    <!-- Nút gửi -->
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">
+                            <i class="bi bi-send-fill me-2"></i> Gửi yêu cầu đặt xe
                         </button>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </section><!-- Kết thúc Form đặt xe -->
+    </section>
 
 </main>
 
 <style>
+    .booking-form {
+        border-radius: 16px;
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .booking-form .form-label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .booking-form .form-control,
+    .booking-form .form-select {
+        border-radius: 8px;
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        transition: all 0.3s ease;
+    }
+
+    .booking-form .form-control:focus,
+    .booking-form .form-select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 6px rgba(13, 110, 253, 0.2);
+    }
+
+    .booking-form button {
+        background: #0d6efd;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .booking-form button:hover {
+        background: #084298;
+    }
+
     /* Cải thiện giao diện ảnh */
     .about-gallery img:hover,
     .car-card img:hover {
@@ -273,4 +315,16 @@
         background: #0056b3;
     }
 </style>
-```
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const selectDichVu = document.getElementById("IDDichVu");
+        const inputThanhTien = document.getElementById("ThanhTien");
+
+        selectDichVu.addEventListener("change", function () {
+            const selectedOption = selectDichVu.options[selectDichVu.selectedIndex];
+            const gia = selectedOption.getAttribute("data-gia");
+            inputThanhTien.value = gia ? parseInt(gia) : "";
+        });
+    });
+</script>

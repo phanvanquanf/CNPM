@@ -53,7 +53,7 @@
                                     @for (int i = 1; i <= 4; i++)
                                     {
                                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2 tw-bg-white tw-p-3 tw-rounded-lg tw-border
-                                                tw-border-gray-200 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
+                                                    tw-border-gray-200 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
                                             <img id="edit-anh-preview-@i" src="" alt="Ảnh phụ @i"
                                                 class="tw-w-28 tw-h-28 tw-object-cover tw-rounded-lg tw-border tw-border-gray-300 tw-cursor-pointer"
                                                 onclick="document.getElementById('edit-anhphu-@i').click()">
@@ -117,7 +117,7 @@
                                     phòng</label>
                                 <select id="edit-idloaiphong" name="IDLoaiPhong" class="form-select tw-mt-1"
                                     asp-items="ViewBag.LoaiPhong">
-                                    <option value="0">-- Chọn loại phòng --</option>
+                                    <option value="">-- Chọn loại phòng --</option>
                                 </select>
                             </div>
 

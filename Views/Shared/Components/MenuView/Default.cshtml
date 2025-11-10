@@ -10,12 +10,12 @@
                 <i class="bi bi-phone d-flex align-items-center ms-4"><span>+84 123 456 789</span></i>
             </div>
             <li class="dropdown user-menu">
-                <a href="/Users/Profile">
-                    <i class="bi bi-person-circle"></i>
-                    <span>@Functions._TenNguoiDung</span>
-                </a>
                 @if (Functions.IsLogin())
                 {
+                    <a href="/Users/Profile">
+                        <i class="bi bi-person-circle"></i>
+                        <span>@Functions._TenNguoiDung</span>
+                    </a>
                     <ul>
                         <li><a href="/Users/Profile">Hồ Sơ Cá Nhân</a></li>
                         <li><a href="/Login/Logout">Đăng Xuất</a></li>
@@ -23,6 +23,10 @@
                 }
                 else
                 {
+                    <a href="/Login/Index">
+                        <i class="bi bi-person-circle"></i>
+                        <span>@Functions._TenNguoiDung</span>
+                    </a>
                     <ul>
                         <li><a href="/Login/Index">Đăng Nhập</a></li>
                         <li><a href="/Register/Index">Đăng Ký</a></li>

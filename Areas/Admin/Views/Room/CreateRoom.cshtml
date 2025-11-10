@@ -59,7 +59,7 @@
                                     {
                                         <div
                                             class="tw-flex tw-flex-col tw-items-center tw-gap-2 tw-bg-white tw-p-3 tw-rounded-lg
-                                                                    tw-border tw-border-gray-200 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
+                                                                        tw-border tw-border-gray-200 tw-shadow-sm hover:tw-scale-[1.02] tw-transition">
                                             <img id="create-anh-preview-@i" src="" alt="Ảnh phụ @i"
                                                 class="tw-w-28 tw-h-28 tw-object-cover tw-rounded-lg tw-border tw-border-gray-300 tw-cursor-pointer"
                                                 onclick="document.getElementById('create-anhphu-@i').click()">
@@ -127,7 +127,7 @@
                                     phòng</label>
                                 <select id="create-idloaiphong" name="IDLoaiPhong" class="form-select tw-mt-1"
                                     asp-items="ViewBag.LoaiPhong">
-                                    <option value="0">-- Chọn loại phòng --</option>
+                                    <option value="">-- Chọn loại phòng --</option>
                                 </select>
                                 <span class="text-danger" id="error-IDLoaiPhong"></span>
                             </div>
