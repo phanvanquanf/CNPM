@@ -28,6 +28,7 @@ namespace hotels.Models
 
         [ForeignKey(nameof(IDLoaiPhong))]
         public virtual tblLoaiPhong? LoaiPhong { get; set; }
+        public virtual ICollection<tblCTDatPhong>? CTDatPhongs { get; set; }
         public virtual ICollection<tblAnhPhong>? AnhPhongs { get; set; }
     }
 }

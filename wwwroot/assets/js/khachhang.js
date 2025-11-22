@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function bindDeleteButtons() {
-    document.querySelectorAll(".delete-btn").forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const id = this.getAttribute("data-id");
-        document.getElementById("delete-id").value = id;
-      });
+    document.addEventListener("click", function (e) {
+      const btn = e.target.closest(".delete-btn");
+      if (!btn) return;
+      const id = btn.getAttribute("data-id");
+      document.getElementById("delete-id").value = id;
     });
   }
 

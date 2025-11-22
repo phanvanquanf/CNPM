@@ -3,7 +3,7 @@
 @model IPagedList<hotels.Models.tblMenu>
 
 <div id="product-container">
-    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+    <div class="tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
         <table class="tw-min-w-full">
             <thead
                 class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
@@ -44,8 +44,9 @@
                                 <div class="dropdown-menu !tw-text-xs">
                                     <!-- Nút mở modal -->
                                     <button type="button" class="dropdown-item edit-btn" data-bs-toggle="modal"
-                                        data-bs-target="#editModal" data-id="@item.menu.MenuID" data-name="@item.menu.MenuName"
-                                        data-levels="@item.menu.Levels" data-parent="@item.menu.ParentID" data-link="@item.menu.Link"
+                                        data-bs-target="#editModal" data-id="@item.menu.MenuID"
+                                        data-name="@item.menu.MenuName" data-levels="@item.menu.Levels"
+                                        data-parent="@item.menu.ParentID" data-link="@item.menu.Link"
                                         data-order="@item.menu.MenuOrder" data-position="@item.menu.Position"
                                         data-active="@item.menu.IsActive">
                                         <i class="bx bx-edit-alt me-2"></i>Sửa

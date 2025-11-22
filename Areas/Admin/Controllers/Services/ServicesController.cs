@@ -164,8 +164,6 @@ namespace hotels.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-
-
         [HttpPost]
         public IActionResult Delete(long id)
         {

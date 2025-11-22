@@ -1,0 +1,143 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Models.tblDatPhong>
+
+<div id="checkinout-container">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        <table class="tw-min-w-full">
+            <thead
+                class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                <tr class="tw-bg-neutral-50 tw-text-center">
+                    <th class="tw-py-3 tw-px-4">#</th>
+                    <th class="tw-py-3 tw-px-4">Booking ID</th>
+                    <th class="tw-py-3 tw-px-4">Ngày Đến</th>
+                    <th class="tw-py-3 tw-px-4">Ngày Đi</th>
+                    <th class="tw-py-3 tw-px-4">Số Khách</th>
+                    <th class="tw-py-3 tw-px-4">Phòng</th>
+                    <th class="tw-py-3 tw-px-4">Trạng Thái</th>
+                    <th class="tw-py-3 tw-px-4">Hoạt Động</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var item in Model.Select((dp, index) => new { dp, index }))
+                    {
+                        <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
+                            <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                            <td class="tw-px-4 tw-py-3">B-@item.dp.IDMaDatPhong</td>
+                            <td class="tw-px-5 tw-py-3">@item.dp.NgayDen?.ToString("dd/MM/yyyy")</td>
+                            <td class="tw-px-5 tw-py-3">@item.dp.NgayDi?.ToString("dd/MM/yyyy")</td>
+                            <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
+
+                            <!-- Phòng -->
+                            <td class="tw-px-4 tw-py-3">
+                                @if (item.dp.CTDatPhongs != null)
+                                {
+                                    @foreach (var ct in item.dp.CTDatPhongs)
+                                    {
+                                        <div class="tw-mb-1">
+                                            @ct.Phong?.MaSoPhong
+                                            <span
+                                                class="tw-text-xs tw-ml-1 tw-font-medium @(ct.Phong != null && ct.Phong.TrangThai == 0 ? "tw-text-green-500" : "tw-text-red-500")">
+                                                (@(ct.Phong != null && ct.Phong.TrangThai == 0 ? "Trống" : "Đang sử dụng"))
+                                            </span>
+                                        </div>
+                                    }
+                                }
+                            </td>
+
+                            <!-- Trạng thái booking -->
+                            <td class="tw-px-4 tw-py-3">
+                                @{
+                                    string statusText = "";
+                                    string statusClass = "";
+                                    switch (item.dp.TrangThai)
+                                    {
+                                        case 1: statusText = "Chờ nhận phòng"; statusClass = "tw-bg-green-100 tw-text-green-400"; break;
+                                        case 2:
+                                            statusText = "Đã nhận phòng"; statusClass = "tw-bg-orange-100 tw-text-orange-400";
+                                            break;
+                                    }
+                                }
+                                <span
+                                    class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium @statusClass">@statusText</span>
+                            </td>
+
+                            <!-- Hoạt động -->
+                            <td class="tw-px-4 tw-py-3">
+                                <div class="tw-flex tw-gap-1 tw-justify-center">
+                                    @if (item.dp.TrangThai == 1)
+                                    {
+                                        <form method="post" asp-area="Admin" asp-controller="Room" asp-action="CheckIn">
+                                            <input type="hidden" name="idDatPhong" value="@item.dp.IDMaDatPhong" />
+                                            <button type="submit" class="btn btn-success btn-sm">Nhận phòng</button>
+                                        </form>
+                                    }
+                                    @if (item.dp.TrangThai == 2)
+                                    {
+                                        <form method="post" asp-area="Admin" asp-controller="Room" asp-action="CheckOut">
+                                            <input type="hidden" name="idDatPhong" value="@item.dp.IDMaDatPhong" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Trả phòng</button>
+                                        </form>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8" class="tw-text-center tw-py-4">Không có dữ liệu</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model!.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function loadPage(page) {
+            if (page < 1) return;
+            const url = `@Url.Action("CheckInOut", "Room", new { area = "Admin" })?page=${page}`;
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("checkinout-container").innerHTML = html;
+                    if (lucide) lucide.createIcons();
+                })
+                .catch(err => console.error("Lỗi load trang:", err));
+        }
+
+        document.getElementById("prevPage")?.addEventListener("click", () => loadPage(parseInt(document.getElementById("prevPage").dataset.page)));
+        document.getElementById("nextPage")?.addEventListener("click", () => loadPage(parseInt(document.getElementById("nextPage").dataset.page)));
+        document.querySelectorAll("#pagination button").forEach(btn => btn.addEventListener("click", () => loadPage(parseInt(btn.dataset.page))));
+    });
+</script>

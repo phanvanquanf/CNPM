@@ -35,18 +35,19 @@
                         <div class="form-container">
                             <form asp-action="BookingPost" asp-controller="Room" method="post" class="reservation-form">
                                 <div class="form-section">
-                                    <input type="hidden" name="IDKhachHang" value="@Context.Session.GetInt32("IDKhachHang")" />
+                                    <input type="hidden" name="IDKhachHang"
+                                        value="@Context.Session.GetInt32("IDKhachHang")" />
                                     <h4>Chi tiết đặt phòng</h4>
                                     <div class="form-grid">
                                         <div class="form-group">
                                             <label for="arrival-date" class="form-label">Ngày đến</label>
-                                            <input type="date" class="form-control" id="NgayDen"
-                                                name="NgayDen" required="">
+                                            <input type="date" class="form-control" id="NgayDen" name="NgayDen"
+                                                required="">
                                         </div>
                                         <div class="form-group">
                                             <label for="departure-date" class="form-label">Ngày đi</label>
-                                            <input type="date" class="form-control" id="NgayDi"
-                                                name="NgayDi" required="">
+                                            <input type="date" class="form-control" id="NgayDi" name="NgayDi"
+                                                required="">
                                         </div>
                                         <div class="form-group">
                                             <label for="guest-count" class="form-label">Tổng số người</label>
@@ -77,12 +78,13 @@
                                     <div class="form-group">
                                         <label for="accommodation-type" class="form-label">Loại phòng</label>
                                         <select class="form-select" id="LoaiPhong" name="LoaiPhong">
-                                        <option value="">Chọn loại phòng</option>
+                                            <option value="">Chọn loại phòng</option>
                                             @if (ViewBag.LoaiPhongs != null)
                                             {
                                                 foreach (var lp in ViewBag.LoaiPhongs)
                                                 {
-                                                    if (ViewBag.SelectedLoaiPhong != null && ViewBag.SelectedLoaiPhong == lp.IDLoaiPhong)
+                                                    if (ViewBag.SelectedLoaiPhong != null && ViewBag.SelectedLoaiPhong ==
+                                                    lp.IDLoaiPhong)
                                                     {
                                                         <option value="@lp.IDLoaiPhong" selected>Phòng @lp.LoaiPhong</option>
                                                     }
@@ -96,8 +98,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="additional-notes" class="form-label">Yêu cầu bổ sung</label>
-                                        <textarea class="form-control" id="GhiChu" name="GhiChu"
-                                            rows="3"
+                                        <textarea class="form-control" id="GhiChu" name="GhiChu" rows="3"
                                             placeholder="Vui lòng ghi rõ các yêu cầu hoặc ưu tiên đặc biệt..."></textarea>
                                     </div>
                                 </div>

@@ -3,7 +3,7 @@
 @model IPagedList<hotels.Models.tblDatPhong>
 
 <div id="product-container">
-    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+    <div class="tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
         <table class="tw-min-w-full">
             <thead
                 class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
@@ -29,27 +29,21 @@
                         <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
                         <td class="tw-px-4 tw-py-3">@item.dp.TongSoPhong</td>
                         <td class="tw-px-4 tw-py-3">
-                            @if (item.dp.TrangThai == 1)
-                            {
-                                <span
-                                    class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium tw-bg-green-100 tw-text-green-400">
-                                    Đã Xác Nhận
-                                </span>
+                            @{
+                                var (statusText, statusClass) = item.dp.TrangThai switch
+                                {
+                                    1 => ("Đã xác nhận", "tw-bg-green-100 tw-text-green-400"),
+                                    2 => ("Đã nhận phòng", "tw-bg-blue-100 tw-text-blue-400"),
+                                    3 => ("Đã trả phòng", "tw-bg-green-100 tw-text-green-400"),
+                                    4 => ("Đã hủy", "tw-bg-gray-100 tw-text-gray-400"),
+                                    _ => ("Chưa xác nhận", "tw-bg-orange-100 tw-text-orange-400"),
+                                };
                             }
-                            else if (item.dp.TrangThai == 2)
-                            {
-                                <span
-                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-gray-100 tw-text-gray-400">
-                                    Đã Hủy
-                                </span>
-                            }
-                            else
-                            {
-                                <span
-                                    class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-orange-100 tw-text-orange-400">
-                                    Chưa Xác Nhận
-                                </span>
-                            }
+
+                            <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium @statusClass">
+                                @statusText
+                            </span>
+
                         </td>
                         <td class="tw-px-4 tw-py-3">
                             <div class="dropdown">
@@ -60,7 +54,7 @@
                                     <form method="post" asp-area="Admin" asp-controller="Booking" asp-action="Confirm">
                                         <input type="hidden" name="id" value="@item.dp.IDMaDatPhong" />
                                         <input type="hidden" name="trangThaiMoi"
-                                            value="@(item.dp.TrangThai == 0 ? 1 : item.dp.TrangThai == 1 ? 2 : 0)" />
+                                            value="@(item.dp.TrangThai == 0 ? 1 : item.dp.TrangThai == 1 ? 4 : 0)" />
                                         <button type="submit" class="dropdown-item edit-btn">
                                             @if (item.dp.TrangThai == 0)
                                             {
@@ -81,9 +75,9 @@
                                         </button>
                                     </form>
 
-                                    <button class="dropdown-item delete-btn">
+                                    <button class="dropdown-item detail-btn">
                                         <i data-lucide="square-arrow-out-up-right"
-                                            class="bx bx-trash tw-w-4 tw-h-4 me-2"></i> Chi tiết
+                                            class="bx bx-info-circle tw-w-4 tw-h-4 me-2"></i> Chi tiết
                                     </button>
                                 </div>
                             </div>
@@ -158,10 +152,11 @@
         // 🔍 Gắn sự kiện nút “Chi tiết”
         // ==========================
         function bindDetailButtons() {
-            document.querySelectorAll(".delete-btn").forEach(btn => {
+            document.querySelectorAll(".detail-btn").forEach(btn => {
                 btn.addEventListener("click", function () {
+
                     const row = btn.closest("tr");
-                    const bookingText = row.querySelector("td:nth-child(2)")?.innerText; // Ví dụ: B-12
+                    const bookingText = row.querySelector("td:nth-child(2)")?.innerText; // B-12
                     const bookingId = bookingText?.replace("B-", "").trim();
 
                     if (!bookingId) {
@@ -170,6 +165,7 @@
                     }
 
                     const url = `@Url.Action("Detail", "Booking", new { area = "Admin" })?id=${bookingId}`;
+
                     fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
                         .then(res => res.text())
                         .then(html => showModal(html))
@@ -186,16 +182,19 @@
             if (!modal) {
                 modal = document.createElement("div");
                 modal.id = "bookingDetailModal";
-                modal.className = "tw-fixed tw-inset-0 tw-bg-black/40 tw-flex tw-items-center tw-justify-center tw-z-50";
+                modal.className = "tw-fixed tw-inset-0 tw-bg-black/40 tw-flex tw-items-center tw-justify-center tw-z-50 tw-p-4";
                 modal.innerHTML = `
-                <div class="tw-bg-white tw-rounded-xl tw-shadow-xl tw-max-w-4xl tw-w-full tw-mx-4 tw-overflow-y-auto tw-max-h-[90vh] tw-animate-fadeIn">
-                    <div class="tw-flex tw-justify-between tw-items-center tw-border-b tw-px-6 tw-py-3">
-                        <h3 class="tw-text-lg tw-font-semibold">Chi tiết đặt phòng</h3>
-                        <button id="closeModalBtn" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-xl">&times;</button>
-                    </div>
-                    <div id="modalContent" class="tw-p-6"></div>
+            <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-w-full tw-max-w-4xl tw-max-h-[90vh] tw-flex tw-flex-col tw-overflow-hidden">
+                <!-- Header -->
+                <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-3 tw-border-b tw-border-gray-200">
+                    <h3 class="tw-text-lg tw-font-semibold">Chi tiết đặt phòng</h3>
+                    <button id="closeModalBtn" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-2xl">&times;</button>
                 </div>
-            `;
+
+                <!-- Content -->
+                <div id="modalContent" class="tw-p-6 tw-flex-1 tw-overflow-y-auto"></div>
+            </div>
+        `;
                 document.body.appendChild(modal);
 
                 modal.addEventListener("click", e => {
@@ -208,6 +207,7 @@
             modal.querySelector("#modalContent").innerHTML = contentHtml;
             lucide.createIcons();
         }
+
 
         // ==========================
         // 🔁 Gắn lại tất cả sự kiện sau Ajax

@@ -3,9 +3,10 @@
 @model IPagedList<hotels.Areas.Admin.Models.tblDatDV>
 
 <div id="service-container">
-    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+    <div class="tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
         <table class="tw-min-w-full">
-            <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+            <thead
+                class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
                 <tr class="tw-bg-neutral-50 tw-text-center">
                     <th class="tw-py-3 tw-px-4">#</th>
                     <th class="tw-py-3 tw-px-4">Booking ID</th>
@@ -37,22 +38,26 @@
                             @switch (item.d.TrangThai)
                             {
                                 case 0:
-                                    <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-orange-100 tw-text-orange-400">
+                                    <span
+                                        class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-orange-100 tw-text-orange-400">
                                         Chờ xác nhân
                                     </span>
                                     break;
                                 case 1:
-                                    <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium tw-bg-green-100 tw-text-green-400">
+                                    <span
+                                        class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium tw-bg-green-100 tw-text-green-400">
                                         Đã xác nhận
                                     </span>
                                     break;
                                 case 2:
-                                    <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-gray-100 tw-text-gray-400">
+                                    <span
+                                        class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-gray-100 tw-text-gray-400">
                                         Đã thanh toán
                                     </span>
                                     break;
                                 case 3:
-                                    <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-blue-100 tw-text-blue-400">
+                                    <span
+                                        class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-md tw-font-medium tw-bg-blue-100 tw-text-blue-400">
                                         Hủy
                                     </span>
                                     break;
@@ -66,7 +71,8 @@
                                 <div class="dropdown-menu !tw-text-xs">
                                     @if (item.d.TrangThai == 0 || item.d.TrangThai == 1)
                                     {
-                                        <form method="post" asp-area="Admin" asp-controller="BookingServices" asp-action="Confirm">
+                                        <form method="post" asp-area="Admin" asp-controller="BookingServices"
+                                            asp-action="Confirm">
                                             <input type="hidden" name="id" value="@item.d.IDDatDichVu" />
                                             <input type="hidden" name="trangThaiMoi" value="@item.d.TrangThai" />
                                             <button type="submit" class="dropdown-item edit-btn">
@@ -83,23 +89,18 @@
                                             </button>
                                         </form>
                                     }
-                                    <button class="dropdown-item view-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#serviceDetailModal"
-                                            data-id="@item.d.IDDichVu"
-                                            data-name="@item.d.DichVu?.DichVu"
-                                            data-loaidichvu="@item.d.DichVu?.LoaiDichVu?.LoaiDichVu"
-                                            data-gia="@item.d.DichVu?.GiaDichVu"
-                                            data-giauudai="@item.d.DichVu?.GiaUuDai"
-                                            data-thoiluong="@item.d.DichVu?.ThoiLuong"
-                                            data-dacdiem="@item.d.DichVu?.DacDiem"
-                                            data-trangthai="@item.d.TrangThai"
-                                            data-mota="@item.d.DichVu?.MoTa"
-                                            data-image="/assets/img/services/@item.d.DichVu?.LoaiDichVu?.LoaiDichVu/@item.d.DichVu?.Image"
-                                            data-ghichu="@item.d.GhiChu">
+                                    <button class="dropdown-item view-btn" data-bs-toggle="modal"
+                                        data-bs-target="#serviceDetailModal" data-id="@item.d.IDDichVu"
+                                        data-name="@item.d.DichVu?.DichVu"
+                                        data-loaidichvu="@item.d.DichVu?.LoaiDichVu?.LoaiDichVu"
+                                        data-gia="@item.d.DichVu?.GiaDichVu" data-giauudai="@item.d.DichVu?.GiaUuDai"
+                                        data-thoiluong="@item.d.DichVu?.ThoiLuong" data-dacdiem="@item.d.DichVu?.DacDiem"
+                                        data-trangthai="@item.d.TrangThai" data-mota="@item.d.DichVu?.MoTa"
+                                        data-image="/assets/img/services/@item.d.DichVu?.LoaiDichVu?.LoaiDichVu/@item.d.DichVu?.Image"
+                                        data-ghichu="@item.d.GhiChu">
                                         <i class="bx bx-show me-2"></i> Chi tiết
                                     </button>
-                            </div>
+                                </div>
                         </td>
                     </tr>
                 }
@@ -110,22 +111,24 @@
 
     <!-- Pagination -->
     <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
-        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")" 
-                data-page="@(Model.PageNumber - 1)">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
             <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
         </button>
 
         <div id="pagination" class="tw-flex tw-gap-1">
             @for (int i = 1; i <= Model.PageCount; i++)
             {
-                <button class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? 
-                "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")" 
-                        data-page="@i">@i</button>
-            }
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? 
+                                    "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                data-page="@i">@i</button>
+                        }
         </div>
 
-        <button id="nextPage" class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")" 
-                data-page="@(Model.PageNumber + 1)">
+        <button id="nextPage"
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
             <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
         </button>
     </div>

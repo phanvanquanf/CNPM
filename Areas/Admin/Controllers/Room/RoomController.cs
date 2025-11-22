@@ -237,5 +237,89 @@ namespace hotels.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult CheckInOut(int page = 1)
+        {
+            int pageSize = 8;
+
+            var datPhongQuery = _context.DatPhongs
+                                .Include(dp => dp.CTDatPhongs!)
+                                .ThenInclude(ctdp => ctdp.Phong!)
+                                .ThenInclude(p => p.LoaiPhong)
+                .Where(dp => dp.TrangThai == 1 || dp.TrangThai == 2)
+                .OrderByDescending(dp => dp.NgayTao);
+
+            var pagedList = datPhongQuery.ToPagedList(page, pageSize);
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return PartialView("_CheckInOutPartial", pagedList);
+
+            return View(pagedList);
+        }
+
+        [HttpPost]
+        public IActionResult CheckIn(long idDatPhong)
+        {
+            var datPhong = _context.DatPhongs
+                .Include(dp => dp.CTDatPhongs!)
+                    .ThenInclude(ct => ct.Phong)
+                .FirstOrDefault(dp => dp.IDMaDatPhong == idDatPhong);
+
+            if (datPhong == null)
+            {
+                TempData["Error"] = "Không tìm thấy đặt phòng!";
+                return RedirectToAction("CheckInOut");
+            }
+
+            if (datPhong.TrangThai != 1)
+            {
+                TempData["Error"] = "Chỉ có thể nhận phòng khi đã xác nhận!";
+                return RedirectToAction("CheckInOut");
+            }
+
+            // Cập nhật trạng thái booking
+            datPhong.TrangThai = 2;
+
+            // Cập nhật trạng thái các phòng
+            datPhong.CTDatPhongs?.Where(ct => ct.Phong != null).ToList()
+                .ForEach(ct => ct.Phong!.TrangThai = 1);
+
+            _context.SaveChanges();
+            TempData["Success"] = "Nhận phòng thành công!";
+            return RedirectToAction("CheckInOut");
+        }
+
+        [HttpPost]
+        public IActionResult CheckOut(long idDatPhong)
+        {
+            var datPhong = _context.DatPhongs
+                .Include(dp => dp.CTDatPhongs!)
+                    .ThenInclude(ct => ct.Phong)
+                .FirstOrDefault(dp => dp.IDMaDatPhong == idDatPhong);
+
+            if (datPhong == null)
+            {
+                TempData["Error"] = "Không tìm thấy đặt phòng!";
+                return RedirectToAction("CheckInOut");
+            }
+
+            if (datPhong.TrangThai != 2)
+            {
+                TempData["Error"] = "Chỉ có thể trả phòng khi đã nhận phòng!";
+                return RedirectToAction("CheckInOut");
+            }
+
+            // Cập nhật trạng thái booking
+            datPhong.TrangThai = 3;
+
+            // Cập nhật trạng thái các phòng
+            datPhong.CTDatPhongs?.Where(ct => ct.Phong != null).ToList()
+                .ForEach(ct => ct.Phong!.TrangThai = 0);
+
+            _context.SaveChanges();
+            TempData["Success"] = "Trả phòng thành công!";
+            return RedirectToAction("CheckInOut");
+        }
     }
 }

@@ -64,19 +64,25 @@
                     <i data-lucide="ellipsis" class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer"></i>
                 </div>
                 <div class="tw-pb-4 tw-mt-3">
-                    @if (dpGanNhat.TrangThai == 1)
-                    {
-                        <div
-                            class="tw-flex tw-items-center tw-justify-center tw-gap-1 tw-bg-green-100 tw-py-1.5 tw-rounded-md tw-text-xs tw-max-w-[106px] tw-font-medium">
-                            <i data-lucide="check" class="tw-w-4 tw-h-4"></i>Đã Xác Nhận
-                        </div>
+                    @{
+                        var (statusText, statusClass, statusIcon) = dpGanNhat.TrangThai switch
+                        {
+                            1 => ("Đã xác nhận", "tw-bg-green-100 tw-text-green-600", "check"),
+                            2 => ("Đã nhận phòng", "tw-bg-blue-100 tw-text-blue-600", "home"),
+                            3 => ("Đã trả phòng", "tw-bg-emerald-100 tw-text-emerald-600", "log-out"),
+                            4 => ("Đã hủy", "tw-bg-gray-100 tw-text-gray-500", "x"),
+                            _ => ("Chưa xác nhận", "tw-bg-orange-100 tw-text-orange-600", null)
+                        };
                     }
-                    else
-                    {
-                        <div
-                            class="tw-flex tw-items-center tw-justify-center tw-gap-1 tw-bg-orange-100 tw-py-1.5 tw-rounded-md tw-text-xs tw-max-w-[106px] tw-font-medium">
-                            Chưa Xác Nhận</div>
-                    }
+
+                    <div
+                        class="tw-flex tw-items-center tw-justify-center tw-gap-1 tw-py-1.5 tw-rounded-md tw-text-xs tw-font-medium @statusClass tw-max-w-[120px]">
+                        @if (statusIcon != null)
+                        {
+                            <i data-lucide="@statusIcon" class="tw-w-4 tw-h-4"></i>
+                        }
+                        <span>@statusText</span>
+                    </div>
                     <p class="tw-font-semibold tw-text-lg tw-mt-2">Booking ID: @dpGanNhat.IDMaDatPhong</p>
                     <p class="tw-text-gray-500 tw-text-xs">@dpGanNhat.NgayTao?.ToString("dd/MM/yyyy HH:mm")</p>
                 </div>
@@ -175,7 +181,7 @@
             <input type="text" placeholder="Search..." class="tw-border tw-rounded-lg tw-px-3 tw-py-1 tw-text-sm">
         </div>
 
-        <div class="tw-overflow-x-auto tw-rounded-lg">
+        <div class="tw-overflow-y-auto tw-max-h-[500px] tw-rounded-lg">
             <table class="tw-w-full tw-text-xs tw-text-left tw-border-collapse">
                 <thead class="tw-bg-gray-50 tw-text-neutral-500 tw-text-center">
                     <tr>
@@ -208,9 +214,33 @@
                             <td class="tw-py-3 tw-px-4">@dp.NgayDi?.ToString("dd/MM/yyyy")</td>
                             <td class="tw-py-3 tw-px-4">@dp.TongSoKhach <text>Người</text></td>
                             <td class="tw-py-3 tw-px-4">
-                                <div class="tw-flex tw-justify-center">
-                                    <i data-lucide="ellipsis"
-                                        class="tw-w-5 tw-h-5 tw-text-gray-600/80 tw-cursor-pointer"></i>
+                                <div class="tw-flex tw-justify-center tw-items-center tw-gap-2">
+                                    @if (dp.TrangThai == 1)
+                                    {
+                                        <form method="post" asp-area="Admin" asp-controller="Booking"
+                                            asp-action="ConfirmClient">
+                                            <input type="hidden" name="id" value="@dp.IDMaDatPhong" />
+                                            <input type="hidden" name="trangThaiMoi" value="4" />
+                                            <button type="submit"
+                                                class="tw-px-3 tw-py-1 tw-rounded-md tw-font-medium tw-flex tw-items-center tw-gap-2 tw-bg-blue-500 tw-text-white hover:tw-bg-blue-600">
+                                                <i data-lucide="file-minus-2" class="tw-w-4 tw-h-4"></i>
+                                                <span>Hủy</span>
+                                            </button>
+                                        </form>
+                                    }
+                                    else if (dp.TrangThai == 3 || dp.TrangThai == 4)
+                                    {
+                                        <form method="post" asp-area="Admin" asp-controller="Booking"
+                                            asp-action="DelBookingHistory"
+                                            onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
+                                            <input type="hidden" name="id" value="@dp.IDMaDatPhong" />
+                                            <button type="submit"
+                                                class="tw-px-3 tw-py-1 tw-rounded-md tw-font-medium tw-flex tw-items-center tw-gap-2 tw-bg-red-500 tw-text-white hover:tw-bg-red-600">
+                                                <i data-lucide="trash" class="tw-w-4 tw-h-4"></i>
+                                                <span>Xóa</span>
+                                            </button>
+                                        </form>
+                                    }
                                 </div>
                             </td>
                         </tr>
@@ -220,7 +250,6 @@
         </div>
     </section>
     <!-- Service Booking History -->
-    <!-- Service Booking History -->
     <section class="tw-col-span-12 tw-bg-white tw-rounded-xl tw-shadow-[0_2px_20px_rgba(0,0,0,0.05)] tw-p-5 tw-mt-6">
         <div class="tw-flex tw-justify-between tw-mb-3">
             <p class="tw-font-semibold tw-text-sm">Lịch Sử Đặt Dịch Vụ</p>
@@ -228,7 +257,7 @@
                 id="searchServiceInput" />
         </div>
 
-        <div class="tw-overflow-x-auto tw-rounded-lg">
+        <div class="tw-overflow-y-auto tw-max-h-[500px] tw-rounded-lg">
             <table class="tw-w-full tw-text-xs tw-text-left tw-border-collapse">
                 <thead class="tw-bg-gray-50 tw-text-neutral-500 tw-text-center">
                     <tr>

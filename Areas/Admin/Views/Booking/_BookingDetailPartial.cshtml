@@ -1,0 +1,125 @@
+@model hotels.Models.tblDatPhong
+@{
+    var details = ViewBag.Details as List<hotels.Models.tblCTDatPhong>;
+    var customer = ViewBag.Customer as hotels.Areas.Admin.Models.tblKhachHang;
+}
+
+<div class="tw-space-y-6 tw-p-4">
+
+    <!-- THÔNG TIN ĐẶT PHÒNG -->
+    <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border tw-border-gray-100">
+        <h2 class="tw-text-2xl tw-font-bold tw-text-gray-800">
+            Thông tin đặt phòng: B-@Model.IDMaDatPhong
+        </h2>
+
+        <div class="tw-mt-3 tw-space-y-1.5 tw-text-gray-600">
+            <p>Khách hàng: <span class="tw-font-semibold">@customer?.HoTen</span></p>
+            <p>Ngày đến: @Model.NgayDen?.ToString("dd/MM/yyyy")</p>
+            <p>Ngày đi: @Model.NgayDi?.ToString("dd/MM/yyyy")</p>
+            <p>Tổng khách: @Model.TongSoKhach</p>
+            <p>Tổng phòng: @Model.TongSoPhong</p>
+
+            @{
+                var (statusText, statusClass) = Model.TrangThai switch
+                {
+                    1 => ("Đã xác nhận", "tw-bg-green-100 tw-text-green-600"),
+                    2 => ("Đã nhận phòng", "tw-bg-blue-100 tw-text-blue-600"),
+                    3 => ("Đã trả phòng", "tw-bg-emerald-100 tw-text-emerald-600"),
+                    4 => ("Đã hủy", "tw-bg-gray-100 tw-text-gray-500"),
+                    _ => ("Chưa xác nhận", "tw-bg-orange-100 tw-text-orange-600"),
+                };
+            }
+
+            <span
+                class="tw-inline-block tw-mt-2 tw-text-xs tw-font-medium tw-px-3 tw-py-1.5 tw-rounded-md @statusClass">
+                @statusText
+            </span>
+        </div>
+    </div>
+
+    <!-- CHI TIẾT PHÒNG -->
+    <h3 class="tw-text-xl tw-font-semibold tw-text-gray-700">Chi tiết phòng</h3>
+
+    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-6">
+
+        @foreach (var d in details!)
+        {
+            var room = d.Phong;
+            var mainImage = room?.AnhPhongs?.FirstOrDefault()?.Link ?? "placeholder.jpg";
+
+            <div
+                class="tw-bg-white tw-border tw-rounded-xl tw-shadow-sm hover:tw-shadow-lg tw-transition tw-overflow-hidden tw-flex tw-flex-col">
+
+                <div class="tw-h-40 tw-w-full tw-overflow-hidden">
+                    <img src="/@mainImage" class="tw-w-full tw-h-full tw-object-cover" alt="Phòng @room?.MaSoPhong" />
+                </div>
+
+                <div class="tw-p-4 tw-flex tw-flex-col tw-flex-1">
+
+                    <h4 class="tw-text-lg tw-font-bold tw-text-gray-800">@room?.MaSoPhong</h4>
+
+                    <p class="tw-text-gray-600 tw-text-sm tw-mt-1">Vị trí: @room?.ViTri</p>
+
+                    <p class="tw-text-gray-600 tw-text-sm">
+                        Giá: @room?.GiaPhong?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))
+                    </p>
+
+                    <p class="tw-text-gray-600 tw-text-sm">Số khách: @d.SoKhach</p>
+
+                    <!-- Rating -->
+                    <div class="tw-flex tw-items-center tw-text-sm tw-text-gray-500 tw-mt-auto tw-pt-2">
+                        <span>Đánh giá:</span>
+
+                        <span class="tw-ml-2 tw-text-yellow-500">
+                            @{
+                                int stars = (int)Math.Round(room?.Rating ?? 0);
+                                for (int i = 0; i < stars; i++)
+                                {
+                                    <text>⭐</text>
+                                }
+                            }
+                        </span>
+
+                        <span class="tw-ml-2">(@room?.Reviewer người đánh giá)</span>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .tw-rounded-xl {
+        border-radius: -0.25rem;
+        border-top-left-radius: ;
+        border-top-right-radius: ;
+        border-bottom-right-radius: ;
+        border-bottom-left-radius: ;
+    }
+
+    .tw-overflow-y-auto {
+        overflow-y: auto;
+    }
+
+    .tw-max-w-4xl {
+        max-width: 79rem;
+    }
+
+    .tw-w-full {
+        width: 100%;
+    }
+
+    .tw-max-h-\[90vh\] {
+        max-height: 80vh;
+    }
+
+    .tw-mx-4 {
+        margin-left: 15rem;
+        margin-right: 0rem;
+    }
+
+    .tw-bg-white.tw-rounded-2xl.tw-shadow-xl.tw-w-full.tw-max-w-4xl.tw-max-h-\[90vh\].tw-flex.tw-flex-col.tw-overflow-hidden {
+        margin-left: 238px;
+    }
+</style>

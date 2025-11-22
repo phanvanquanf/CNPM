@@ -1,0 +1,163 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<hotels.Models.tblDatPhong>
+
+<div id="booking-history-container">
+    <div class="tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+        <table class="tw-min-w-full">
+            <thead
+                class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                <tr class="tw-bg-neutral-50 tw-text-center">
+                    <th class="tw-py-3 tw-px-4">#</th>
+                    <th class="tw-py-3 tw-px-4">Booking ID</th>
+                    <th class="tw-py-3 tw-px-4">Ngày Đến</th>
+                    <th class="tw-py-3 tw-px-4">Ngày Đi</th>
+                    <th class="tw-py-3 tw-px-4">Số Khách</th>
+                    <th class="tw-py-3 tw-px-4">Số Phòng</th>
+                    <th class="tw-py-3 tw-px-4">Trạng Thái</th>
+                    <th class="tw-py-3 tw-px-4">Chi Tiết</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                @foreach (var item in Model.Select((dp, index) => new { dp, index }))
+                {
+                    <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
+                        <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                        <td class="tw-px-4 tw-py-3">B-@item.dp.IDMaDatPhong</td>
+                        <td class="tw-px-4 tw-py-3">@item.dp.NgayDen?.ToString("dd/MM/yyyy")</td>
+                        <td class="tw-px-4 tw-py-3">@item.dp.NgayDi?.ToString("dd/MM/yyyy")</td>
+                        <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
+                        <td class="tw-px-4 tw-py-3">@item.dp.TongSoPhong</td>
+                        <td class="tw-px-4 tw-py-3">
+                            @{
+                                var (text, css) = item.dp.TrangThai switch
+                                {
+                                    3 => ("Đã trả phòng", "tw-bg-red-100 tw-text-red-400"),
+                                    _ => ("Đã hủy", "tw-bg-gray-100 tw-text-gray-500")
+                                };
+                            }
+
+                            <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium @css">
+                                @text
+                            </span>
+                        </td>
+
+                        <td class="tw-px-4 tw-py-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu !tw-text-xs">
+                                    <button class="dropdown-item view-btn" data-id="@item.dp.IDMaDatPhong">
+                                        <i class="bx bx-show me-2"></i> Xem chi tiết
+                                    </button>
+
+                                    <form asp-area="Admin" asp-controller="Booking" asp-action="DeleteBookingHistory"
+                                        method="post">
+                                        <input type="hidden" name="id" value="@item.dp.IDMaDatPhong" />
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bx bx-trash me-2"></i> Xóa
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
+            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+        </button>
+
+        <div id="pagination" class="tw-flex tw-gap-1">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
+                    @i
+                </button>
+            }
+        </div>
+
+        <button id="nextPage"
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
+            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="bookingDetailModal"
+    class="tw-fixed tw-inset-0 tw-bg-black/40 tw-flex tw-items-center tw-justify-center tw-z-50 tw-hidden">
+    <div
+        class="tw-bg-white tw-rounded-xl tw-shadow-xl tw-max-w-4xl tw-w-full tw-mx-4 tw-overflow-y-auto tw-max-h-[90vh]">
+        <div class="tw-flex tw-justify-between tw-items-center tw-border-b tw-px-6 tw-py-3">
+            <h3 class="tw-text-lg tw-font-semibold">Chi tiết đặt phòng</h3>
+            <button id="closeModalBtn" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-xl">&times;</button>
+        </div>
+        <div id="modalContent" class="tw-p-6"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("booking-history-container");
+
+        // Load page via Ajax
+        function loadPage(page) {
+            if (page < 1) return;
+            const url = `@Url.Action("BookingHistory", "Booking", new { area = "Admin" })?page=${page}`;
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(res => res.text())
+                .then(html => {
+                    container.innerHTML = html;
+                    lucide.createIcons();
+                    bindEvents();
+                })
+                .catch(err => console.error("Lỗi load trang:", err));
+        }
+
+        // Bind pagination and detail buttons
+        function bindEvents() {
+            // Pagination
+            const prev = document.getElementById("prevPage");
+            const next = document.getElementById("nextPage");
+            if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+            if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
+
+            document.querySelectorAll("#pagination button").forEach(btn => {
+                btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+            });
+
+            // Chi tiết
+            document.querySelectorAll(".view-btn").forEach(btn => {
+                btn.onclick = () => {
+                    const id = btn.dataset.id;
+                    fetch(`@Url.Action("Detail", "Booking", new { area = "Admin" })?id=${id}`, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                        .then(res => res.text())
+                        .then(html => {
+                            const modal = document.getElementById("bookingDetailModal");
+                            modal.querySelector("#modalContent").innerHTML = html;
+                            modal.classList.remove("tw-hidden");
+
+                            // Close button
+                            modal.querySelector("#closeModalBtn").onclick = () => modal.classList.add("tw-hidden");
+                            modal.onclick = e => { if (e.target === modal) modal.classList.add("tw-hidden"); };
+
+                            lucide.createIcons();
+                        });
+                };
+            });
+        }
+
+        bindEvents();
+    });
+</script>
