@@ -17,343 +17,343 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = hotels
 build_property.RootNamespace = hotels
-build_property.ProjectDir = d:\Workspace\FullStack\ASP.NET\Project\CNPM\
+build_property.ProjectDir = D:\CNPM\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\Workspace\FullStack\ASP.NET\Project\CNPM
+build_property.MSBuildProjectDirectory = D:\CNPM
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/AdminMenu/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/AdminMenu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/AdminMenu/_AdminMenuTablePartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/AdminMenu/_AdminMenuTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XF9BZG1pbk1lbnVUYWJsZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/AdminMenu/_DeleteModal.cshtml]
+[D:/CNPM/Areas/Admin/Views/AdminMenu/_DeleteModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5NZW51XF9EZWxldGVNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/BookingServices/Details.cshtml]
+[D:/CNPM/Areas/Admin/Views/BookingServices/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1NlcnZpY2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/BookingServices/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/BookingServices/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1NlcnZpY2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/BookingServices/_BookingServicePartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/BookingServices/_BookingServicePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1NlcnZpY2VzXF9Cb29raW5nU2VydmljZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Booking/BookingHistory.cshtml]
+[D:/CNPM/Areas/Admin/Views/Booking/BookingHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xCb29raW5nSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Booking/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Booking/_BookingDetail.cshtml]
+[D:/CNPM/Areas/Admin/Views/Booking/_BookingDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xfQm9va2luZ0RldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Booking/_BookingHistoryPartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/Booking/_BookingHistoryPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xfQm9va2luZ0hpc3RvcnlQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Booking/_BookingTablePartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/Booking/_BookingTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xfQm9va2luZ1RhYmxlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Home/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/KhachHang/Delete.cshtml]
+[D:/CNPM/Areas/Admin/Views/KhachHang/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/KhachHang/Details.cshtml]
+[D:/CNPM/Areas/Admin/Views/KhachHang/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/KhachHang/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/KhachHang/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/KhachHang/_KhachHangTablePartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/KhachHang/_KhachHangTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nXF9LaGFjaEhhbmdUYWJsZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Menu/Delete.cshtml]
+[D:/CNPM/Areas/Admin/Views/Menu/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Menu/Edit.cshtml]
+[D:/CNPM/Areas/Admin/Views/Menu/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Menu/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/Menu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Menu/_CreateModal.cshtml]
+[D:/CNPM/Areas/Admin/Views/Menu/_CreateModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxfQ3JlYXRlTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Menu/_MenuTablePartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/Menu/_MenuTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxfTWVudVRhYmxlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/NhanVien/CreateNV.cshtml]
+[D:/CNPM/Areas/Admin/Views/NhanVien/CreateNV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cQ3JlYXRlTlYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/NhanVien/DeleteNV.cshtml]
+[D:/CNPM/Areas/Admin/Views/NhanVien/DeleteNV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cRGVsZXRlTlYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/NhanVien/EditNV.cshtml]
+[D:/CNPM/Areas/Admin/Views/NhanVien/EditNV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cRWRpdE5WLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/NhanVien/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/NhanVien/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/NhanVien/_NhanVienTablePartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/NhanVien/_NhanVienTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmhhblZpZW5cX05oYW5WaWVuVGFibGVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/CheckInOut.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/CheckInOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxDaGVja0luT3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/CreateRoom.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/CreateRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxDcmVhdGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/DeleteRoom.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/DeleteRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxEZWxldGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/EditRoom.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/EditRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxFZGl0Um9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/_CheckInOutPartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/_CheckInOutPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxfQ2hlY2tJbk91dFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Room/_RoomPartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/Room/_RoomPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxfUm9vbVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/ServicesTypes/Create.cshtml]
+[D:/CNPM/Areas/Admin/Views/ServicesTypes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/ServicesTypes/Delete.cshtml]
+[D:/CNPM/Areas/Admin/Views/ServicesTypes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/ServicesTypes/Edit.cshtml]
+[D:/CNPM/Areas/Admin/Views/ServicesTypes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/ServicesTypes/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/ServicesTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/ServicesTypes/_servicesTypes.cshtml]
+[D:/CNPM/Areas/Admin/Views/ServicesTypes/_servicesTypes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNUeXBlc1xfc2VydmljZXNUeXBlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Services/Create.cshtml]
+[D:/CNPM/Areas/Admin/Views/Services/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Services/Delete.cshtml]
+[D:/CNPM/Areas/Admin/Views/Services/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Services/Edit.cshtml]
+[D:/CNPM/Areas/Admin/Views/Services/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Services/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/Services/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Services/_ServicesPartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/Services/_ServicesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcX1NlcnZpY2VzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
+[D:/CNPM/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5NZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[D:/CNPM/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/Statistics/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/Statistics/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RhdGlzdGljc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/TaiKhoan/CreateTK.cshtml]
+[D:/CNPM/Areas/Admin/Views/TaiKhoan/CreateTK.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cQ3JlYXRlVEsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/TaiKhoan/DeleteTK.cshtml]
+[D:/CNPM/Areas/Admin/Views/TaiKhoan/DeleteTK.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cRGVsZXRlVEsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/TaiKhoan/EditTK.cshtml]
+[D:/CNPM/Areas/Admin/Views/TaiKhoan/EditTK.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cRWRpdFRLLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/TaiKhoan/Index.cshtml]
+[D:/CNPM/Areas/Admin/Views/TaiKhoan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/TaiKhoan/_TaiKhoanPartial.cshtml]
+[D:/CNPM/Areas/Admin/Views/TaiKhoan/_TaiKhoanPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFpS2hvYW5cX1RhaUtob2FuUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/CNPM/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/CNPM/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Home/About.cshtml]
+[D:/CNPM/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Home/Contact.cshtml]
+[D:/CNPM/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Home/Index.cshtml]
+[D:/CNPM/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Home/Offers.cshtml]
+[D:/CNPM/Views/Home/Offers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPZmZlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Login/Index.cshtml]
+[D:/CNPM/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Pages/Gallery.cshtml]
+[D:/CNPM/Views/Pages/Gallery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcR2FsbGVyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Pages/Privacy.cshtml]
+[D:/CNPM/Views/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Pages/Terms.cshtml]
+[D:/CNPM/Views/Pages/Terms.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcVGVybXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Register/Index.cshtml]
+[D:/CNPM/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Room/Booking.cshtml]
+[D:/CNPM/Views/Room/Booking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxCb29raW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Room/BookingSuccess.cshtml]
+[D:/CNPM/Views/Room/BookingSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxCb29raW5nU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Room/Details.cshtml]
+[D:/CNPM/Views/Room/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Room/Index.cshtml]
+[D:/CNPM/Views/Room/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Services/Airport.cshtml]
+[D:/CNPM/Views/Services/Airport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQWlycG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Services/BookingSuccess.cshtml]
+[D:/CNPM/Views/Services/BookingSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQm9va2luZ1N1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Services/Events.cshtml]
+[D:/CNPM/Views/Services/Events.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRXZlbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Services/Index.cshtml]
+[D:/CNPM/Views/Services/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Services/Restaurant.cshtml]
+[D:/CNPM/Views/Services/Restaurant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmVzdGF1cmFudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Services/Spa.cshtml]
+[D:/CNPM/Views/Services/Spa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcU3BhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/Components/MenuView/Default.cshtml]
+[D:/CNPM/Views/Shared/Components/MenuView/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVZpZXdcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/Components/RoomView/Room.cshtml]
+[D:/CNPM/Views/Shared/Components/RoomView/Room.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUm9vbVZpZXdcUm9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/Error.cshtml]
+[D:/CNPM/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/Footer.cshtml]
+[D:/CNPM/Views/Shared/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/Header.cshtml]
+[D:/CNPM/Views/Shared/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/CNPM/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Users/EditProfile.cshtml]
+[D:/CNPM/Views/Users/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Users/Profile.cshtml]
+[D:/CNPM/Views/Users/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/_ViewImports.cshtml]
+[D:/CNPM/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/_ViewStart.cshtml]
+[D:/CNPM/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Workspace/FullStack/ASP.NET/Project/CNPM/Views/Shared/_Layout.cshtml]
+[D:/CNPM/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-u01g7u5e72

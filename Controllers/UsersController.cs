@@ -57,6 +57,15 @@ namespace hotels.Controllers
 
             ViewBag.LichSuDichVu = lichSuDichVu;
 
+            decimal tongTienDichVuGanNhat = 0;
+            if (dpGanNhat != null)
+            {
+                tongTienDichVuGanNhat = lichSuDichVu
+                    .Where(d => d.NgaySuDung >= dpGanNhat.NgayDen && d.NgaySuDung <= dpGanNhat.NgayDi)
+                    .Sum(d => d.ThanhTien);
+            }
+
+            ViewBag.TongTienDichVuGanNhat = tongTienDichVuGanNhat;
             return View(datPhongs);
         }
 
