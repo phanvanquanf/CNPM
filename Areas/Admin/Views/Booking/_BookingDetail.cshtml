@@ -1,0 +1,166 @@
+@model hotels.Models.tblDatPhong
+
+@{
+    // Chuyển ViewBag sang local variables, kiểm tra null
+    var details = ViewBag.Details as List<hotels.Models.tblCTDatPhong> ?? new List<hotels.Models.tblCTDatPhong>();
+    var customer = ViewBag.Customer as hotels.Areas.Admin.Models.tblKhachHang;
+
+     var (statusText, statusClass, statusIcon) = Model.TrangThai switch
+    {
+        1 => ("Đã xác nhận", "tw-bg-green-100 tw-text-green-600", "check"),
+        2 => ("Đã nhận phòng", "tw-bg-blue-100 tw-text-blue-600", "home"),
+        3 => ("Đã trả phòng", "tw-bg-emerald-100 tw-text-emerald-600", "log-out"),
+        4 => ("Đã hủy", "tw-bg-gray-100 tw-text-gray-500", "x"),
+        _ => ("Chưa xác nhận", "tw-bg-orange-100 tw-text-orange-600", null)
+    };
+
+    int duration = (Model.NgayDi - Model.NgayDen)?.Days ?? 0;
+}
+
+<div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+
+            <!-- HEADER -->
+            <div class="modal-header">
+                <div class="tw-flex tw-items-center tw-gap-1.5">
+                    <i data-lucide="square-arrow-out-up-right" class="tw-w-4 tw-h-4 tw-mr-1"></i>
+                    <h5 class="modal-title" id="modalCenterTitle">Booking ID: B-@Model.IDMaDatPhong</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+                <section
+                    class="tw-col-span-9 tw-grid tw-grid-cols-9 tw-gap-6 tw-bg-white tw-px-5">
+                    <!-- Room Info -->
+                    <div class="tw-col-span-6">
+                        <div class="tw-flex tw-items-center tw-justify-between">
+                            <p class="tw-font-semibold tw-text-sm">Thông Tin Đặt Phòng</p>
+                            <div
+                                class="tw-flex tw-items-center tw-justify-center tw-gap-1 tw-py-1.5 tw-px-1.5 tw-rounded-md tw-text-xs tw-font-medium @statusClass tw-max-w-[120px]">
+                                @if (statusIcon != null)
+                                {
+                                    <i data-lucide="@statusIcon" class="tw-w-4 tw-h-4"></i>
+                                }
+                                <span>@statusText</span>
+                            </div>
+                        </div>
+                        <div class="tw-pb-4 tw-mt-1">
+                            <div class="tw-flex tw-items-center tw-gap-1 tw-mb-1">
+                            <p class="tw-font-semibold tw-text-sm">Khách hàng:</p>
+                            <span class="tw-text-sm">@customer?.HoTen</span>
+                            </div>
+                            <p class="tw-text-gray-500 tw-text-xs">@Model.NgayTao?.ToString("dd/MM/yyyy HH:mm")</p>
+                        </div>
+
+                        <div class="tw-space-y-4">
+                            @foreach(var d in details)
+                            {
+                                var phong = d.Phong;
+                                var loaiPhong = phong?.LoaiPhong;
+                            <div class="tw-grid tw-grid-cols-3 tw-gap-4 tw-text-sm">
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Loại Phòng</p>
+                                    <p class="tw-font-medium">@loaiPhong?.LoaiPhong</p>
+                                </div>
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Số Phòng </p>
+                                    <p class="tw-font-medium">@phong?.MaSoPhong</p>
+                                </div>
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Giá Phòng</p>
+                                    <p class="tw-font-medium">@(phong?.GiaPhong?.ToString("N0"))₫/<span
+                                            class="tw-text-xs tw-text-gray-500">đêm</span></p>
+                                </div>
+                            </div>
+                            }
+
+                            <div class="tw-grid tw-grid-cols-3 tw-gap-4 tw-text-sm">
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Số người</p>
+                                    <p class="tw-font-medium">@Model?.TongSoKhach</p>
+                                </div>
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Tổng Số Phòng </p>
+                                    <p class="tw-font-medium">@Model?.TongSoPhong</p>
+                                </div>
+                            </div>
+
+                            <div class="tw-grid tw-grid-cols-3 tw-gap-4 tw-text-sm">
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Ngày Đến</p>
+                                    <p class="tw-font-medium">@Model?.NgayDen?.ToString("dd/MM/yyyy")</p>
+                                </div>
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Ngày Đi</p>
+                                    <p class="tw-font-medium">@Model?.NgayDi?.ToString("dd/MM/yyyy")</p>
+                                </div>
+                                <div class="tw-space-y-0.5">
+                                    <p class="tw-text-xs tw-text-gray-500">Khoảng Thời Gian</p>
+                                    <p class="tw-font-medium">@duration đêm</p>
+                                </div>
+                            </div>
+
+
+                            <div class="tw-space-y-0.5 tw-text-sm">
+                                <p class="tw-text-xs tw-text-gray-500">Ghi Chú</p>
+                                <p class="tw-font-medium">@Model?.GhiChu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Info -->
+                    @foreach(var d in details)
+                    {
+                        var phong = d.Phong;
+                        var loaiPhong = phong?.LoaiPhong;
+                        decimal price = phong?.GiaPhong ?? 0;
+                        decimal total = price * duration;
+                        var img = phong?.AnhPhongs?.FirstOrDefault(a => a.AnhChinh)?.Link;
+
+                    <div class="tw-col-span-3 tw-bg-neutral-100 tw-rounded-xl tw-p-[13px]">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-2">
+                            <p class="tw-font-semibold tw-text-sm">Thông Tin Phòng</p>
+                            <i data-lucide="square-arrow-out-up-right" class="tw-w-4 tw-h-4 tw-cursor-pointer tw-text-gray-500"></i>
+                        </div>
+                        <img src="~/@img" alt="Room" class="tw-rounded-lg tw-mb-4">
+                        <div class="tw-space-y-3 tw-text-xs">
+                            <div class="tw-flex tw-items-center tw-justify-between tw-border-b tw-border-neutral-300 tw-pb-3">
+                                <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
+                                    <i data-lucide="inspection-panel"
+                                        class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiPhong?.DienTich m²</span>
+                                <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
+                                    <i data-lucide="bed" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiPhong?.KieuGiuong</span>
+                                <span class="tw-flex tw-items-center tw-gap-1.5 tw-text-gray-800 tw-font-medium">
+                                    <i data-lucide="users" class="tw-w-4 tw-h-4 tw-text-gray-500"></i>@loaiPhong?.SucChua
+                                    Người</span>
+                            </div>
+                            <div class="tw-flex tw-justify-between">
+                                <span class="tw-text-gray-800 tw-font-medium">Giá Phòng</span>
+                                <span>@total.ToString("N0")₫</span>
+                            </div>
+                            <div class="tw-flex tw-justify-between">
+                                <span class="tw-text-gray-800 tw-font-medium">Dịch vụ</span>
+                                <span>--</span>
+                            </div>
+                            <div
+                                class="tw-flex tw-justify-between tw-font-semibold tw-text-sm tw-border-t tw-border-neutral-300 tw-pt-3">
+                                <span>Tổng Tiền</span>
+                                <span>@total.ToString("N0")₫</span>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </section>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>

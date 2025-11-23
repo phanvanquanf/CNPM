@@ -1,5 +1,9 @@
 using hotels.Models;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
+
+// Set EPPlus license for version 8+ (NonCommercial use)
+ExcelPackage.License.SetNonCommercialPersonal("Hotel Management System");
 
 var builder = WebApplication.CreateBuilder(args);
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");

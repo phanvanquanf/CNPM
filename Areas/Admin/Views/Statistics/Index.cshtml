@@ -1,0 +1,822 @@
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active">Báo cáo thống kê</li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="card tw-p-8 tw-mb-6">
+            <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <h1 class="tw-text-xl tw-capitalize tw-font-semibold">Báo cáo thống kê</h1>
+                    <p class="tw-text-neutral-400 tw-text-sm">Tổng quan hoạt động và hiệu suất của khách sạn</p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary tw-flex tw-items-center tw-gap-2" id="btnExportExcel">
+                        <i class="bx bx-export"></i>
+                        <span>Xuất Excel</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Period Tabs -->
+            <div class="tw-flex tw-items-center tw-gap-2">
+                <button class="period-tab-btn" id="periodDay">Hôm nay</button>
+                <button class="period-tab-btn active" id="periodWeek">Tuần này</button>
+                <button class="period-tab-btn" id="periodMonth">Tháng này</button>
+                <button class="period-tab-btn" id="periodYear">Năm nay</button>
+            </div>
+        </div>
+
+        <!-- Main Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+                        <div>
+                            <p class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-mb-1">Doanh thu</p>
+                            <h3 class="tw-text-2xl tw-font-bold tw-text-gray-900" id="revenueAmount">0 đ</h3>
+                        </div>
+                        <div class="tw-w-12 tw-h-12 tw-rounded-lg tw-bg-amber-100 tw-flex tw-items-center tw-justify-center">
+                            <i class="bx bx-dollar tw-text-2xl tw-text-amber-600"></i>
+                        </div>
+                    </div>
+                    <div class="stat-change-badge positive" id="revenueGrowth">
+                        <i class="bx bx-up-arrow-alt"></i>
+                        <span>0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+                        <div>
+                            <p class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-mb-1">Tổng đặt phòng</p>
+                            <h3 class="tw-text-2xl tw-font-bold tw-text-gray-900" id="totalBookings">0</h3>
+                        </div>
+                        <div class="tw-w-12 tw-h-12 tw-rounded-lg tw-bg-blue-100 tw-flex tw-items-center tw-justify-center">
+                            <i class="bx bx-calendar-check tw-text-2xl tw-text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="stat-change-badge neutral">
+                        <span>Tổng đơn</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+                        <div>
+                            <p class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-mb-1">Tỷ lệ lấp đầy</p>
+                            <h3 class="tw-text-2xl tw-font-bold tw-text-gray-900" id="occupancyRate">0%</h3>
+                        </div>
+                        <div class="tw-w-12 tw-h-12 tw-rounded-lg tw-bg-green-100 tw-flex tw-items-center tw-justify-center">
+                            <i class="bx bx-bed tw-text-2xl tw-text-green-600"></i>
+                        </div>
+                    </div>
+                    <div class="stat-change-badge neutral">
+                        <span>Phòng sử dụng</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+                        <div>
+                            <p class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-mb-1">Tổng khách hàng</p>
+                            <h3 class="tw-text-2xl tw-font-bold tw-text-gray-900" id="totalCustomers">0</h3>
+                        </div>
+                        <div class="tw-w-12 tw-h-12 tw-rounded-lg tw-bg-purple-100 tw-flex tw-items-center tw-justify-center">
+                            <i class="bx bx-user tw-text-2xl tw-text-purple-600"></i>
+                        </div>
+                    </div>
+                    <div class="stat-change-badge neutral">
+                        <span>Tổng số</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 1 -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Doanh thu theo tháng</h3>
+                        <div class="dropdown">
+                            <button class="tw-flex tw-items-center tw-gap-1 tw-px-3 tw-py-1.5 tw-text-sm tw-font-medium tw-text-gray-700 tw-bg-white tw-border tw-border-solid tw-border-neutral-200/80 tw-rounded-lg hover:tw-bg-gray-50 dropdown-toggle" type="button"
+                                id="yearDropdown" data-bs-toggle="dropdown">
+                                Năm @DateTime.Now.Year
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" id="yearDropdownMenu">
+                                @for (int i = DateTime.Now.Year; i >= DateTime.Now.Year - 5; i--)
+                                {
+                                    <a class="dropdown-item year-option" href="javascript:void(0);" data-year="@i">Năm @i</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div id="revenueChart" style="min-height: 350px;"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Trạng thái đặt phòng</h3>
+                    </div>
+                    <div id="bookingStatusChart" style="min-height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 2 -->
+        <div class="row mb-4">
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Doanh thu 30 ngày gần nhất</h3>
+                    </div>
+                    <div id="dailyRevenueChart" style="min-height: 320px;"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Doanh thu theo loại phòng</h3>
+                    </div>
+                    <div id="roomTypeRevenueChart" style="min-height: 320px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 3 -->
+        <div class="row mb-4">
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Xu hướng đặt phòng (6 tháng)</h3>
+                    </div>
+                    <div id="bookingTrendChart" style="min-height: 320px;"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Top dịch vụ</h3>
+                    </div>
+                    <div id="topServicesChart" style="min-height: 320px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 4 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card tw-p-6">
+                    <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">
+                        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900">Đặt phòng theo giờ trong ngày</h3>
+                    </div>
+                    <div id="bookingByHourChart" style="min-height: 320px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="row mb-4">
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900 tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">Thống kê phòng</h3>
+                    <div id="roomStatisticsContent">
+                        <div class="tw-flex tw-justify-center tw-items-center tw-py-8">
+                            <div class="tw-animate-spin tw-rounded-full tw-h-8 tw-w-8 tw-border-b-2 tw-border-gray-900"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900 tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">Dịch vụ phổ biến</h3>
+                    <div id="serviceStatisticsContent">
+                        <div class="tw-flex tw-justify-center tw-items-center tw-py-8">
+                            <div class="tw-animate-spin tw-rounded-full tw-h-8 tw-w-8 tw-border-b-2 tw-border-gray-900"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables Section -->
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900 tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">Khách hàng thân thiết</h3>
+                    <div class="table-responsive">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">STT</th>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">Tên khách hàng</th>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">Số đơn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topCustomersTable">
+                                <tr>
+                                    <td colspan="3" class="tw-text-center tw-py-8">
+                                        <div class="tw-animate-spin tw-rounded-full tw-h-6 tw-w-6 tw-border-b-2 tw-border-gray-900 tw-mx-auto"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card tw-p-6">
+                    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-900 tw-mb-4 tw-pb-4 tw-border-b tw-border-neutral-200">Thống kê theo loại phòng</h3>
+                    <div class="table-responsive">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">Loại phòng</th>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">Tổng số</th>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">Trống</th>
+                                    <th class="tw-text-xs tw-text-neutral-400 tw-uppercase tw-tracking-wide tw-font-semibold">Đã đặt</th>
+                                </tr>
+                            </thead>
+                            <tbody id="roomTypesTable">
+                                <tr>
+                                    <td colspan="4" class="tw-text-center tw-py-8">
+                                        <div class="tw-animate-spin tw-rounded-full tw-h-6 tw-w-6 tw-border-b-2 tw-border-gray-900 tw-mx-auto"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .period-tab-btn {
+        padding: 0.5rem 1rem;
+        border: 1px solid #e5e7eb;
+        background: white;
+        color: #6b7280;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .period-tab-btn:hover {
+        background: #f9fafb;
+        border-color: #d1d5db;
+    }
+
+    .period-tab-btn.active {
+        background: #1a1a1a;
+        color: white;
+        border-color: #1a1a1a;
+    }
+
+    .stat-change-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.375rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .stat-change-badge.positive {
+        background: #d1fae5;
+        color: #059669;
+    }
+
+    .stat-change-badge.negative {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .stat-change-badge.neutral {
+        background: #f3f4f6;
+        color: #6b7280;
+    }
+</style>
+
+@section Scripts {
+    <script src="~/admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script>
+        let revenueChart, bookingStatusChart, dailyRevenueChart, roomTypeRevenueChart;
+        let bookingTrendChart, topServicesChart, bookingByHourChart;
+        let currentPeriod = 'week';
+        let currentYear = @DateTime.Now.Year;
+
+        $(document).ready(function () {
+            // Đảm bảo ApexCharts đã được load
+            if (typeof ApexCharts === 'undefined') {
+                console.error('ApexCharts chưa được load');
+                setTimeout(function() {
+                    if (typeof ApexCharts !== 'undefined') {
+                        initializeCharts();
+                    } else {
+                        console.error('Không thể load ApexCharts');
+                    }
+                }, 500);
+            } else {
+                initializeCharts();
+            }
+        });
+
+        function initializeCharts() {
+            setupPeriodButtons();
+            setupYearDropdown();
+            loadStatistics();
+            // Delay một chút để đảm bảo DOM đã sẵn sàng
+            setTimeout(function() {
+                loadAllCharts();
+            }, 300);
+        }
+
+        function setupPeriodButtons() {
+            $('.period-tab-btn').on('click', function () {
+                $('.period-tab-btn').removeClass('active');
+                $(this).addClass('active');
+                currentPeriod = $(this).attr('id').replace('period', '').toLowerCase();
+                loadStatistics();
+            });
+
+            // Export Excel button
+            $('#btnExportExcel').on('click', function () {
+                const period = $('.period-tab-btn.active').attr('id').replace('period', '').toLowerCase();
+                window.location.href = '/Admin/Statistics/ExportToExcel?period=' + period;
+            });
+        }
+
+        function setupYearDropdown() {
+            $('.year-option').on('click', function () {
+                currentYear = $(this).data('year');
+                $('#yearDropdown').text('Năm ' + currentYear);
+                loadRevenueChart();
+            });
+        }
+
+        function loadStatistics() {
+            // Revenue
+            $.get('/Admin/Statistics/GetRevenueStatistics', { period: currentPeriod }, function (data) {
+                $('#revenueAmount').text(formatCurrency(data.revenue));
+                const growthClass = data.growthRate >= 0 ? 'positive' : 'negative';
+                const growthIcon = data.growthRate >= 0 ? 'bx-up-arrow-alt' : 'bx-down-arrow-alt';
+                $('#revenueGrowth').removeClass('positive negative')
+                    .addClass('stat-change-badge ' + growthClass)
+                    .html('<i class="bx ' + growthIcon + '"></i> <span>' + Math.abs(data.growthRate) + '%</span>');
+                $('#totalBookings').text(data.bookingCount);
+            }).fail(function() {
+                $('#revenueAmount').text('0 đ');
+                $('#totalBookings').text('0');
+            });
+
+            // Booking stats
+            $.get('/Admin/Statistics/GetBookingStatistics', function (data) {
+                updateBookingStatusChart(data);
+            }).fail(function() {
+                updateBookingStatusChart({ total: 0, confirmed: 0, pending: 0, completed: 0, cancelled: 0 });
+            });
+
+            // Room stats
+            $.get('/Admin/Statistics/GetRoomStatistics', function (data) {
+                let html = '';
+                html += '<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-bg-gray-50 tw-rounded-lg tw-mb-2">';
+                html += '<div class="tw-w-10 tw-h-10 tw-rounded-lg tw-bg-amber-100 tw-flex tw-items-center tw-justify-center"><i class="bx bx-bed tw-text-amber-600"></i></div>';
+                html += '<div class="tw-flex-1"><p class="tw-text-xs tw-text-gray-500 tw-mb-0">Tổng số phòng</p><p class="tw-text-base tw-font-semibold tw-text-gray-900 tw-mb-0" id="totalRooms">' + data.total + ' phòng</p></div></div>';
+
+                html += '<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-bg-gray-50 tw-rounded-lg tw-mb-2">';
+                html += '<div class="tw-w-10 tw-h-10 tw-rounded-lg tw-bg-green-100 tw-flex tw-items-center tw-justify-center"><i class="bx bx-check-circle tw-text-green-600"></i></div>';
+                html += '<div class="tw-flex-1"><p class="tw-text-xs tw-text-gray-500 tw-mb-0">Phòng trống</p><p class="tw-text-base tw-font-semibold tw-text-gray-900 tw-mb-0" id="availableRooms">' + data.available + ' phòng</p></div></div>';
+
+                html += '<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-bg-gray-50 tw-rounded-lg tw-mb-2">';
+                html += '<div class="tw-w-10 tw-h-10 tw-rounded-lg tw-bg-blue-100 tw-flex tw-items-center tw-justify-center"><i class="bx bx-user-check tw-text-blue-600"></i></div>';
+                html += '<div class="tw-flex-1"><p class="tw-text-xs tw-text-gray-500 tw-mb-0">Đang sử dụng</p><p class="tw-text-base tw-font-semibold tw-text-gray-900 tw-mb-0" id="occupiedRooms">' + data.occupied + ' phòng</p></div></div>';
+
+                html += '<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-bg-gray-50 tw-rounded-lg">';
+                html += '<div class="tw-w-10 tw-h-10 tw-rounded-lg tw-bg-red-100 tw-flex tw-items-center tw-justify-center"><i class="bx bx-wrench tw-text-red-600"></i></div>';
+                html += '<div class="tw-flex-1"><p class="tw-text-xs tw-text-gray-500 tw-mb-0">Đang bảo trì</p><p class="tw-text-base tw-font-semibold tw-text-gray-900 tw-mb-0" id="maintenanceRooms">' + data.maintenance + ' phòng</p></div></div>';
+
+                $('#roomStatisticsContent').html(html);
+                $('#occupancyRate').text(data.occupancyRate + '%');
+
+                // Room types
+                let roomTypesHtml = '';
+                if (data.roomTypes && data.roomTypes.length > 0) {
+                    data.roomTypes.forEach(function (type) {
+                        roomTypesHtml += '<tr class="tw-border-b tw-border-gray-100 hover:tw-bg-gray-50">';
+                        roomTypesHtml += '<td class="tw-py-3 tw-px-4"><strong class="tw-text-gray-900">' + type.type + '</strong></td>';
+                        roomTypesHtml += '<td class="tw-py-3 tw-px-4"><span class="tw-px-2 tw-py-1 tw-bg-blue-100 tw-text-blue-700 tw-rounded tw-text-xs tw-font-medium">' + type.count + '</span></td>';
+                        roomTypesHtml += '<td class="tw-py-3 tw-px-4"><span class="tw-px-2 tw-py-1 tw-bg-green-100 tw-text-green-700 tw-rounded tw-text-xs tw-font-medium">' + type.available + '</span></td>';
+                        roomTypesHtml += '<td class="tw-py-3 tw-px-4"><span class="tw-px-2 tw-py-1 tw-bg-amber-100 tw-text-amber-700 tw-rounded tw-text-xs tw-font-medium">' + type.occupied + '</span></td>';
+                        roomTypesHtml += '</tr>';
+                    });
+                } else {
+                    roomTypesHtml = '<tr><td colspan="4" class="tw-text-center tw-py-8 tw-text-gray-500">Không có dữ liệu</td></tr>';
+                }
+                $('#roomTypesTable').html(roomTypesHtml);
+            }).fail(function() {
+                $('#roomStatisticsContent').html('<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>');
+            });
+
+            // Customer stats
+            $.get('/Admin/Statistics/GetCustomerStatistics', function (data) {
+                $('#totalCustomers').text(data.total);
+
+                let customersHtml = '';
+                if (data.topCustomers && data.topCustomers.length > 0) {
+                    data.topCustomers.forEach(function (customer, index) {
+                        customersHtml += '<tr class="tw-border-b tw-border-gray-100 hover:tw-bg-gray-50">';
+                        customersHtml += '<td class="tw-py-3 tw-px-4"><strong class="tw-text-gray-900">' + (index + 1) + '</strong></td>';
+                        customersHtml += '<td class="tw-py-3 tw-px-4">' + (customer.name || 'N/A') + '</td>';
+                        customersHtml += '<td class="tw-py-3 tw-px-4"><span class="tw-px-2 tw-py-1 tw-bg-blue-100 tw-text-blue-700 tw-rounded tw-text-xs tw-font-medium">' + customer.bookingCount + '</span></td>';
+                        customersHtml += '</tr>';
+                    });
+                } else {
+                    customersHtml = '<tr><td colspan="3" class="tw-text-center tw-py-8 tw-text-gray-500">Không có dữ liệu</td></tr>';
+                }
+                $('#topCustomersTable').html(customersHtml);
+            }).fail(function() {
+                $('#topCustomersTable').html('<tr><td colspan="3" class="tw-text-center tw-py-8 tw-text-gray-500">Không thể tải dữ liệu</td></tr>');
+            });
+
+            // Service stats
+            $.get('/Admin/Statistics/GetServiceStatistics', function (data) {
+                let servicesHtml = '';
+                if (data.serviceBookings && data.serviceBookings.length > 0) {
+                    data.serviceBookings.forEach(function (service) {
+                        servicesHtml += '<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-bg-gray-50 tw-rounded-lg tw-mb-2">';
+                        servicesHtml += '<div class="tw-w-10 tw-h-10 tw-rounded-lg tw-bg-green-100 tw-flex tw-items-center tw-justify-center"><i class="bx bx-check-circle tw-text-green-600"></i></div>';
+                        servicesHtml += '<div class="tw-flex-1"><p class="tw-text-sm tw-font-semibold tw-text-gray-900 tw-mb-0">' + service.serviceName + '</p><p class="tw-text-xs tw-text-gray-500 tw-mb-0">' + service.bookingCount + ' đơn đặt</p></div>';
+                        servicesHtml += '<div class="tw-text-sm tw-font-semibold tw-text-green-600">' + formatCurrency(service.totalRevenue) + '</div>';
+                        servicesHtml += '</div>';
+                    });
+                } else {
+                    servicesHtml = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                }
+                $('#serviceStatisticsContent').html(servicesHtml);
+            }).fail(function() {
+                $('#serviceStatisticsContent').html('<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>');
+            });
+        }
+
+        function loadAllCharts() {
+            console.log('Loading all charts...');
+            try {
+                loadRevenueChart();
+                setTimeout(function() { loadDailyRevenueChart(); }, 100);
+                setTimeout(function() { loadRoomTypeRevenueChart(); }, 200);
+                setTimeout(function() { loadBookingTrendChart(); }, 300);
+                setTimeout(function() { loadTopServicesChart(); }, 400);
+                setTimeout(function() { loadBookingByHourChart(); }, 500);
+            } catch (error) {
+                console.error('Error loading charts:', error);
+            }
+        }
+
+        function loadRevenueChart() {
+            const chartElement = document.querySelector("#revenueChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #revenueChart');
+                return;
+            }
+
+            $.get('/Admin/Statistics/GetRevenueByMonth', { year: currentYear }, function (data) {
+                if (!data || data.length === 0) {
+                    chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                    return;
+                }
+
+                const categories = data.map(item => item.monthName);
+                const revenues = data.map(item => item.revenue || 0);
+                const bookings = data.map(item => item.bookingCount || 0);
+
+                const options = {
+                    series: [{
+                        name: 'Doanh thu',
+                        type: 'column',
+                        data: revenues
+                    }, {
+                        name: 'Số đơn',
+                        type: 'line',
+                        data: bookings
+                    }],
+                    chart: {
+                        height: 350,
+                        type: 'line',
+                        toolbar: { show: false },
+                        fontFamily: 'inherit'
+                    },
+                    stroke: { width: [0, 3], curve: 'smooth' },
+                    plotOptions: { bar: { columnWidth: '60%', borderRadius: 6 } },
+                    dataLabels: { enabled: true, enabledOnSeries: [1], style: { fontSize: '11px', fontWeight: 500 } },
+                    labels: categories,
+                    xaxis: { type: 'category', labels: { style: { fontSize: '12px', colors: '#6b7280' } } },
+                    yaxis: [{
+                        title: { text: 'Doanh thu', style: { fontSize: '12px', color: '#6b7280' } },
+                        labels: { formatter: function (val) { return (val / 1000000).toFixed(1) + 'M'; }, style: { fontSize: '12px', colors: '#6b7280' } }
+                    }, {
+                        opposite: true,
+                        title: { text: 'Số đơn', style: { fontSize: '12px', color: '#6b7280' } },
+                        labels: { style: { fontSize: '12px', colors: '#6b7280' } }
+                    }],
+                    colors: ['#1a1a1a', '#059669'],
+                    legend: { position: 'top', horizontalAlign: 'right', fontSize: '12px', fontWeight: 500 },
+                    grid: { borderColor: '#e5e7eb', strokeDashArray: 3 },
+                    tooltip: { theme: 'light', y: { formatter: function (val) { return formatCurrency(val); } } }
+                };
+
+                if (revenueChart) revenueChart.destroy();
+                revenueChart = new ApexCharts(chartElement, options);
+                revenueChart.render();
+                console.log('Revenue chart rendered');
+            }).fail(function(xhr, status, error) {
+                console.error('Error loading revenue chart:', error);
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>';
+            });
+        }
+
+        function updateBookingStatusChart(data) {
+            const chartElement = document.querySelector("#bookingStatusChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #bookingStatusChart');
+                return;
+            }
+
+            if (!data || (data.total === 0 && data.confirmed === 0 && data.pending === 0 && data.completed === 0 && data.cancelled === 0)) {
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                return;
+            }
+
+            const options = {
+                series: [data.confirmed || 0, data.pending || 0, data.completed || 0, data.cancelled || 0],
+                chart: { type: 'donut', height: 350, fontFamily: 'inherit' },
+                labels: ['Đã xác nhận', 'Chờ xác nhận', 'Hoàn thành', 'Đã hủy'],
+                colors: ['#059669', '#f59e0b', '#1a1a1a', '#dc2626'],
+                legend: { position: 'bottom', fontSize: '12px', fontWeight: 500 },
+                dataLabels: { enabled: true, formatter: function (val) { return val.toFixed(1) + '%'; }, style: { fontSize: '11px', fontWeight: 500 } },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '65%',
+                            labels: {
+                                show: true,
+                                total: {
+                                    show: true,
+                                    label: 'Tổng',
+                                    fontSize: '14px',
+                                    fontWeight: 600,
+                                    color: '#1a1a1a',
+                                    formatter: function () { return data.total || 0; }
+                                }
+                            }
+                        }
+                    }
+                },
+                tooltip: { theme: 'light' }
+            };
+
+            if (bookingStatusChart) bookingStatusChart.destroy();
+            bookingStatusChart = new ApexCharts(chartElement, options);
+            bookingStatusChart.render();
+            console.log('Booking status chart rendered');
+        }
+
+        function loadDailyRevenueChart() {
+            const chartElement = document.querySelector("#dailyRevenueChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #dailyRevenueChart');
+                return;
+            }
+
+            $.get('/Admin/Statistics/GetRevenueByDay', { days: 30 }, function (data) {
+                if (!data || data.length === 0) {
+                    chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                    return;
+                }
+
+                const dates = data.map(item => item.date);
+                const revenues = data.map(item => item.revenue || 0);
+
+                const options = {
+                    series: [{ name: 'Doanh thu', data: revenues }],
+                    chart: { height: 320, type: 'area', toolbar: { show: false }, fontFamily: 'inherit' },
+                    dataLabels: { enabled: false },
+                    stroke: { curve: 'smooth', width: 3 },
+                    xaxis: { categories: dates, labels: { style: { fontSize: '11px', colors: '#6b7280' }, rotate: -45, rotateAlways: false } },
+                    yaxis: { labels: { formatter: function (val) { return (val / 1000000).toFixed(1) + 'M'; }, style: { fontSize: '12px', colors: '#6b7280' } } },
+                    colors: ['#1a1a1a'],
+                    fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.7, opacityTo: 0.3, stops: [0, 90, 100] } },
+                    grid: { borderColor: '#e5e7eb', strokeDashArray: 3 },
+                    tooltip: { theme: 'light', y: { formatter: function (val) { return formatCurrency(val); } } }
+                };
+
+                if (dailyRevenueChart) dailyRevenueChart.destroy();
+                dailyRevenueChart = new ApexCharts(chartElement, options);
+                dailyRevenueChart.render();
+                console.log('Daily revenue chart rendered');
+            }).fail(function(xhr, status, error) {
+                console.error('Error loading daily revenue chart:', error);
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>';
+            });
+        }
+
+        function loadRoomTypeRevenueChart() {
+            const chartElement = document.querySelector("#roomTypeRevenueChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #roomTypeRevenueChart');
+                return;
+            }
+
+            $.get('/Admin/Statistics/GetRevenueByRoomType', function (data) {
+                if (!data || data.length === 0) {
+                    chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                    return;
+                }
+
+                const roomTypes = data.map(item => item.roomType);
+                const revenues = data.map(item => item.revenue || 0);
+
+                const options = {
+                    series: [{ name: 'Doanh thu', data: revenues }],
+                    chart: { height: 320, type: 'bar', toolbar: { show: false }, fontFamily: 'inherit' },
+                    plotOptions: { bar: { horizontal: true, borderRadius: 6, dataLabels: { position: 'top' } } },
+                    dataLabels: { enabled: true, formatter: function (val) { return (val / 1000000).toFixed(1) + 'M'; }, style: { fontSize: '11px', fontWeight: 500 } },
+                    xaxis: { categories: roomTypes, labels: { style: { fontSize: '12px', colors: '#6b7280' } } },
+                    yaxis: { labels: { style: { fontSize: '12px', colors: '#6b7280' } } },
+                    colors: ['#059669'],
+                    grid: { borderColor: '#e5e7eb', strokeDashArray: 3 },
+                    tooltip: { theme: 'light', y: { formatter: function (val) { return formatCurrency(val); } } }
+                };
+
+                if (roomTypeRevenueChart) roomTypeRevenueChart.destroy();
+                roomTypeRevenueChart = new ApexCharts(chartElement, options);
+                roomTypeRevenueChart.render();
+                console.log('Room type revenue chart rendered');
+            }).fail(function(xhr, status, error) {
+                console.error('Error loading room type revenue chart:', error);
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>';
+            });
+        }
+
+        function loadBookingTrendChart() {
+            const chartElement = document.querySelector("#bookingTrendChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #bookingTrendChart');
+                return;
+            }
+
+            $.get('/Admin/Statistics/GetBookingTrend', { months: 6 }, function (data) {
+                if (!data || data.length === 0) {
+                    chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                    return;
+                }
+
+                const months = data.map(item => item.monthName);
+                const total = data.map(item => item.total || 0);
+                const confirmed = data.map(item => item.confirmed || 0);
+                const completed = data.map(item => item.completed || 0);
+                const cancelled = data.map(item => item.cancelled || 0);
+
+                const options = {
+                    series: [
+                        { name: 'Tổng', data: total },
+                        { name: 'Đã xác nhận', data: confirmed },
+                        { name: 'Hoàn thành', data: completed },
+                        { name: 'Đã hủy', data: cancelled }
+                    ],
+                    chart: { height: 320, type: 'line', toolbar: { show: false }, fontFamily: 'inherit' },
+                    stroke: { width: 3, curve: 'smooth' },
+                    markers: { size: 5 },
+                    xaxis: { categories: months, labels: { style: { fontSize: '12px', colors: '#6b7280' } } },
+                    yaxis: { labels: { style: { fontSize: '12px', colors: '#6b7280' } } },
+                    colors: ['#1a1a1a', '#059669', '#2563eb', '#dc2626'],
+                    legend: { position: 'top', horizontalAlign: 'right', fontSize: '12px', fontWeight: 500 },
+                    grid: { borderColor: '#e5e7eb', strokeDashArray: 3 },
+                    tooltip: { theme: 'light' }
+                };
+
+                if (bookingTrendChart) bookingTrendChart.destroy();
+                bookingTrendChart = new ApexCharts(chartElement, options);
+                bookingTrendChart.render();
+                console.log('Booking trend chart rendered');
+            }).fail(function(xhr, status, error) {
+                console.error('Error loading booking trend chart:', error);
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>';
+            });
+        }
+
+        function loadTopServicesChart() {
+            const chartElement = document.querySelector("#topServicesChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #topServicesChart');
+                return;
+            }
+
+            $.get('/Admin/Statistics/GetTopServicesChart', function (data) {
+                if (!data || data.length === 0) {
+                    chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                    return;
+                }
+
+                const services = data.map(item => item.serviceName);
+                const revenues = data.map(item => item.totalRevenue || 0);
+
+                const options = {
+                    series: [{ name: 'Doanh thu', data: revenues }],
+                    chart: { height: 320, type: 'bar', toolbar: { show: false }, fontFamily: 'inherit' },
+                    plotOptions: { bar: { borderRadius: 6, dataLabels: { position: 'top' } } },
+                    dataLabels: { enabled: true, formatter: function (val) { return (val / 1000000).toFixed(1) + 'M'; }, style: { fontSize: '11px', fontWeight: 500 } },
+                    xaxis: { categories: services, labels: { style: { fontSize: '11px', colors: '#6b7280' }, rotate: -45, rotateAlways: false } },
+                    yaxis: { labels: { formatter: function (val) { return (val / 1000000).toFixed(1) + 'M'; }, style: { fontSize: '12px', colors: '#6b7280' } } },
+                    colors: ['#7c3aed'],
+                    grid: { borderColor: '#e5e7eb', strokeDashArray: 3 },
+                    tooltip: { theme: 'light', y: { formatter: function (val) { return formatCurrency(val); } } }
+                };
+
+                if (topServicesChart) topServicesChart.destroy();
+                topServicesChart = new ApexCharts(chartElement, options);
+                topServicesChart.render();
+                console.log('Top services chart rendered');
+            }).fail(function(xhr, status, error) {
+                console.error('Error loading top services chart:', error);
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>';
+            });
+        }
+
+        function loadBookingByHourChart() {
+            const chartElement = document.querySelector("#bookingByHourChart");
+            if (!chartElement) {
+                console.error('Không tìm thấy element #bookingByHourChart');
+                return;
+            }
+
+            $.get('/Admin/Statistics/GetBookingByHour', function (data) {
+                if (!data || data.length === 0) {
+                    chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không có dữ liệu</p>';
+                    return;
+                }
+
+                const hours = data.map(item => item.hour);
+                const counts = data.map(item => item.count || 0);
+
+                const options = {
+                    series: [{ name: 'Số đơn', data: counts }],
+                    chart: { height: 320, type: 'bar', toolbar: { show: false }, fontFamily: 'inherit' },
+                    plotOptions: { bar: { borderRadius: 6, columnWidth: '80%' } },
+                    dataLabels: { enabled: true, style: { fontSize: '11px', fontWeight: 500 } },
+                    xaxis: { categories: hours, labels: { style: { fontSize: '11px', colors: '#6b7280' } } },
+                    yaxis: { labels: { style: { fontSize: '12px', colors: '#6b7280' } } },
+                    colors: ['#f59e0b'],
+                    grid: { borderColor: '#e5e7eb', strokeDashArray: 3 },
+                    tooltip: { theme: 'light' }
+                };
+
+                if (bookingByHourChart) bookingByHourChart.destroy();
+                bookingByHourChart = new ApexCharts(chartElement, options);
+                bookingByHourChart.render();
+                console.log('Booking by hour chart rendered');
+            }).fail(function(xhr, status, error) {
+                console.error('Error loading booking by hour chart:', error);
+                chartElement.innerHTML = '<p class="tw-text-center tw-text-gray-500 tw-py-8">Không thể tải dữ liệu</p>';
+            });
+        }
+
+        function formatCurrency(amount) {
+            if (!amount) return '0 đ';
+            if (amount >= 1000000000) {
+                return (amount / 1000000000).toFixed(2) + ' tỷ';
+            } else if (amount >= 1000000) {
+                return (amount / 1000000).toFixed(1) + ' triệu';
+            } else if (amount >= 1000) {
+                return (amount / 1000).toFixed(1) + ' nghìn';
+            }
+            return amount.toLocaleString('vi-VN') + ' đ';
+        }
+    </script>
+}

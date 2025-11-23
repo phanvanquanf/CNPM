@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ksNet\\hotels\\hotels.csproj": {}
+    "D:\\Workspace\\FullStack\\ASP.NET\\Project\\CNPM\\hotels.csproj": {}
   },
   "projects": {
-    "D:\\ksNet\\hotels\\hotels.csproj": {
+    "D:\\Workspace\\FullStack\\ASP.NET\\Project\\CNPM\\hotels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ksNet\\hotels\\hotels.csproj",
+        "projectUniqueName": "D:\\Workspace\\FullStack\\ASP.NET\\Project\\CNPM\\hotels.csproj",
         "projectName": "hotels",
-        "projectPath": "D:\\ksNet\\hotels\\hotels.csproj",
-        "packagesPath": "C:\\Users\\MY ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\ksNet\\hotels\\obj\\",
+        "projectPath": "D:\\Workspace\\FullStack\\ASP.NET\\Project\\CNPM\\hotels.csproj",
+        "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspace\\FullStack\\ASP.NET\\Project\\CNPM\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\MY ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.9, )"

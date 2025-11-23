@@ -97,6 +97,8 @@ public class BookingController : Controller
             .Where(x => x.IDMaDatPhong == id)
             .Include(d => d.Phong!)
             .ThenInclude(p => p.AnhPhongs)
+            .Include(d => d.Phong!)
+            .ThenInclude(p => p.LoaiPhong)
             .ToList();
 
         var customer = _context.KhachHangs
@@ -105,7 +107,7 @@ public class BookingController : Controller
         ViewBag.Details = details;
         ViewBag.Customer = customer;
 
-        return PartialView("_BookingDetailPartial", booking);
+        return PartialView("_BookingDetail", booking);
     }
 
 

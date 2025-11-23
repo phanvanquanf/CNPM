@@ -12,6 +12,7 @@
     <PackageReference Include="Slugify.Core" Version="5.1.1" />
     <PackageReference Include="X.PagedList" Version="10.5.9" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="10.5.9" />
+    <PackageReference Include="EPPlus" Version="8.3.0" />
   </ItemGroup>
 
 </Project>

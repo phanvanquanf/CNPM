@@ -5,8 +5,7 @@
 <div id="product-container">
     <div class="tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
         <table class="tw-min-w-full">
-            <thead
-                class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+            <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
                 <tr class="tw-bg-neutral-50 tw-text-center">
                     <th class="tw-py-3 tw-px-4">#</th>
                     <th class="tw-py-3 tw-px-4">Booking ID</th>
@@ -39,11 +38,7 @@
                                     _ => ("Chưa xác nhận", "tw-bg-orange-100 tw-text-orange-400"),
                                 };
                             }
-
-                            <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium @statusClass">
-                                @statusText
-                            </span>
-
+                            <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium @statusClass">@statusText</span>
                         </td>
                         <td class="tw-px-4 tw-py-3">
                             <div class="dropdown">
@@ -75,7 +70,7 @@
                                         </button>
                                     </form>
 
-                                    <button class="dropdown-item detail-btn">
+                                    <button class="dropdown-item" onclick="loadDetail(@item.dp.IDMaDatPhong)">
                                         <i data-lucide="square-arrow-out-up-right"
                                             class="bx bx-info-circle tw-w-4 tw-h-4 me-2"></i> Chi tiết
                                     </button>
@@ -88,135 +83,68 @@
         </table>
     </div>
 
-
     <!-- Pagination -->
     <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
         <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
             data-page="@(Model.PageNumber - 1)">
-            <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
+            <i class="tw-w-4 tw-h-4 bx bx-chevron-left"></i>
         </button>
 
         <div id="pagination" class="tw-flex tw-gap-1">
             @for (int i = 1; i <= Model.PageCount; i++)
             {
-                <button
-                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
-                    data-page="@i">
-                    @i
-                </button>
+                <button class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-bg-gray-200/60 tw-rounded" : "tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                        data-page="@i">@i</button>
             }
         </div>
 
-        <button id="nextPage"
-            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+        <button id="nextPage" class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
             data-page="@(Model.PageNumber + 1)">
-            <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
+            <i class="tw-w-4 tw-h-4 bx bx-chevron-right"></i>
         </button>
     </div>
 </div>
 
+<!-- Container modal sẽ được load bằng AJAX -->
+<div id="detailModalContainer"></div>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // ==========================
-        // 📄 Hàm load phân trang Ajax
-        // ==========================
-        function loadPage(page) {
-            if (page < 1) return;
-            const url = `@Url.Action("Index")?page=${page}`;
-            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById("product-container").innerHTML = html;
-                    lucide.createIcons();
-                    bindAllEvents(); // Gắn lại sự kiện sau khi load lại
-                })
-                .catch(err => console.error("Lỗi load trang:", err));
-        }
+document.addEventListener("DOMContentLoaded", function () {
 
-        // ==========================
-        // ⏩ Gắn sự kiện phân trang
-        // ==========================
-        function bindPagination() {
-            const prev = document.getElementById("prevPage");
-            const next = document.getElementById("nextPage");
-
-            if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
-            if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
-
-            document.querySelectorAll("#pagination button").forEach(btn => {
-                btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+    function loadPage(page) {
+        if (page < 1) return;
+        fetch(`@Url.Action("Index")?page=${page}`, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("product-container").innerHTML = html;
+                lucide.createIcons();
+                bindPagination();
             });
-        }
+    }
 
-        // ==========================
-        // 🔍 Gắn sự kiện nút “Chi tiết”
-        // ==========================
-        function bindDetailButtons() {
-            document.querySelectorAll(".detail-btn").forEach(btn => {
-                btn.addEventListener("click", function () {
+    function bindPagination() {
+        const prev = document.getElementById("prevPage");
+        const next = document.getElementById("nextPage");
 
-                    const row = btn.closest("tr");
-                    const bookingText = row.querySelector("td:nth-child(2)")?.innerText; // B-12
-                    const bookingId = bookingText?.replace("B-", "").trim();
+        if (prev) prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+        if (next) next.onclick = () => loadPage(parseInt(next.dataset.page));
 
-                    if (!bookingId) {
-                        alert("Không tìm thấy mã đặt phòng!");
-                        return;
-                    }
+        document.querySelectorAll("#pagination button").forEach(btn => {
+            btn.onclick = () => loadPage(parseInt(btn.getAttribute("data-page")));
+        });
+    }
 
-                    const url = `@Url.Action("Detail", "Booking", new { area = "Admin" })?id=${bookingId}`;
+    bindPagination();
+});
 
-                    fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
-                        .then(res => res.text())
-                        .then(html => showModal(html))
-                        .catch(err => console.error("Lỗi khi tải chi tiết:", err));
-                });
-            });
-        }
-
-        // ==========================
-        // 🪟 Tạo modal hiển thị chi tiết
-        // ==========================
-        function showModal(contentHtml) {
-            let modal = document.getElementById("bookingDetailModal");
-            if (!modal) {
-                modal = document.createElement("div");
-                modal.id = "bookingDetailModal";
-                modal.className = "tw-fixed tw-inset-0 tw-bg-black/40 tw-flex tw-items-center tw-justify-center tw-z-50 tw-p-4";
-                modal.innerHTML = `
-            <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-w-full tw-max-w-4xl tw-max-h-[90vh] tw-flex tw-flex-col tw-overflow-hidden">
-                <!-- Header -->
-                <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-3 tw-border-b tw-border-gray-200">
-                    <h3 class="tw-text-lg tw-font-semibold">Chi tiết đặt phòng</h3>
-                    <button id="closeModalBtn" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-2xl">&times;</button>
-                </div>
-
-                <!-- Content -->
-                <div id="modalContent" class="tw-p-6 tw-flex-1 tw-overflow-y-auto"></div>
-            </div>
-        `;
-                document.body.appendChild(modal);
-
-                modal.addEventListener("click", e => {
-                    if (e.target.id === "bookingDetailModal" || e.target.id === "closeModalBtn") {
-                        modal.remove();
-                    }
-                });
-            }
-
-            modal.querySelector("#modalContent").innerHTML = contentHtml;
+function loadDetail(id) {
+    fetch(`/Admin/Booking/Detail?id=${id}`)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('detailModalContainer').innerHTML = html;
             lucide.createIcons();
-        }
-
-
-        // ==========================
-        // 🔁 Gắn lại tất cả sự kiện sau Ajax
-        // ==========================
-        function bindAllEvents() {
-            bindPagination();
-            bindDetailButtons();
-        }
-
-        bindAllEvents(); // Khởi động ban đầu
-    });
+            var modal = new bootstrap.Modal(document.getElementById('detailModal'));
+            modal.show();
+        });
+}
 </script>
