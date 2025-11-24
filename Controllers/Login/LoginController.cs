@@ -41,6 +41,12 @@ namespace hotels.Controllers
                 return RedirectToAction("Index", "Login");
             }
 
+            if (check.TrangThai == false)
+            {
+                Functions._Message = "Tài khoản đã bị vô hiệu hóa";
+                return RedirectToAction("Index", "Login");
+            }
+
             Functions._Message = string.Empty;
             Functions._MaTaiKhoan = check.IDTaiKhoan;
             Functions._TenDangNhap = check.TenDangNhap ?? string.Empty;

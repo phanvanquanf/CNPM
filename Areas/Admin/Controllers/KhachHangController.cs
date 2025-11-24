@@ -83,6 +83,13 @@ namespace hotels.Areas.Admin.Controllers
                 return NotFound();
 
             kh.TrangThai = 1 - kh.TrangThai;
+
+            var tk = _context.TaiKhoans.FirstOrDefault(t => t.IDTaiKhoan == kh.IDTaiKhoan);
+            if (tk != null)
+            {
+                tk.TrangThai = false;
+            }
+
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
