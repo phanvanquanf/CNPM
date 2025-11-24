@@ -3,7 +3,7 @@
 @model IPagedList<hotels.Areas.Admin.Models.tblKhachHang>
 
 <div id="product-container">
-    <div class="tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
+    <div class="tw-overflow-hidden tw-rounded-xl tw-border tw-border-solid tw-border-neutral-100/80">
         @if (ViewBag.Message != null)
         {
             <div class="tw-text-center tw-text-sm tw-text-neutral-500 tw-py-6">
@@ -12,87 +12,88 @@
         }
         else
         {
-            <table class="tw-min-w-full">
-                <thead
-                    class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
-                    <tr class="tw-bg-neutral-50 tw-text-center">
-                        <th class="tw-px-4 tw-py-3">#</th>
-                        <th class="tw-px-4 tw-py-3">Họ tên</th>
-                        <th class="tw-px-4 tw-py-3">Tên đăng nhập</th>
-                        <th class="tw-px-4 tw-py-3">CCCD</th>
-                        <th class="tw-px-4 tw-py-3">Giới tính</th>
-                        <th class="tw-px-4 tw-py-3">SĐT</th>
-                        <th class="tw-px-4 tw-py-3">Email</th>
-                        <th class="tw-px-4 tw-py-3">Địa chỉ</th>
-                        <th class="tw-px-4 tw-py-3">Trạng thái</th>
-                        <th class="tw-px-4 tw-py-3">Chức năng</th>
-                    </tr>
-                </thead>
-                <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
-                    @foreach (var item in Model.Select((kh, index) => new { kh, index }))
-                    {
-                        <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
-                            <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
-                            <td class="tw-px-4 tw-py-3">@item.kh.HoTen</td>
-                            <th class="tw-px-4 tw-py-3">@item.kh.TaiKhoan?.TenDangNhap</th>
-                            <td class="tw-px-4 tw-py-3">@item.kh.CCCD</td>
-                            <td class="tw-px-4 tw-py-3">@item.kh.GioiTinh</td>
-                            <td class="tw-px-4 tw-py-3">@item.kh.SDT</td>
-                            <td class="tw-px-4 tw-py-3">@item.kh.Email</td>
+        <table class="tw-min-w-full">
+            <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
+                <tr class="tw-bg-neutral-50 tw-text-center">
+                    <th class="tw-px-4 tw-py-3">#</th>
+                    <th class="tw-px-4 tw-py-3">Họ tên</th>
+                    <th class="tw-px-4 tw-py-3">Giới tính</th>
+                    <th class="tw-px-4 tw-py-3">SĐT</th>
+                    <th class="tw-px-4 tw-py-3">Email</th>
+                    <th class="tw-px-4 tw-py-3">Trạng thái</th>
+                    <th class="tw-px-4 tw-py-3">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
+                @foreach (var item in Model.Select((kh, index) => new { kh, index }))
+                {
+                    <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
+                        <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
+                        <td class="tw-px-4 tw-py-3">@item.kh.HoTen</td>
+                        <td class="tw-px-4 tw-py-3">@item.kh.GioiTinh</td>
+                        <td class="tw-px-4 tw-py-3">@item.kh.SDT</td>
+                        <td class="tw-px-4 tw-py-3">@item.kh.Email</td>
+                        <td class="tw-px-4 tw-py-3">
+                            @if (item.kh.TrangThai == 0)
+                            {
+                                <span class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-green-100 tw-text-green-500">
+                                    Hoạt động
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-red-100 tw-text-red-500">
+                                    Vô hiệu hóa
+                                </span>
+                            }
+                        </td>
+                        <td class="tw-px-4 tw-py-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu !tw-text-xs">
+                                   <button class="dropdown-item view-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#showModal"
+                                        data-id="@item.kh.IDKhachHang"
+                                        data-tendangnhap="@item.kh.TaiKhoan?.TenDangNhap"
+                                        data-name="@item.kh.HoTen"
+                                        data-gioitinh="@item.kh.GioiTinh"
+                                        data-cccd="@item.kh.CCCD"
+                                        data-sdt="@item.kh.SDT"
+                                        data-email="@item.kh.Email"
+                                        data-address="@item.kh.DiaChi"
+                                        data-trangthai="@item.kh.TrangThai">
+                                    <i class="bx bx-show me-2"></i> Xem chi tiết
+                                </button>
 
-                            <td class="tw-px-4 tw-py-3">@item.kh.DiaChi</td>
-                            <td class="tw-px-4 tw-py-3">
-                                @if (item.kh.TrangThai == 0)
-                                {
-                                    <span
-                                        class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-green-100 tw-text-green-500">
-                                        Hoạt động
-                                    </span>
-                                }
-                                else
-                                {
-                                    <span
-                                        class="tw-px-2 tw-py-1 tw-text-xs tw-rounded-lg tw-font-medium tw-bg-red-100 tw-text-red-500">
-                                        Vô hiệu hóa
-                                    </span>
-                                }
-                            </td>
-                            <td class="tw-px-4 tw-py-3">
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    <button class="dropdown-item update-status-btn"
+                                            data-id="@item.kh.IDKhachHang"
+                                            data-trangthai="@item.kh.TrangThai"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#updateStatusModal">
+                                        @if (item.kh.TrangThai == 0){
+                                            <i data-lucide="user-x" class="bx bx-edit-alt tw-w-4 tw-h-4 me-2 tw-mb-1"></i> <span>Vô hiệu hóa</span>
+                                        } else {
+                                            <i data-lucide="user-check" class="bx bx-edit-alt tw-w-4 tw-h-4 me-2 tw-mb-1"></i> <span>Kích hoạt</span>
+                                        }
                                     </button>
-                                    <div class="dropdown-menu !tw-text-xs">
-                                        <button class="dropdown-item view-btn" data-bs-toggle="modal"
-                                            data-bs-target="#showModal" data-id="@item.kh.IDKhachHang"
-                                            data-tendangnhap="@item.kh.TaiKhoan?.TenDangNhap" data-name="@item.kh.HoTen"
-                                            data-gioitinh="@item.kh.GioiTinh" data-cccd="@item.kh.CCCD" data-sdt="@item.kh.SDT"
-                                            data-email="@item.kh.Email" data-address="@item.kh.DiaChi"
-                                            data-trangthai="@item.kh.TrangThai">
-                                            <i class="bx bx-show me-2"></i> Xem chi tiết
-                                        </button>
-
-                                        <button class="dropdown-item delete-btn" data-id="@item.kh.IDKhachHang"
-                                            data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                            <i class="bx bx-trash me-2"></i> Xóa
-                                        </button>
-                                    </div>
                                 </div>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            @await Html.PartialAsync(partialViewName: "Details")
-            @await Html.PartialAsync(partialViewName: "Delete")
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @await Html.PartialAsync(partialViewName: "Details")
+        @await Html.PartialAsync(partialViewName: "UpdateStatus")
         }
     </div>
 
     <!-- Pagination -->
-    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-6 tw-text-sm">
-        <button id="prevPage"
-            class="tw-pr-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
-                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
             data-page="@(Model.PageNumber - 1)">
             <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
         </button>
@@ -101,8 +102,7 @@
             @for (int i = 1; i <= Model.PageCount; i++)
             {
                 <button
-                    class="tw-w-8 tw-h-8 tw-rounded tw-font-medium
-                     @(i == Model.PageNumber ? "tw-bg-indigo-600 tw-text-white" : "tw-text-gray-600 tw-hover:bg-indigo-50 tw-transition")"
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
                     data-page="@i">
                     @i
                 </button>
@@ -110,12 +110,164 @@
         </div>
 
         <button id="nextPage"
-            class="tw-pl-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
-                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
             data-page="@(Model.PageNumber + 1)">
             <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
         </button>
     </div>
 </div>
 
-<script src="~/assets/js/khachhang.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+  const container = document.getElementById("product-container");
+
+  function loadPage(page) {
+    if (page < 1) return;
+    fetch(`/Admin/KhachHang/Index?page=${page}`, {
+      headers: { "X-Requested-With": "XMLHttpRequest" },
+    })
+      .then((res) => res.text())
+      .then((html) => {
+        container.innerHTML = html;
+        lucide.createIcons();
+      })
+      .catch((err) => console.error("Lỗi load page:", err));
+  }
+
+  container.addEventListener("click", function (event) {
+    const viewBtn = event.target.closest(".view-btn");
+    const updateBtn = event.target.closest(".update-status-btn");
+    const pageBtn = event.target.closest("#pagination button");
+    const prevBtn = event.target.closest("#prevPage");
+    const nextBtn = event.target.closest("#nextPage");
+
+    if (viewBtn) {
+      document.getElementById("show-id").value = viewBtn.dataset.id || "";
+      document.getElementById("show-tenDangNhap").value =
+        viewBtn.dataset.tendangnhap || "";
+      document.getElementById("show-name").value = viewBtn.dataset.name || "";
+      document.getElementById("show-gioitinh").value =
+        viewBtn.dataset.gioitinh || "";
+      document.getElementById("show-cccd").value = viewBtn.dataset.cccd || "";
+      document.getElementById("show-sdt").value = viewBtn.dataset.sdt || "";
+      document.getElementById("show-email").value = viewBtn.dataset.email || "";
+      document.getElementById("show-address").value =
+        viewBtn.dataset.address || "";
+      document.getElementById("show-trangthai").value =
+        viewBtn.dataset.trangthai == "0" ? "Hoạt động" : "Vô hiệu hóa";
+      return;
+    }
+
+ if (updateBtn) {
+    document.getElementById("updateStatus-id").value = updateBtn.dataset.id;
+
+    const modal_title = document.getElementById("modal-title")
+    const title = document.getElementById("updateStatus-title");
+    const desc = document.getElementById("updateStatus-desc");
+
+    const iconHeader = document.getElementById("update-icon-header");
+    const iconBody = document.getElementById("update-icon-body");
+
+    iconBody.classList.add("tw-w-12", "tw-h-12", "tw-mr-4");
+
+    iconBody.classList.remove("text-danger", "text-success");
+
+    const submit = document.getElementById("submit")
+
+    submit.classList.remove("btn-danger", "btn-success")
+
+    if (updateBtn.dataset.trangthai == "0") {
+
+        modal_title.textContent = "Vô hiệu hóa tài khoản"
+        title.textContent = "Bạn có chắc muốn vô hiệu hóa tài khoản?";
+        desc.textContent = "Hành động này sẽ dừng mọi quyền truy cập của tài khoản.";
+
+        iconHeader.setAttribute("data-lucide", "user-x");
+        iconBody.setAttribute("data-lucide", "user-x");
+
+        iconBody.classList.add("text-danger");
+        submit.classList.add("btn-danger")
+
+    } else {
+        modal_title.textContent = "Kích hoạt tài khoản"
+        title.textContent = "Bạn có chắc muốn kích hoạt lại tài khoản?";
+        desc.textContent = "Tài khoản sẽ có thể đăng nhập và sử dụng hệ thống.";
+
+        iconHeader.setAttribute("data-lucide", "user-check");
+        iconBody.setAttribute("data-lucide", "user-check");
+
+        iconBody.classList.add("text-success");
+        submit.classList.add("btn-success")
+    }
+
+    lucide.createIcons();
+}
+
+
+    if (pageBtn) {
+      const page = parseInt(pageBtn.dataset.page);
+      if (!isNaN(page)) loadPage(page);
+      return;
+    }
+
+    if (prevBtn && !prevBtn.classList.contains("tw-opacity-30")) {
+      loadPage(parseInt(prevBtn.dataset.page));
+      return;
+    }
+
+    if (nextBtn && !nextBtn.classList.contains("tw-opacity-30")) {
+      loadPage(parseInt(nextBtn.dataset.page));
+      return;
+    }
+  });
+
+  const statusFilter = document.getElementById("statusFilter");
+  const dropdownBtn = statusFilter?.previousElementSibling;
+
+  if (statusFilter) {
+    statusFilter.addEventListener("click", function (event) {
+      const item = event.target.closest("a[data-value]");
+      if (!item) return;
+
+      const status = item.dataset.value;
+      const label = item.textContent.trim();
+
+      if (dropdownBtn) dropdownBtn.textContent = label;
+
+      fetch(
+        `/Admin/KhachHang/FilterByStatus?status=${encodeURIComponent(status)}`
+      )
+        .then((res) => res.text())
+        .then((html) => {
+          container.innerHTML = html;
+          lucide.createIcons();
+        })
+        .catch((err) => console.error("Lỗi lọc trạng thái:", err));
+    });
+  }
+
+
+  function searchEmployee() {
+    if (!searchInput) return;
+    const keyword = searchInput.value.trim();
+    fetch(`/Admin/KhachHang/Search?keyword=${encodeURIComponent(keyword)}`)
+      .then((res) => res.text())
+      .then((html) => {
+        container.innerHTML = html;
+        lucide.createIcons();
+      })
+      .catch((err) => console.error("Lỗi tìm kiếm:", err));
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        searchEmployee();
+      }
+    });
+  }
+});
+
+</script>

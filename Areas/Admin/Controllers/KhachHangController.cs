@@ -42,7 +42,7 @@ namespace hotels.Areas.Admin.Controllers
             }
 
             query = query.OrderByDescending(kh => kh.IDKhachHang);
-            var pagedList = query.ToPagedList(page, 3);
+            var pagedList = query.ToPagedList(page, 8);
 
             if (!pagedList.Any())
             {
@@ -67,7 +67,7 @@ namespace hotels.Areas.Admin.Controllers
             ViewBag.TaiKhoan = new SelectList(_context.TaiKhoans.ToList(), "IDTaiKhoan", "TenDangNhap");
             var khList = _context.KhachHangs.Include(m => m.TaiKhoan)
                                 .OrderByDescending(m => m.IDKhachHang)
-                                .ToPagedList(page, 3);
+                                .ToPagedList(page, 8);
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
                 return PartialView("_KhachHangTablePartial", khList);
@@ -76,12 +76,13 @@ namespace hotels.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(long id)
+        public IActionResult UpdateStatus(long id)
         {
             var kh = _context.KhachHangs.Find(id);
             if (kh == null)
                 return NotFound();
-            _context.KhachHangs.Remove(kh);
+
+            kh.TrangThai = 1 - kh.TrangThai;
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

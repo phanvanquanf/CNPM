@@ -34,7 +34,7 @@
                             <td class="tw-px-4 tw-py-3 tw-font-medium tw-flex tw-justify-center tw-items-center">
                                 <img src="~/assets/img/Services/@item.dv.LoaiDichVu?.LoaiDichVu/@item.dv.Image" 
                                     alt="@item.dv.DichVu" 
-                                    class="tw-w-32 tw-h-32 tw-object-cover tw-rounded-lg tw-transition tw-transform hover:tw-scale-110" />
+                                    class="tw-w-28 tw-h-28 tw-object-cover tw-rounded-lg tw-transition tw-transform hover:tw-scale-110" />
                             </td>
                             <td class="tw-px-4 tw-py-3 tw-font-medium">@item.dv.DichVu</td>
                             <td class="tw-px-4 tw-py-3">@item.dv.LoaiDichVu?.LoaiDichVu</td>
@@ -107,29 +107,26 @@
     </div>
 
     <!-- Pagination -->
-    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-6 tw-text-sm">
-        <button id="prevPage"
-                class="tw-pr-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
-                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
-                data-page="@(Model.PageNumber - 1)">
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
             <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
         </button>
 
         <div id="pagination" class="tw-flex tw-gap-1">
             @for (int i = 1; i <= Model.PageCount; i++)
             {
-                <button class="tw-w-8 tw-h-8 tw-rounded tw-font-medium
-                 @(i == Model.PageNumber ? "tw-bg-indigo-600 tw-text-white" : "tw-text-gray-600 tw-hover:bg-indigo-50 tw-transition")"
-                        data-page="@i">
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
                     @i
                 </button>
             }
         </div>
 
         <button id="nextPage"
-                class="tw-pl-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
-                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
-                data-page="@(Model.PageNumber + 1)">
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
             <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
         </button>
     </div>

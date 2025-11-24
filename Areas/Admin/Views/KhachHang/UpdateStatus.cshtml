@@ -1,0 +1,45 @@
+<!-- Update Status Modal -->
+<div class="modal fade" id="updateStatusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="tw-bg-warning tw-flex tw-items-center tw-justify-between tw-px-4 tw-py-3 tw-rounded-t-lg">
+                <div class="tw-flex tw-items-center tw-gap-2">
+                    <div id="update-icon-header">
+                    <i data-lucide="user-round-x" class="tw-w-4 tw-h-4"></i>
+                    </div>
+                    <h5 id="modal-title" class="modal-title tw-mt-1" id="modalCenterTitle">Thay đổi trạng thái</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form id="updateStatusForm" method="post" asp-area="Admin" asp-controller="KhachHang" asp-action="UpdateStatus">
+                <input type="hidden" name="id" id="updateStatus-id" />
+
+                <div class="modal-body">
+                    <div class="tw-flex tw-pt-3 tw-pb-1">
+                        <div id="update-icon-body" class="tw-shrink-0 tw-mr-4">
+                            <i data-lucide="user-x" class="tw-w-12 tw-h-12"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 id="updateStatus-title" class="tw-text-neutral-800 tw-font-medium mb-2">
+                                Bạn chắc chắn muốn vô hiệu hóa tài khoản này?
+                            </h6>
+                            <p id="updateStatus-desc" class="tw-text-neutral-400">
+                                Hành động này sẽ tạm ngừng toàn bộ quyền truy cập của tài khoản.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button id="submit" type="submit" class="btn btn-danger tw-flex tw-items-center tw-gap-2">
+                        <i data-lucide="check" class="tw-w-4 tw-h-4"></i>Xác nhận
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

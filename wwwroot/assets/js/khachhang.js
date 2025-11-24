@@ -1,135 +1,136 @@
-const searchInput = document.getElementById("searchInput");
-const employeeList = document.getElementById("employeeList");
-
 document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+  const container = document.getElementById("product-container");
+
   function loadPage(page) {
     if (page < 1) return;
-    const url = `/Admin/KhachHang/Index?page=${page}`;
-    fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+    fetch(`/Admin/KhachHang/Index?page=${page}`, {
+      headers: { "X-Requested-With": "XMLHttpRequest" },
+    })
       .then((res) => res.text())
       .then((html) => {
-        document.getElementById("product-container").innerHTML = html;
+        container.innerHTML = html;
         lucide.createIcons();
-        bindShowButtons();
-        bindDeleteButtons();
-        bindPagination();
-      });
+      })
+      .catch((err) => console.error("Lỗi load page:", err));
   }
 
-  function bindShowButtons() {
-    document.addEventListener("click", function (event) {
-      const button = event.target.closest(".view-btn");
-      if (!button) return;
+  container.addEventListener("click", function (event) {
+    const viewBtn = event.target.closest(".view-btn");
+    const updateBtn = event.target.closest(".update-status-btn");
+    const pageBtn = event.target.closest("#pagination button");
+    const prevBtn = event.target.closest("#prevPage");
+    const nextBtn = event.target.closest("#nextPage");
 
-      const modalEl = document.getElementById("showModal");
-      if (!modalEl) return;
-
-      const data = {
-        idKhachHang: button.dataset.id,
-        tenDangNhap: button.dataset.tendangnhap,
-        name: button.dataset.name,
-        gioiTinh: button.dataset.gioitinh,
-        cccd: button.dataset.cccd,
-        sdt: button.dataset.sdt,
-        email: button.dataset.email,
-        diaChi: button.dataset.address,
-        trangThai: button.dataset.trangthai,
-      };
-
-      // Gán dữ liệu trực tiếp vào form (modal đã có sẵn)
-      document.getElementById("show-id").value = data.idKhachHang || "";
+    if (viewBtn) {
+      document.getElementById("show-id").value = viewBtn.dataset.id || "";
       document.getElementById("show-tenDangNhap").value =
-        data.tenDangNhap || "";
-      document.getElementById("show-name").value = data.name || "";
-      document.getElementById("show-gioitinh").value = data.gioiTinh || "";
-      document.getElementById("show-cccd").value = data.cccd || "";
-      document.getElementById("show-sdt").value = data.sdt || "";
-      document.getElementById("show-email").value = data.email || "";
-      document.getElementById("show-address").value = data.diaChi || "";
+        viewBtn.dataset.tendangnhap || "";
+      document.getElementById("show-name").value = viewBtn.dataset.name || "";
+      document.getElementById("show-gioitinh").value =
+        viewBtn.dataset.gioitinh || "";
+      document.getElementById("show-cccd").value = viewBtn.dataset.cccd || "";
+      document.getElementById("show-sdt").value = viewBtn.dataset.sdt || "";
+      document.getElementById("show-email").value = viewBtn.dataset.email || "";
+      document.getElementById("show-address").value =
+        viewBtn.dataset.address || "";
       document.getElementById("show-trangthai").value =
-        data.trangThai == 0 ? "Hoạt động" : "Không hoạt động";
-    });
-  }
-
-  function bindDeleteButtons() {
-    document.addEventListener("click", function (e) {
-      const btn = e.target.closest(".delete-btn");
-      if (!btn) return;
-      const id = btn.getAttribute("data-id");
-      document.getElementById("delete-id").value = id;
-    });
-  }
-
-  function bindPagination() {
-    const prev = document.getElementById("prevPage");
-    const next = document.getElementById("nextPage");
-
-    if (prev && !prev.classList.contains("tw-opacity-30")) {
-      prev.onclick = () => loadPage(parseInt(prev.dataset.page));
+        viewBtn.dataset.trangthai == "0" ? "Hoạt động" : "Vô hiệu hóa";
+      return;
     }
 
-    if (next && !next.classList.contains("tw-opacity-30")) {
-      next.onclick = () => loadPage(parseInt(next.dataset.page));
+    if (updateBtn) {
+      document.getElementById("updateStatus-id").value = updateBtn.dataset.id;
+
+      const title = document.getElementById("updateStatus-title");
+      const desc = document.getElementById("updateStatus-desc");
+
+      const iconHeader = document.getElementById("update-icon-header");
+      const iconBody = document.getElementById("update-icon-body");
+
+      if (updateBtn.dataset.trangthai == "0") {
+        title.textContent = "Bạn có chắc muốn vô hiệu hóa tài khoản?";
+        desc.textContent =
+          "Hành động này sẽ dừng mọi quyền truy cập của tài khoản.";
+
+        iconHeader.setAttribute("data-lucide", "user-x");
+        iconBody.setAttribute("data-lucide", "user-x");
+        iconBody.className = "tw-w-12 tw-h-12 tw-mr-4";
+      } else {
+        title.textContent = "Bạn có chắc muốn kích hoạt lại tài khoản?";
+        desc.textContent = "Tài khoản sẽ có thể đăng nhập và sử dụng hệ thống.";
+
+        iconHeader.setAttribute("data-lucide", "user-check");
+        iconBody.setAttribute("data-lucide", "user-check");
+        iconBody.className = "tw-w-12 tw-h-12 tw-mr-4";
+      }
+
+      lucide.createIcons();
     }
 
-    document.querySelectorAll("#pagination button").forEach((btn) => {
-      btn.onclick = () => {
-        const page = parseInt(btn.getAttribute("data-page"));
-        if (!isNaN(page)) loadPage(page);
-      };
-    });
-  }
+    if (pageBtn) {
+      const page = parseInt(pageBtn.dataset.page);
+      if (!isNaN(page)) loadPage(page);
+      return;
+    }
 
-  const statusFilter = document.getElementById("statusFilter");
-  const dropdownBtn = statusFilter.previousElementSibling;
+    if (prevBtn && !prevBtn.classList.contains("tw-opacity-30")) {
+      loadPage(parseInt(prevBtn.dataset.page));
+      return;
+    }
 
-  statusFilter.addEventListener("click", function (event) {
-    const item = event.target.closest("a[data-value]");
-    if (!item) return;
-
-    const status = item.getAttribute("data-value");
-    const label = item.textContent.trim();
-
-    dropdownBtn.textContent = label;
-
-    filterByStatus(status);
+    if (nextBtn && !nextBtn.classList.contains("tw-opacity-30")) {
+      loadPage(parseInt(nextBtn.dataset.page));
+      return;
+    }
   });
 
-  function filterByStatus(status) {
-    fetch(
-      `/Admin/KhachHang/FilterByStatus?status=${encodeURIComponent(status)}`
-    )
-      .then((res) => res.text())
-      .then((html) => {
-        document.getElementById("employeeList").innerHTML = html;
-        lucide.createIcons();
-        bindPagination();
-      })
-      .catch((err) => console.error("Lỗi khi lọc trạng thái:", err));
+  const statusFilter = document.getElementById("statusFilter");
+  const dropdownBtn = statusFilter?.previousElementSibling;
+
+  if (statusFilter) {
+    statusFilter.addEventListener("click", function (event) {
+      const item = event.target.closest("a[data-value]");
+      if (!item) return;
+
+      const status = item.dataset.value;
+      const label = item.textContent.trim();
+
+      if (dropdownBtn) dropdownBtn.textContent = label;
+
+      fetch(
+        `/Admin/KhachHang/FilterByStatus?status=${encodeURIComponent(status)}`
+      )
+        .then((res) => res.text())
+        .then((html) => {
+          container.innerHTML = html;
+          lucide.createIcons();
+        })
+        .catch((err) => console.error("Lỗi lọc trạng thái:", err));
+    });
   }
 
+  /* ============================
+     TÌM KIẾM
+  ============================ */
   function searchEmployee() {
+    if (!searchInput) return;
     const keyword = searchInput.value.trim();
     fetch(`/Admin/KhachHang/Search?keyword=${encodeURIComponent(keyword)}`)
       .then((res) => res.text())
       .then((html) => {
-        employeeList.innerHTML = html;
+        container.innerHTML = html;
         lucide.createIcons();
-        bindPagination();
       })
-      .catch((err) => console.error("Lỗi khi tìm kiếm:", err));
+      .catch((err) => console.error("Lỗi tìm kiếm:", err));
   }
 
-  searchInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      searchEmployee();
-    }
-  });
-
-  bindPagination();
-  bindShowButtons();
-  bindDeleteButtons();
-  filterByStatus();
-  searchEmployee();
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        searchEmployee();
+      }
+    });
+  }
 });

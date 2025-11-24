@@ -16,12 +16,9 @@
             <thead class="tw-text-neutral-800 tw-text-xs tw-text-left tw-border-b tw-border-solid tw-border-neutral-100/80">
                 <tr class="tw-bg-neutral-50 tw-text-center">
                     <th class="tw-px-4 tw-py-3">#</th>
-                    <th class="tw-px-4 tw-py-3">Tên đăng nhập</th>
                     <th class="tw-px-4 tw-py-3">Họ tên</th>
-                    <th class="tw-px-4 tw-py-3">CCCD</th>
                     <th class="tw-px-4 tw-py-3">Giới tính</th>
                     <th class="tw-px-4 tw-py-3">SĐT</th>
-                    <th class="tw-px-4 tw-py-3">Email</th>
                     <th class="tw-px-4 tw-py-3">Chức vụ</th>
                     <th class="tw-px-4 tw-py-3">Địa chỉ</th>
                     <th class="tw-px-4 tw-py-3">Trạng thái</th>
@@ -33,12 +30,9 @@
                 {
                     <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
                         <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
-                        <td class="tw-px-4 tw-py-3">@item.nv.TaiKhoan?.TenDangNhap</td>
                         <td class="tw-px-4 tw-py-3">@item.nv.HoTen</td>
-                        <td class="tw-px-4 tw-py-3">@item.nv.CCCD</td>
                         <td class="tw-px-4 tw-py-3">@item.nv.GioiTinh</td>
                         <td class="tw-px-4 tw-py-3">@item.nv.SDT</td>
-                        <td class="tw-px-4 tw-py-3">@item.nv.Email</td>
                         <td class="tw-px-4 tw-py-3">@item.nv.ChucVu</td>
                         <td class="tw-px-4 tw-py-3">@item.nv.DiaChi</td>
                         <td class="tw-px-4 tw-py-3">
@@ -97,29 +91,26 @@
     </div>
 
     <!-- Pagination -->
-    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-6 tw-text-sm">
-        <button id="prevPage"
-                class="tw-pr-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
-                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
-                data-page="@(Model.PageNumber - 1)">
+    <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
+        <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == 1 ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber - 1)">
             <i data-lucide="chevron-left" class="tw-w-4 tw-h-4"></i>
         </button>
 
         <div id="pagination" class="tw-flex tw-gap-1">
             @for (int i = 1; i <= Model.PageCount; i++)
             {
-                <button class="tw-w-8 tw-h-8 tw-rounded tw-font-medium
-                 @(i == Model.PageNumber ? "tw-bg-indigo-600 tw-text-white" : "tw-text-gray-600 tw-hover:bg-indigo-50 tw-transition")"
-                        data-page="@i">
+                <button
+                    class="tw-w-8 tw-h-8 tw-cursor-pointer @(i == Model.PageNumber ? "tw-text-gray-600 tw-bg-gray-200/60 tw-rounded" : "tw-text-gray-600 tw-hover:bg-gray-200/60 tw-hover:rounded")"
+                    data-page="@i">
                     @i
                 </button>
             }
         </div>
 
         <button id="nextPage"
-                class="tw-pl-2 tw-py-1 tw-cursor-pointer tw-rounded tw-bg-indigo-50
-                 hover:tw-bg-indigo-100 tw-text-indigo-600 tw-transition @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
-                data-page="@(Model.PageNumber + 1)">
+            class="tw-pl-2 tw-py-1 tw-cursor-pointer @(Model.PageNumber == Model.PageCount ? "tw-opacity-30" : "")"
+            data-page="@(Model.PageNumber + 1)">
             <i data-lucide="chevron-right" class="tw-w-4 tw-h-4"></i>
         </button>
     </div>
