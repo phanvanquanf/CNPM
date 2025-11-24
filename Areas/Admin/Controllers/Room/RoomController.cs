@@ -278,10 +278,8 @@ namespace hotels.Areas.Admin.Controllers
                 return RedirectToAction("CheckInOut");
             }
 
-            // Cập nhật trạng thái booking
             datPhong.TrangThai = 2;
 
-            // Cập nhật trạng thái các phòng
             datPhong.CTDatPhongs?.Where(ct => ct.Phong != null).ToList()
                 .ForEach(ct => ct.Phong!.TrangThai = 1);
 

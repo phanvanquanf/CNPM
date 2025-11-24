@@ -52,7 +52,9 @@
         var phongGanNhat = ctGanNhat?.Phong;
         var loaiGanNhat = phongGanNhat?.LoaiPhong;
         int duration = (dpGanNhat.NgayDi - dpGanNhat.NgayDen)?.Days ?? 0;
-        decimal tongTien = (phongGanNhat?.GiaPhong ?? 0) * duration;
+        decimal tongTienPhong = (phongGanNhat?.GiaPhong ?? 0) * duration;
+        decimal tongTienDichVu = (decimal)ViewBag.TongTienDichVuGanNhat;
+        decimal tongTienPhongVaDichVu = tongTienPhong + tongTienDichVu;
         var img = phongGanNhat?.AnhPhongs?.FirstOrDefault(a => a.AnhChinh == true);
 
         <section
@@ -158,16 +160,16 @@
                     </div>
                     <div class="tw-flex tw-justify-between">
                         <span class="tw-text-gray-800 tw-font-medium">Giá Phòng</span>
-                        <span>@tongTien.ToString("N0")₫</span>
+                        <span>@tongTienPhong.ToString("N0")₫</span>
                     </div>
                     <div class="tw-flex tw-justify-between">
                         <span class="tw-text-gray-800 tw-font-medium">Dịch vụ</span>
-                        <span>--</span>
+                        <span>@tongTienDichVu.ToString("N0")₫</span>
                     </div>
                     <div
                         class="tw-flex tw-justify-between tw-font-semibold tw-text-sm tw-border-t tw-border-neutral-300 tw-pt-3">
                         <span>Tổng Tiền</span>
-                        <span>@tongTien.ToString("N0")₫</span>
+                        <span>@tongTienPhongVaDichVu.ToString("N0")₫</span>
                     </div>
                 </div>
             </div>
