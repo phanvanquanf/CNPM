@@ -9,6 +9,7 @@
                 <tr class="tw-bg-neutral-50 tw-text-center">
                     <th class="tw-py-3 tw-px-4">#</th>
                     <th class="tw-py-3 tw-px-4">Booking ID</th>
+                    <th class="tw-py-3 tw-px-4">Tên Khách Hàng</th>
                     <th class="tw-py-3 tw-px-4">Ngày Đến</th>
                     <th class="tw-py-3 tw-px-4">Ngày Đi</th>
                     <th class="tw-py-3 tw-px-4">Số Khách</th>
@@ -20,9 +21,13 @@
             <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
                 @foreach (var item in Model.Select((dp, index) => new { dp, index }))
                 {
+                    var khachHang = ViewContext.HttpContext.RequestServices.GetService<hotels.Models.DataContext>()!
+                        .KhachHangs.FirstOrDefault(k => k.IDKhachHang == item.dp.IDKhachHang);
+                    
                     <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
                         <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
                         <td class="tw-px-4 tw-py-3">B-@item.dp.IDMaDatPhong</td>
+                        <td class="tw-px-4 tw-py-3">@(khachHang?.HoTen ?? "N/A")</td>
                         <td class="tw-px-5 tw-py-3">@item.dp.NgayDen?.ToString("dd/MM/yyyy")</td>
                         <td class="tw-px-5 tw-py-3">@item.dp.NgayDi?.ToString("dd/MM/yyyy")</td>
                         <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
@@ -105,7 +110,6 @@
     </div>
 </div>
 
-<!-- Container modal sẽ được load bằng AJAX -->
 <div id="detailModalContainer"></div>
 
 <script>
@@ -113,7 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadPage(page) {
         if (page < 1) return;
-        fetch(`@Url.Action("Index")?page=${page}`, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+        
+        const searchValue = document.getElementById("searchInput")?.value || '';
+        const statusValue = document.getElementById("statusFilter")?.value || '';
+        
+        let url = `@Url.Action("Index")?page=${page}`;
+        if (searchValue) url += `&search=${encodeURIComponent(searchValue)}`;
+        if (statusValue) url += `&status=${statusValue}`;
+        
+        fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
             .then(res => res.text())
             .then(html => {
                 document.getElementById("product-container").innerHTML = html;

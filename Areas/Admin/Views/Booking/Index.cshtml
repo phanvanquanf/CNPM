@@ -29,23 +29,84 @@
                                 class="tw-w-full tw-outline-none tw-text-xs tw-text-neutral-400" />
                         </div>
                         <div class="btn-group">
-                            <button type="button" class="tw-flex tw-items-center tw-gap-1 tw-px-2 tw-h-8 tw-cursor-pointer tw-rounded-lg 
+                            <button type="button" id="statusFilterButton" class="tw-flex tw-items-center tw-gap-1 tw-px-2 tw-h-8 tw-cursor-pointer tw-rounded-lg 
                                 tw-border tw-border-solid tw-border-neutral-200/80 tw-text-xs dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Trạng thái
+                                <span id="statusFilterText">Trạng thái</span>
                             </button>
                             <ul class="dropdown-menu !tw-text-xs">
-                                <li><a class="dropdown-item" href="javascript:void(0);">Tất cả</a></li>
-                                <li><a class="dropdown-item" href="javascript:void(0);">Đã Xác Nhận</a></li>
-                                <li><a class="dropdown-item" href="javascript:void(0);">Chưa Xác Nhận</a></li>
+                                <li><a class="dropdown-item status-filter-item" href="javascript:void(0);" data-status="">Tất cả</a></li>
+                                <li><a class="dropdown-item status-filter-item" href="javascript:void(0);" data-status="0">Chưa Xác Nhận</a></li>
+                                <li><a class="dropdown-item status-filter-item" href="javascript:void(0);" data-status="1">Đã Xác Nhận</a></li>
                             </ul>
                         </div>
+                        <input type="hidden" id="statusFilter" value="" />
                     </div>
                 </div>
             </div>
 
-            <!-- Include Partial Table -->
             <partial name="_BookingTablePartial" model="Model" />
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const statusFilter = document.getElementById("statusFilter");
+    let searchTimeout;
+
+    // Search input with debounce
+    if (searchInput) {
+        searchInput.addEventListener("input", function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                reloadBookings();
+            }, 500); // Wait 500ms after user stops typing
+        });
+    }
+
+    // Status filter change
+    function bindStatusFilter() {
+        const statusFilter = document.getElementById("statusFilter");
+        if (statusFilter) {
+            // Handle status filter dropdown items
+            document.querySelectorAll('.status-filter-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const statusValue = this.getAttribute('data-status');
+                    const statusText = this.textContent.trim();
+                    
+                    // Update hidden input
+                    statusFilter.value = statusValue;
+                    
+                    // Update button text
+                    document.getElementById('statusFilterText').textContent = statusText;
+                    
+                    // Reload bookings
+                    reloadBookings();
+                });
+            });
+        }
+    }
+
+    function reloadBookings() {
+        const searchValue = searchInput?.value || '';
+        const statusValue = statusFilter?.value || '';
+        
+        let url = '@Url.Action("Index")?page=1';
+        if (searchValue) url += `&search=${encodeURIComponent(searchValue)}`;
+        if (statusValue) url += `&status=${statusValue}`;
+        
+        fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("product-container").innerHTML = html;
+                lucide.createIcons();
+                bindStatusFilter(); // Rebind status filter after reload
+            });
+    }
+
+    // Initial binding
+    bindStatusFilter();
+});
+</script>

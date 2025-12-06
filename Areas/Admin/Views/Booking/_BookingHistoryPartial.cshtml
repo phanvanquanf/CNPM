@@ -10,6 +10,7 @@
                 <tr class="tw-bg-neutral-50 tw-text-center">
                     <th class="tw-py-3 tw-px-4">#</th>
                     <th class="tw-py-3 tw-px-4">Booking ID</th>
+                    <th class="tw-py-3 tw-px-4">Tên Khách Hàng</th>
                     <th class="tw-py-3 tw-px-4">Ngày Đến</th>
                     <th class="tw-py-3 tw-px-4">Ngày Đi</th>
                     <th class="tw-py-3 tw-px-4">Số Khách</th>
@@ -21,9 +22,13 @@
             <tbody class="tw-text-xs tw-text-neutral-800 tw-text-center">
                 @foreach (var item in Model.Select((dp, index) => new { dp, index }))
                 {
+                    var khachHang = ViewContext.HttpContext.RequestServices.GetService<hotels.Models.DataContext>()!
+                        .KhachHangs.FirstOrDefault(k => k.IDKhachHang == item.dp.IDKhachHang);
+                    
                     <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
                         <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
                         <td class="tw-px-4 tw-py-3">B-@item.dp.IDMaDatPhong</td>
+                        <td class="tw-px-4 tw-py-3">@(khachHang?.HoTen ?? "N/A")</td>
                         <td class="tw-px-4 tw-py-3">@item.dp.NgayDen?.ToString("dd/MM/yyyy")</td>
                         <td class="tw-px-4 tw-py-3">@item.dp.NgayDi?.ToString("dd/MM/yyyy")</td>
                         <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
@@ -110,11 +115,27 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById("booking-history-container");
+        const searchInput = document.getElementById("searchInput");
+        let searchTimeout;
+
+        // Search input with debounce
+        if (searchInput) {
+            searchInput.addEventListener("input", function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    loadPage(1);
+                }, 500); // Wait 500ms after user stops typing
+            });
+        }
 
         // Load page via Ajax
         function loadPage(page) {
             if (page < 1) return;
-            const url = `@Url.Action("BookingHistory", "Booking", new { area = "Admin" })?page=${page}`;
+            
+            const searchValue = searchInput?.value || '';
+            let url = `@Url.Action("BookingHistory", "Booking", new { area = "Admin" })?page=${page}`;
+            if (searchValue) url += `&search=${encodeURIComponent(searchValue)}`;
+            
             fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
                 .then(res => res.text())
                 .then(html => {
@@ -160,4 +181,5 @@
 
         bindEvents();
     });
+
 </script>

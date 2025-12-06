@@ -1,0 +1,205 @@
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/Booking/Index">Quản lý Đặt phòng</a></li>
+                <li class="breadcrumb-item active">Thêm đặt phòng mới</li>
+            </ol>
+        </nav>
+
+        <div class="card tw-p-8">
+            <div class="tw-flex tw-flex-col tw-pb-5 tw-gap-1 tw-border-b tw-border-gray-200 tw-mb-6">
+                <div class="tw-flex tw-items-center tw-gap-3">
+                    <i data-lucide="calendar-plus" class="tw-w-6 tw-h-6 tw-text-indigo-600"></i>
+                    <h1 class="tw-text-xl tw-capitalize tw-font-semibold">Thêm đặt phòng mới</h1>
+                </div>
+                <p class="tw-text-sm tw-text-gray-500">Điền thông tin để tạo đặt phòng mới cho khách hàng</p>
+            </div>
+
+            <form id="bookingForm" method="post" asp-area="Admin" asp-controller="Booking" asp-action="CreateBooking">
+                
+                <!-- Thông tin khách hàng -->
+                <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-6 tw-mb-6">
+                    <h6 class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-3 tw-mb-4">
+                        <i data-lucide="user" class="tw-w-4 tw-h-4 tw-inline tw-mr-2"></i>
+                        Thông tin khách hàng
+                    </h6>
+
+                    <div class="tw-grid tw-grid-cols-1 tw-gap-4">
+                        <div>
+                            <label for="khachhang" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Khách hàng <span class="tw-text-red-500">*</span>
+                            </label>
+                            <select id="khachhang" name="IDKhachHang" class="form-select" required
+                                asp-items="ViewBag.KhachHangs">
+                                <option value="">-- Chọn khách hàng --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin đặt phòng -->
+                <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-6 tw-mb-6">
+                    <h6 class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-3 tw-mb-4">
+                        <i data-lucide="calendar" class="tw-w-4 tw-h-4 tw-inline tw-mr-2"></i>
+                        Thông tin đặt phòng
+                    </h6>
+
+                    <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+                        <div>
+                            <label for="ngayden" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Ngày đến <span class="tw-text-red-500">*</span>
+                            </label>
+                            <input type="date" id="ngayden" name="NgayDen" class="form-control" required />
+                        </div>
+
+                        <div>
+                            <label for="ngaydi" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Ngày đi <span class="tw-text-red-500">*</span>
+                            </label>
+                            <input type="date" id="ngaydi" name="NgayDi" class="form-control" required />
+                        </div>
+
+                        <div>
+                            <label for="sokhach" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Tổng số khách <span class="tw-text-red-500">*</span>
+                            </label>
+                            <input type="number" id="sokhach" name="TongSoKhach" class="form-control" 
+                                min="1" max="20" value="1" required />
+                        </div>
+
+                        <div>
+                            <label for="sophong" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Tổng số phòng <span class="tw-text-red-500">*</span>
+                            </label>
+                            <input type="number" id="sophong" name="TongSoPhong" class="form-control" 
+                                min="1" max="10" value="1" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chọn phòng -->
+                <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-6 tw-mb-6">
+                    <h6 class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-3 tw-mb-4">
+                        <i data-lucide="home" class="tw-w-4 tw-h-4 tw-inline tw-mr-2"></i>
+                        Chọn phòng
+                    </h6>
+
+                    <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+                        <div>
+                            <label for="loaiphong" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Loại phòng
+                            </label>
+                            <select id="loaiphong" name="IDLoaiPhong" class="form-select"
+                                asp-items="ViewBag.LoaiPhongs">
+                                <option value="">-- Chọn loại phòng --</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="phong" class="tw-font-medium tw-text-gray-700 tw-mb-2 tw-block">
+                                Phòng <span class="tw-text-red-500">*</span>
+                            </label>
+                            <select id="phong" name="IDPhong" class="form-select" required
+                                asp-items="ViewBag.Phongs">
+                                <option value="">-- Chọn phòng --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ghi chú -->
+                <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-shadow-sm tw-bg-gray-50 tw-p-6 tw-mb-6">
+                    <h6 class="tw-font-semibold tw-text-gray-700 tw-text-base tw-border-b tw-border-gray-200 tw-pb-3 tw-mb-4">
+                        <i data-lucide="file-text" class="tw-w-4 tw-h-4 tw-inline tw-mr-2"></i>
+                        Ghi chú
+                    </h6>
+
+                    <div>
+                        <textarea id="ghichu" name="GhiChu" class="form-control" rows="3"
+                            placeholder="Ghi chú thêm cho đặt phòng (nếu có)..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="tw-flex tw-justify-end tw-gap-3 tw-mt-2">
+                    <a href="/Admin/Booking/Index" class="btn btn-outline-secondary tw-flex tw-items-center tw-gap-2">
+                        <i data-lucide="x" class="tw-w-4 tw-h-4"></i>
+                        <span>Hủy</span>
+                    </a>
+                    <button type="submit" class="btn btn-primary tw-flex tw-items-center tw-gap-2">
+                        <i data-lucide="check" class="tw-w-4 tw-h-4"></i>
+                        <span>Tạo đặt phòng</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Set min date to today
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('ngayden').setAttribute('min', today);
+        document.getElementById('ngayden').value = today;
+
+        // Update min date for checkout when checkin changes
+        document.getElementById('ngayden').addEventListener('change', function () {
+            var checkinDate = new Date(this.value);
+            checkinDate.setDate(checkinDate.getDate() + 1);
+            var minCheckout = checkinDate.toISOString().split('T')[0];
+            document.getElementById('ngaydi').setAttribute('min', minCheckout);
+
+            // If current checkout is before new min, update it
+            var checkoutInput = document.getElementById('ngaydi');
+            if (checkoutInput.value && checkoutInput.value <= this.value) {
+                checkoutInput.value = minCheckout;
+            }
+        });
+
+        // Filter rooms by room type
+        document.getElementById('loaiphong').addEventListener('change', function () {
+            var loaiPhongId = this.value;
+            var phongSelect = document.getElementById('phong');
+
+            if (loaiPhongId) {
+                fetch('/Admin/Booking/GetPhongsByLoaiPhong?idLoaiPhong=' + loaiPhongId)
+                    .then(response => response.json())
+                    .then(data => {
+                        phongSelect.innerHTML = '<option value="">-- Chọn phòng --</option>';
+                        data.forEach(function (phong) {
+                            var option = document.createElement('option');
+                            option.value = phong.idPhong;
+                            option.textContent = phong.maSoPhong + ' - ' + phong.loaiPhong + ' (' + new Intl.NumberFormat('vi-VN').format(phong.giaPhong) + ' đ)';
+                            phongSelect.appendChild(option);
+                        });
+                        lucide.createIcons();
+                    });
+            } else {
+                fetch('/Admin/Booking/GetPhongsByLoaiPhong')
+                    .then(response => response.json())
+                    .then(data => {
+                        phongSelect.innerHTML = '<option value="">-- Chọn phòng --</option>';
+                        data.forEach(function (phong) {
+                            var option = document.createElement('option');
+                            option.value = phong.idPhong;
+                            option.textContent = phong.maSoPhong + ' - ' + phong.loaiPhong + ' (' + new Intl.NumberFormat('vi-VN').format(phong.giaPhong) + ' đ)';
+                            phongSelect.appendChild(option);
+                        });
+                        lucide.createIcons();
+                    });
+            }
+        });
+
+        // Initialize lucide icons
+        lucide.createIcons();
+    });
+</script>
+}
