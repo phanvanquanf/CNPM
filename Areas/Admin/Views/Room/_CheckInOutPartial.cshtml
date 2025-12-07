@@ -10,6 +10,7 @@
                 <tr class="tw-bg-neutral-50 tw-text-center">
                     <th class="tw-py-3 tw-px-4">#</th>
                     <th class="tw-py-3 tw-px-4">Booking ID</th>
+                    <th class="tw-py-3 tw-px-4">Tên Khách Hàng</th>
                     <th class="tw-py-3 tw-px-4">Ngày Đến</th>
                     <th class="tw-py-3 tw-px-4">Ngày Đi</th>
                     <th class="tw-py-3 tw-px-4">Số Khách</th>
@@ -26,11 +27,17 @@
                         <tr class="tw-border-t tw-border-solid tw-border-neutral-100/80">
                             <td class="tw-px-4 tw-py-3">@((Model.PageNumber - 1) * Model.PageSize + item.index + 1)</td>
                             <td class="tw-px-4 tw-py-3">B-@item.dp.IDMaDatPhong</td>
+                            <td class="tw-px-4 tw-py-3">
+                                @{
+                                    var customers = ViewBag.Customers as List<hotels.Areas.Admin.Models.tblKhachHang>;
+                                    var customer = customers?.FirstOrDefault(c => c.IDKhachHang == item.dp.IDKhachHang);
+                                    @(customer?.HoTen ?? "N/A")
+                                }
+                            </td>
                             <td class="tw-px-5 tw-py-3">@item.dp.NgayDen?.ToString("dd/MM/yyyy")</td>
                             <td class="tw-px-5 tw-py-3">@item.dp.NgayDi?.ToString("dd/MM/yyyy")</td>
                             <td class="tw-px-4 tw-py-3">@item.dp.TongSoKhach</td>
 
-                            <!-- Phòng -->
                             <td class="tw-px-4 tw-py-3">
                                 @if (item.dp.CTDatPhongs != null)
                                 {
@@ -47,7 +54,6 @@
                                 }
                             </td>
 
-                            <!-- Trạng thái booking -->
                             <td class="tw-px-4 tw-py-3">
                                 @{
                                     string statusText = "";
@@ -64,7 +70,6 @@
                                     class="tw-px-2.5 tw-py-1.5 tw-text-xs tw-rounded-md tw-font-medium @statusClass">@statusText</span>
                             </td>
 
-                            <!-- Hoạt động -->
                             <td class="tw-px-4 tw-py-3">
                                 <div class="tw-flex tw-gap-1 tw-justify-center">
                                     @if (item.dp.TrangThai == 1)
@@ -89,14 +94,13 @@
                 else
                 {
                     <tr>
-                        <td colspan="8" class="tw-text-center tw-py-4">Không có dữ liệu</td>
+                        <td colspan="9" class="tw-text-center tw-py-4">Không có dữ liệu</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 
-    <!-- Pagination -->
     <div class="tw-flex tw-justify-center tw-items-center tw-gap-1.5 tw-mt-4 tw-text-xs">
         <button id="prevPage" class="tw-pr-2 tw-py-1 tw-cursor-pointer @(Model!.PageNumber == 1 ? "tw-opacity-30" : "")"
             data-page="@(Model.PageNumber - 1)">
@@ -121,23 +125,3 @@
         </button>
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        function loadPage(page) {
-            if (page < 1) return;
-            const url = `@Url.Action("CheckInOut", "Room", new { area = "Admin" })?page=${page}`;
-            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById("checkinout-container").innerHTML = html;
-                    if (lucide) lucide.createIcons();
-                })
-                .catch(err => console.error("Lỗi load trang:", err));
-        }
-
-        document.getElementById("prevPage")?.addEventListener("click", () => loadPage(parseInt(document.getElementById("prevPage").dataset.page)));
-        document.getElementById("nextPage")?.addEventListener("click", () => loadPage(parseInt(document.getElementById("nextPage").dataset.page)));
-        document.querySelectorAll("#pagination button").forEach(btn => btn.addEventListener("click", () => loadPage(parseInt(btn.dataset.page))));
-    });
-</script>

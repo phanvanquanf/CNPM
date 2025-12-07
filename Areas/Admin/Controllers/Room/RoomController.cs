@@ -239,7 +239,7 @@ namespace hotels.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult CheckInOut(int page = 1)
+        public IActionResult CheckInOut(int page = 1, string? search = null, int? status = null)
         {
             int pageSize = 8;
 
@@ -248,9 +248,27 @@ namespace hotels.Areas.Admin.Controllers
                                 .ThenInclude(ctdp => ctdp.Phong!)
                                 .ThenInclude(p => p.LoaiPhong)
                 .Where(dp => dp.TrangThai == 1 || dp.TrangThai == 2)
-                .OrderByDescending(dp => dp.NgayTao);
+                .AsQueryable();
+
+            if (status.HasValue)
+            {
+                datPhongQuery = datPhongQuery.Where(dp => dp.TrangThai == status.Value);
+            }
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                search = search.Trim().ToLower();
+                datPhongQuery = datPhongQuery.Where(dp =>
+                    _context.KhachHangs.Any(k => k.IDKhachHang == dp.IDKhachHang &&
+                        k.HoTen!.ToLower().Contains(search))
+                );
+            }
+
+            datPhongQuery = datPhongQuery.OrderByDescending(dp => dp.NgayTao);
 
             var pagedList = datPhongQuery.ToPagedList(page, pageSize);
+
+            ViewBag.Customers = _context.KhachHangs.ToList();
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
                 return PartialView("_CheckInOutPartial", pagedList);
@@ -308,10 +326,8 @@ namespace hotels.Areas.Admin.Controllers
                 return RedirectToAction("CheckInOut");
             }
 
-            // Cập nhật trạng thái booking
             datPhong.TrangThai = 3;
 
-            // Cập nhật trạng thái các phòng
             datPhong.CTDatPhongs?.Where(ct => ct.Phong != null).ToList()
                 .ForEach(ct => ct.Phong!.TrangThai = 0);
 

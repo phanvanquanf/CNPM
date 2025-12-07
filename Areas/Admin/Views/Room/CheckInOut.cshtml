@@ -63,3 +63,86 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let debounceTimer;
+        let currentSearch = '';
+        let currentStatus = '';
+
+        const searchInput = document.getElementById("searchInput");
+        const statusFilter = document.getElementById("statusFilter");
+
+        // Debounced search function
+        function debounceSearch() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentSearch = searchInput.value.trim();
+                loadPage(1, currentSearch, currentStatus);
+            }, 500);
+        }
+
+        // Search input event listener
+        if (searchInput) {
+            searchInput.addEventListener("input", debounceSearch);
+        }
+
+        // Status filter event listener
+        if (statusFilter) {
+            statusFilter.querySelectorAll("a").forEach(item => {
+                item.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    currentStatus = this.getAttribute("data-value");
+                    loadPage(1, currentSearch, currentStatus);
+                });
+            });
+        }
+
+        // Load page function with search and status
+        function loadPage(page, search = '', status = '') {
+            if (page < 1) return;
+            const url = `@Url.Action("CheckInOut", "Room", new { area = "Admin" })?page=${page}&search=${encodeURIComponent(search)}&status=${status}`;
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("employeeList").innerHTML = html;
+                    if (lucide) lucide.createIcons();
+                    attachPaginationHandlers();
+                })
+                .catch(err => console.error("Lỗi load trang:", err));
+        }
+
+        // Attach pagination handlers
+        function attachPaginationHandlers() {
+            const container = document.getElementById("checkinout-container");
+            if (!container) return;
+
+            const prevBtn = container.querySelector("#prevPage");
+            const nextBtn = container.querySelector("#nextPage");
+            const pageButtons = container.querySelectorAll("#pagination button");
+
+            if (prevBtn) {
+                prevBtn.addEventListener("click", () => {
+                    const page = parseInt(prevBtn.dataset.page);
+                    if (page >= 1) loadPage(page, currentSearch, currentStatus);
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener("click", () => {
+                    const page = parseInt(nextBtn.dataset.page);
+                    loadPage(page, currentSearch, currentStatus);
+                });
+            }
+
+            pageButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    loadPage(parseInt(btn.dataset.page), currentSearch, currentStatus);
+                });
+            });
+        }
+
+        // Initial attachment of pagination handlers
+        attachPaginationHandlers();
+    });
+</script>
